@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "esnext",
+    "jsx": "preserve",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "strict": true,
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@generated/*": [
+        "../generated/*"
+      ]
+    }
+  },
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "content",
+    "public",
+    ".cache"
+  ],
+  "presets": [
+    ["react-app", {
+      "flow": false,
+      "typescript": true
+    }]
+  ]
+}
