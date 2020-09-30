@@ -1,34 +1,19 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "esnext",
-    "jsx": "preserve",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
+    "module": "esnext",
+    "target": "es5",
+    "jsx": "react",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "strict": true,
     "noEmit": true,
     "noUnusedLocals": true,
     "esModuleInterop": true,
-    "baseUrl": "./src",
-    "paths": {
-      "@generated/*": [
-        "../generated/*"
-      ]
-    }
+    "moduleResolution": "node",
+    "baseUrl": "src",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["src"],
-  "exclude": [
-    "node_modules",
-    "content",
-    "public",
-    ".cache"
-  ],
-  "presets": [
-    ["react-app", {
-      "flow": false,
-      "typescript": true
-    }]
-  ]
+  "exclude": ["node_modules", "content", "public", ".cache"]
 }

@@ -1,9 +1,9 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
-  /* Your site config here */
-}
+  siteMetadata: {
+    title: 'Gatsby-blog',
+    description:
+      'Blog made with Gatsby, Typescript, Javascript, React hooks, emotion, deployed using Netlify',
+    author: 'Karol Gardyjas',
+  },
+  plugins: [`gatsby-plugin-emotion`],
+};
