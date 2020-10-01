@@ -21,6 +21,7 @@
     "gatsby-image": "^2.2.44",
     "gatsby-plugin-emotion": "^4.3.11",
     "gatsby-plugin-manifest": "^2.2.48",
+    "gatsby-plugin-netlify-cms": "^4.3.15",
     "gatsby-plugin-offline": "^3.0.41",
     "gatsby-plugin-react-helmet": "^3.1.24",
     "gatsby-remark-reading-time": "^1.1.0",
