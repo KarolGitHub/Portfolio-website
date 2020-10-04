@@ -4,23 +4,24 @@ import { Link } from 'gatsby';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import Menu from '../Sidedrawer/Menu/Menu';
 import { Wrapper, Navigation, Logo } from './Toolbar.styles';
-import logo from '../../../assets/logo.png';
 import ModeButton from '../../UI/ModeButton/ModeButton';
+import { useSiteConfigQuery } from '../../../hooks/useSiteConfigQuery';
 
 type Props = {
   openMenu: () => void;
   title: string;
 };
 
-const Toolbar: FunctionComponent<Props> = ({ title, openMenu }) => {
+const Toolbar: FunctionComponent<Props> = ({ openMenu, title = `` }) => {
+  const siteConfig = useSiteConfigQuery();
   return (
     <Wrapper>
       <Menu clicked={openMenu} />
       <Navigation>
         <Link to="/">
-          <Logo src={logo} alt={title} />
+          <Logo src={siteConfig.logo} alt={title} />
         </Link>
-        <NavigationItems />
+        <NavigationItems items={siteConfig.menu} />
       </Navigation>
       <ModeButton />
     </Wrapper>

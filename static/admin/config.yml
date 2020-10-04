@@ -12,7 +12,7 @@ collections: # A list of collections the CMS should be able to edit
     description: >
       The description is a great place for tone setting, high level information, and editing
       guidelines that are specific to a collection.
-    folder: 'content/posts'
+    folder: 'src/content/blog/posts'
     extension: mdx
     format: frontmatter
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'

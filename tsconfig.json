@@ -15,5 +15,5 @@
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true
   },
-  "exclude": ["node_modules", "content", "public", ".cache"]
+  "exclude": ["node_modules", "src/content", "public", ".cache"]
 }

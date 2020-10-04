@@ -12,8 +12,31 @@ module.exports = {
     ],
   },
   plugins: [
+    'gatsby-plugin-typescript',
     'gatsby-plugin-emotion',
     'gatsby-plugin-netlify-cms',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.md`, `.mdx`],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/content/`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: `${__dirname}/src/assets/`,
+        },
+      },
+    }`gatsby-remark-reading-time`,
   ],
 };

@@ -1,15 +1,20 @@
 import React, { FunctionComponent } from 'react';
 import NavigationItem from './NavigationItem/NavigationItem';
 
-import { Wrapper} from './NavigationItems.styles';
+import { Wrapper } from './NavigationItems.styles';
 
-const NavigationItems: FunctionComponent = () => (
-    <Wrapper>
-      <NavigationItem link="/">Home</NavigationItem>
-      <NavigationItem link="/blog">Blog</NavigationItem>
-      <NavigationItem link="/contact">Contact</NavigationItem>
-      <NavigationItem link="/about">About</NavigationItem>
-    </Wrapper>
+type Props = {
+  items: [];
+};
+
+const NavigationItems: FunctionComponent<Props> = ({ items }) => (
+  <Wrapper>
+    {items.map((item: any) => (
+      <NavigationItem key={item.id} link={item.link}>
+        {item.name}
+      </NavigationItem>
+    ))}
+  </Wrapper>
 );
 
 export default NavigationItems;

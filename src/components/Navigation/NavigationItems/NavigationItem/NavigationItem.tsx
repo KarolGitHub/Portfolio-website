@@ -1,10 +1,10 @@
-import React, { FunctionComponent } from "react"
-import { Link } from "gatsby"
+import React, { FunctionComponent } from 'react';
+import { Link } from 'gatsby';
 
 type Props = {
-  link: string
-  children: any
-}
+  link: string;
+  children: any;
+};
 
 const NavigationItem: FunctionComponent<Props> = ({ link, children }) => (
   <li>
@@ -12,6 +12,6 @@ const NavigationItem: FunctionComponent<Props> = ({ link, children }) => (
       {children}
     </Link>
   </li>
-)
+);
 
-export default NavigationItem
+export default NavigationItem;

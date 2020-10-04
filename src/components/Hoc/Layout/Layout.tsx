@@ -29,7 +29,11 @@ const Layout: FunctionComponent<Props> = ({ children }) => {
         openMenu={() => setSideDrawer(!showSideDrawer)}
         title={data.title}
       />
-      <Sidedrawer open={showSideDrawer} clicked={() => setSideDrawer(false)} />
+      <Sidedrawer
+        open={showSideDrawer}
+        clicked={() => setSideDrawer(false)}
+        title={data.title}
+      />
       <main>{children}</main>
       <Footer author={data.author} />
     </ThemeProvider>
