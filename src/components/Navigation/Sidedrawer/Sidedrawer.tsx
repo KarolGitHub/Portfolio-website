@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import NavigationItems from '../NavigationItems/NavigationItems';
 import Backdrop from '../../UI/Backdrop/Backdrop';
 import { Logo } from '../Toolbar/Toolbar.styles';
-import { Wrapper, Nav } from './Sidedrawer.styles';
+import { Wrapper, Navigation } from './Sidedrawer.styles';
 import { useSiteConfigQuery } from '../../../hooks/useSiteConfigQuery';
 
 type Props = {
@@ -21,12 +21,12 @@ const Sidedrawer: FunctionComponent<Props> = ({ open, clicked, title = ``}) => {
       <Wrapper {...{ open }} onClick={clicked}>
         <div>
           <Link to="/">
-            <Logo src={siteConfig.logo} alt={title} />
+            <Logo src={siteConfig.logo.publicURL} alt={title} />
           </Link>
         </div>
-        <Nav>
+        <Navigation>
           <NavigationItems items={siteConfig.menu} />
-        </Nav>
+        </Navigation>
       </Wrapper>
     </Fragment>
   );

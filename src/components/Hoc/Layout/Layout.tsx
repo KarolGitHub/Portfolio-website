@@ -34,7 +34,7 @@ const Layout: FunctionComponent<Props> = ({ children }) => {
         clicked={() => setSideDrawer(false)}
         title={data.title}
       />
-      <main>{children}</main>
+      {children}
       <Footer author={data.author} />
     </ThemeProvider>
   );

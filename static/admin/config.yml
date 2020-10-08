@@ -3,7 +3,7 @@ backend:
   repo: KarolGitHub/Gatsby-blog
 
 media_folder: static/images/uploads # Media files will be stored in the repo under images/uploads
-public_folder: images/uploads
+public_folder: assets
 
 collections: # A list of collections the CMS should be able to edit
   - name: blog # Used in routes, ie.: /admin/collections/:slug/edit
@@ -19,14 +19,26 @@ collections: # A list of collections the CMS should be able to edit
     summary: '{{title}} - {{year}}/{{month}}/{{day}}'
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
+      - { label: Author, name: author, widget: string }
       - { label: Title, name: title, widget: string, tagname: 'h1' }
       - {
           label: 'Publish Date',
           name: date,
           widget: date,
-          format: 'YYYY-MM-DD'
+          format: 'YYYY-MM-DD',
         }
-      - { label: Body, name: body, widget: markdown, hint: 'Main content goes here.' }
+      - {
+          label: 'Image',
+          name: 'image',
+          widget: image,
+          hint: 'Image size 1280x800 works best :)',
+          required: false,
+        }
+      - {
+          label: Body,
+          name: body,
+          widget: markdown,
+          hint: 'Main content goes here.',
+        }
       - { label: Excerpt, name: excerpt, required: false }
       - { label: Tags, name: tags, widget: list, required: false }
-      - { label: Keywords, name: keywords, widget: list, required: false }

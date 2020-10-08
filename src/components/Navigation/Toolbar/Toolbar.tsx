@@ -19,7 +19,7 @@ const Toolbar: FunctionComponent<Props> = ({ openMenu, title = `` }) => {
       <Menu clicked={openMenu} />
       <Navigation>
         <Link to="/">
-          <Logo src={siteConfig.logo} alt={title} />
+          <Logo src={siteConfig.logo.publicURL} alt={title} />
         </Link>
         <NavigationItems items={siteConfig.menu} />
       </Navigation>

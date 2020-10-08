@@ -17,6 +17,6 @@ export const Wrapper = styled.div`
     margin-bottom: 32px;
   }
 `;
-export const Nav = styled.nav`
+export const Navigation = styled.nav`
   width: 30%;
 `;

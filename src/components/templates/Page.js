@@ -9,10 +9,12 @@ const Page = ({ data: { mdx } }) => {
   return (
     <Layout>
       <SEO title={mdx.frontmatter.title} />
-      <h2>{mdx.frontmatter.title}</h2>
-      <MDXProvider>
-        <MDXRenderer>{mdx.body}</MDXRenderer>
-      </MDXProvider>
+      <main>
+        <h2>{mdx.frontmatter.title}</h2>
+        <MDXProvider>
+          <MDXRenderer>{mdx.body}</MDXRenderer>
+        </MDXProvider>
+      </main>
     </Layout>
   );
 };

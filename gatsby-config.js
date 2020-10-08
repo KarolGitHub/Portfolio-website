@@ -16,7 +16,6 @@ module.exports = {
     'gatsby-plugin-emotion',
     'gatsby-plugin-netlify-cms',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -26,17 +25,32 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `posts`,
-        path: `${__dirname}/src/content/`,
+        name: `content`,
+        path: `${__dirname}/src/content`,
       },
     },
     {
-      resolve: 'gatsby-plugin-react-svg',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        rule: {
-          include: `${__dirname}/src/assets/`,
-        },
+        name: `images`,
+        path: `${__dirname}/src/assets`,
       },
-    }`gatsby-remark-reading-time`,
+    },
+    `gatsby-remark-reading-time`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Gatsby-blog`,
+        short_name: `blog`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/assets/logo.png`,
+      },
+    },
+    'gatsby-plugin-offline',
   ],
 };

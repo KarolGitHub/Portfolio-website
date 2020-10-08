@@ -5,7 +5,9 @@ export const useSiteConfigQuery = () => {
     query ConfigQuery {
       mdx(frontmatter: { type: { eq: "config" } }) {
         frontmatter {
-          logo
+          logo {
+            publicURL
+          }
           menu {
             id
             link

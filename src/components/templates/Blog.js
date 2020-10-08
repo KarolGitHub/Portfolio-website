@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { graphql, Link } from 'gatsby';
 import Layout from '../Hoc/Layout/Layout';
 import SEO from '../SEO/SEO';
+import BlogCard from '../BlogCard/BlogCard';
 
 const Blog = ({ data }) => {
   const { edges: posts } = data.allMdx;
@@ -9,27 +10,21 @@ const Blog = ({ data }) => {
   return (
     <Layout>
       <SEO title="Blog" />
-      <ul>
-        {posts.map(({ node: post }) => {
-          return (
-            <li key={post.id}>
-              <h2>
-                <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
-              </h2>
-              <div>
-                <span>
-                  Posted on {post.frontmatter.date} <span> / </span>{' '}
-                  {post.timeToRead} min read
-                </span>
-              </div>
-              <p>{post.excerpt}</p>
-              <div>
-                <Link to={post.fields.slug}>Read More</Link>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+      <main>
+        {posts.map(({ node: post }) => (
+          <BlogCard
+            key={post.id}
+            slug={post.fields.slug}
+            title={post.frontmatter.title}
+            date={post.frontmatter.date}
+            tags={post.frontmatter.tags}
+            author={post.frontmatter.author}
+            timeToRead={post.timeToRead}
+            excerpt={post.excerpt}
+            image={post.frontmatter.image.childImageSharp.fluid}
+          />
+        ))}
+      </main>
     </Layout>
   );
 };
@@ -49,9 +44,17 @@ export const blogQuery = graphql`
           timeToRead
           frontmatter {
             title
-            tags
             date(formatString: "DD MMMM, YYYY")
+            tags
+            author
             published
+            image {
+              childImageSharp {
+                fluid(maxWidth: 200, maxHeight: 200) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           fields {
             slug

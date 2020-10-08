@@ -5,7 +5,8 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  margin: 0 auto;
+  border-radius: 10px;
+  margin: 0 auto 40px auto;
   background-color: ${(props) => props.theme.colors.menuBackground};
   max-width: 960px;
   height: 60px;

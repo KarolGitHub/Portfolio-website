@@ -1,10 +1,11 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
+import { rgba } from 'emotion-rgba';
 
 export const colors = {
   primaryColor: '#464646',
-  secondaryColor: '#f44f18',
-  mainWhite: '#fff',
+  overlayDark: rgba('#000000', 0.6),
+  overlayLight: rgba('#FFFFFF', 0.6),
   white: '#fff',
   light: '#f8f9fa',
   gray: '#343a40',
@@ -23,6 +24,7 @@ export const darkTheme = {
     textDark: colors.blueShade3,
     textMain: colors.blueShade2,
     textSecondary: colors.blueShade3,
+    imageOverlay: colors.overlayDark,
   },
 };
 
@@ -34,6 +36,7 @@ export const lightTheme = {
     textDark: colors.blueShade1,
     textMain: colors.blueShade2,
     textSecondary: colors.deepDarkGray,
+    imageOverlay: colors.overlayLight,
   },
 };
 
@@ -41,16 +44,18 @@ export const GlobalStyles = (props) => (
   <Global
     {...props}
     styles={css`
-      :root {
-        --site-max-width: 1200px;
-      }
       * {
         box-sizing: border-box;
+      }
+      :root {
+        --max-width: 1200px;
       }
 
       html,
       body {
+        margin: 0 auto;
         height: 100%;
+        max-width: var(--max-width);
       }
 
       body {
@@ -61,9 +66,9 @@ export const GlobalStyles = (props) => (
           'Helvetica Neue', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        font-weight: 300;
+        font-size: 1rem;
         font-style: normal;
-        margin: 0;
+        margin: 0 auto;
         transition: all 0.5s ease;
         @media (min-width: 600px) {
           padding: 0 20px 80px 20px;
@@ -76,7 +81,7 @@ export const GlobalStyles = (props) => (
       }
 
       main {
-        margin: 0 auto;
+        margin: 40px auto;
         max-width: 960px;
       }
 
