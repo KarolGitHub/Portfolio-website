@@ -1,4 +1,3 @@
-import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
 export const Overlay = styled.div`
@@ -15,6 +14,23 @@ export const Overlay = styled.div`
   background-color: ${(props) => props.theme.colors.imageOverlay};
 `;
 
+export const Wrapper = styled.div`
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 150px;
+  margin-bottom: 40px;
+  -webkit-box-shadow: 0 7px 30px -10px ${(props) => props.theme.colors.postShadow};
+  -moz-box-shadow: 0 7px 30px -10px ${(props) => props.theme.colors.postShadow};
+  box-shadow: 0 7px 30px -10px ${(props) => props.theme.colors.postShadow};
+  padding: 0;
+  list-style: none;
+  z-index: 0;
+  :hover ${Overlay} {
+    width: 100%;
+  }
+`;
+
 export const ImageWrapper = styled.div`
   position: relative;
   display: none;
@@ -27,20 +43,6 @@ export const ImageWrapper = styled.div`
   }
   @media screen and (min-width: 600px) {
     display: block;
-  }
-`;
-
-export const Wrapper = styled.div`
-  position: relative;
-  display: flex;
-  width: 100%;
-  min-height: 150px;
-  margin-bottom: 40px;
-  padding: 0;
-  list-style: none;
-  z-index: 0;
-  :hover ${Overlay} {
-    width: 100%;
   }
 `;
 

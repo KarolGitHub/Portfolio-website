@@ -14,6 +14,8 @@ export const colors = {
   blueShade1: '#215973',
   blueShade2: '#6fadc6',
   blueShade3: '#d1e1e9',
+  shadowDark: rgba('#96aab4', 0.5),
+  shadowLight: rgba('#96aab4', 0.9),
 };
 
 export const darkTheme = {
@@ -25,6 +27,7 @@ export const darkTheme = {
     textMain: colors.blueShade2,
     textSecondary: colors.blueShade3,
     imageOverlay: colors.overlayDark,
+    postShadow: colors.shadowDark,
   },
 };
 
@@ -37,6 +40,7 @@ export const lightTheme = {
     textMain: colors.blueShade2,
     textSecondary: colors.deepDarkGray,
     imageOverlay: colors.overlayLight,
+    postShadow: colors.shadowLight,
   },
 };
 

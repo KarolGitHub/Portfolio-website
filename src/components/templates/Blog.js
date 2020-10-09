@@ -3,27 +3,34 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../Hoc/Layout/Layout';
 import SEO from '../SEO/SEO';
 import BlogCard from '../BlogCard/BlogCard';
+import Pagination from '../UI/Pagination/Pagination';
 
-const Blog = ({ data }) => {
+const Blog = ({ data, pageContext: { blogPages, currentPage } }) => {
+  console.log(data);
   const { edges: posts } = data.allMdx;
 
   return (
     <Layout>
       <SEO title="Blog" />
       <main>
-        {posts.map(({ node: post }) => (
-          <BlogCard
-            key={post.id}
-            slug={post.fields.slug}
-            title={post.frontmatter.title}
-            date={post.frontmatter.date}
-            tags={post.frontmatter.tags}
-            author={post.frontmatter.author}
-            timeToRead={post.timeToRead}
-            excerpt={post.excerpt}
-            image={post.frontmatter.image.childImageSharp.fluid}
-          />
-        ))}
+        <Pagination blogPages={blogPages} currentPage={currentPage} />
+        {posts.map(({ node: post }) => {
+          const title = post.frontmatter.title || 'Untitled';
+          return (
+            <BlogCard
+              key={post.id}
+              slug={post.fields.slug}
+              title={title}
+              date={post.frontmatter.date}
+              tags={post.frontmatter.tags}
+              author={post.frontmatter.author}
+              timeToRead={post.timeToRead}
+              excerpt={post.excerpt}
+              image={post.frontmatter.image.childImageSharp.fluid}
+            />
+          );
+        })}
+        <Pagination blogPages={blogPages} currentPage={currentPage} />
       </main>
     </Layout>
   );
@@ -32,8 +39,10 @@ const Blog = ({ data }) => {
 export default Blog;
 
 export const blogQuery = graphql`
-  query blogListQuery {
+  query blogListQuery($skip: Int, $limit: Int) {
     allMdx(
+      limit: $limit
+      skip: $skip
       filter: { frontmatter: { type: { eq: "post" }, published: { eq: true } } }
       sort: { fields: frontmatter___date, order: DESC }
     ) {

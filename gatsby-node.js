@@ -93,10 +93,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   });
 
   //Posts in Blog page
-  Array.from({ length: allPosts.length }).forEach(() => {
+  const limit = 5;
+  const blogPages = Math.ceil(allPosts.length / limit);
+  Array.from({ length: blogPages }).forEach((_, i) => {
     createPage({
-      path: `blog`,
+      path: i === 0 ? `blog` : `blog/${i + 1}`,
       component: path.resolve(`./src/components/templates/Blog.js`),
+      context: { limit: limit, skip: i * limit, blogPages, currentPage: i + 1 },
     });
   });
 };
