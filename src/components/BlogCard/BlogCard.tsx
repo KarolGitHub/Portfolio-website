@@ -20,7 +20,7 @@ type Props = {
   date: string;
   tags: [string];
   author: string;
-  timeToRead: string;
+  readingTime: string;
   excerpt: string;
   image: any;
 };
@@ -31,7 +31,7 @@ const BlogCard: FunctionComponent<Props> = ({
   date,
   tags,
   author,
-  timeToRead,
+  readingTime,
   excerpt,
   image,
 }) => (
@@ -50,7 +50,7 @@ const BlogCard: FunctionComponent<Props> = ({
           </ul>
           <ul>
             <img src={TimeIcon} alt="time" />
-            <li>{timeToRead} min read</li>
+            <li>{readingTime}</li>
           </ul>
         </DetailsWrapper>
       </Overlay>
@@ -63,7 +63,11 @@ const BlogCard: FunctionComponent<Props> = ({
       <InfoWrapper>
         <ul>
           <img src={TagsIcon} alt="time" />
-          <li>{tags.join(' ')}</li>
+          {tags.map((tag, i) => (
+            <Link key={'tag' + i} to={`/blog/t/${tag}`}>
+              #{tag}
+            </Link>
+          ))}
         </ul>
         <Link to={slug}>Read More</Link>
       </InfoWrapper>

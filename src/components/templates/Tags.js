@@ -1,22 +1,25 @@
-import React, { FunctionComponent } from 'react';
-import { graphql, Link } from 'gatsby';
-import Layout from '../Hoc/Layout/Layout';
+import React from 'react';
+import { Link, graphql } from 'gatsby';
 import SEO from '../SEO/SEO';
-import BlogCard from '../BlogCard/BlogCard';
 import Pagination from '../UI/Pagination/Pagination';
+import BlogCard from '../BlogCard/BlogCard';
+import Layout from '../Hoc/Layout/Layout';
 
-const Blog = ({ data, pageContext: { totalPages, currentPage } }) => {
-  const { edges: posts } = data.allMdx;
-
+const Tags = ({ data, pageContext: { totalPages, currentPage, tag } }) => {
+  const { edges: posts, totalCount } = data.allMdx;
+  const tagHeader = `${totalCount} post${
+    totalCount === 1 ? '' : 's'
+  } tagged with "${tag}"`;
   return (
     <Layout>
       <SEO title="Blog" />
       <main>
         <Pagination
-          postfix="/blog"
+          postfix={`/blog/t/${tag}`}
           totalPages={totalPages}
           currentPage={currentPage}
         />
+        <h1>{tagHeader}</h1>
         {posts.map(({ node: post }) => {
           const title = post.frontmatter.title || 'Untitled';
           return (
@@ -33,26 +36,33 @@ const Blog = ({ data, pageContext: { totalPages, currentPage } }) => {
             />
           );
         })}
-        <Pagination
-          postfix="/blog"
-          totalPages={totalPages}
-          currentPage={currentPage}
-        />
+        {totalCount > 1 && (
+          <Pagination
+            postfix={`/blog/t/${tag}`}
+            totalPages={totalPages}
+            currentPage={currentPage}
+          />
+        )}
       </main>
     </Layout>
   );
 };
-
-export default Blog;
-
-export const blogQuery = graphql`
-  query blogListQuery($skip: Int, $limit: Int) {
+export default Tags;
+export const pageQuery = graphql`
+  query($skip: Int, $limit: Int, $tag: String) {
     allMdx(
       limit: $limit
       skip: $skip
-      filter: { frontmatter: { type: { eq: "post" }, published: { eq: true } } }
-      sort: { fields: frontmatter___date, order: DESC }
+      filter: {
+        frontmatter: {
+          tags: { in: [$tag] }
+          type: { eq: "post" }
+          published: { eq: true }
+        }
+      }
+      sort: { fields: [frontmatter___date], order: DESC }
     ) {
+      totalCount
       edges {
         node {
           id

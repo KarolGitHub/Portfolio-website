@@ -29,12 +29,18 @@ export const Wrapper = styled.div`
   :hover ${Overlay} {
     width: 100%;
   }
+  a {
+    :hover {
+      opacity: 0.7;
+    }
+  }
 `;
 
 export const ImageWrapper = styled.div`
   position: relative;
   display: none;
-  width: 30%;
+  min-width: 30%;
+  max-width: 50%;
   margin: 0 20px 0 0;
   height: min-content;
   z-index: -1;
@@ -96,8 +102,10 @@ export const InfoWrapper = styled.div`
     list-style: none;
     display: flex;
     li {
-      width: 300px;
       margin: 0px 0px 0px 10px;
     }
+  }
+  a {
+    margin-right: 5px;
   }
 `;

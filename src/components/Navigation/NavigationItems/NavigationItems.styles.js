@@ -7,7 +7,6 @@ export const Wrapper = styled.ul`
   padding: 0;
 
   a {
-    text-decoration: none;
     color: ${(props) => props.theme.colors.textDark};
   }
 

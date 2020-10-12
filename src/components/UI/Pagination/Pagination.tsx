@@ -8,14 +8,19 @@ import RightIcon from '../../../assets/right.svg';
 import { Nav } from './Pagination.styles';
 
 type Props = {
-  blogPages: number;
+  postfix: string;
+  totalPages: number;
   currentPage: number;
 };
 
-const Pagination: FunctionComponent<Props> = ({ blogPages, currentPage }) => (
+const Pagination: FunctionComponent<Props> = ({
+  postfix,
+  totalPages,
+  currentPage,
+}) => (
   <Nav>
     <div>
-      <Link to="/" >
+      <Link to={`${postfix}/`}>
         <input
           type="image"
           alt="first"
@@ -23,7 +28,7 @@ const Pagination: FunctionComponent<Props> = ({ blogPages, currentPage }) => (
           disabled={currentPage < 2}
         />
       </Link>
-      <Link to={`/${currentPage < 2 ? '' : currentPage - 1}`}>
+      <Link to={`${postfix}/${currentPage < 3 ? '' : currentPage - 1}`}>
         <input
           type="image"
           alt="left"
@@ -32,22 +37,22 @@ const Pagination: FunctionComponent<Props> = ({ blogPages, currentPage }) => (
         />
       </Link>
     </div>
-    {currentPage} / {blogPages}
+    {currentPage} / {totalPages}
     <div>
-      <Link to={`/${currentPage + 1}`}>
+      <Link to={`${postfix}/${currentPage + 1}`}>
         <input
           type="image"
           alt="right"
           src={RightIcon}
-          disabled={currentPage === blogPages}
+          disabled={currentPage === totalPages}
         />
       </Link>
-      <Link to={`/${blogPages}`}>
+      <Link to={`${postfix}/${totalPages}`}>
         <input
           type="image"
           alt="last"
           src={LastIcon}
-          disabled={currentPage === blogPages}
+          disabled={currentPage === totalPages}
         />
       </Link>
     </div>

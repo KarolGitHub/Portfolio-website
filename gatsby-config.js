@@ -6,20 +6,31 @@ module.exports = {
     author: 'Karol Gardyjas',
     social: [
       {
-        name: 'github',
+        name: 'GitHub',
         url: 'https://github.com/KarolGitHub/Gatsby-blog',
+      },
+      {
+        name: 'LinkedIn',
+        url: 'https://www.linkedin.com/in/karolgardyjas',
       },
     ],
   },
   plugins: [
     'gatsby-plugin-typescript',
     'gatsby-plugin-emotion',
-    'gatsby-plugin-netlify-cms',
     'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        extensions: [`.md`, `.mdx`],
+        name: `images`,
+        path: `${__dirname}/static/images/uploads`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: `${__dirname}/src/assets`,
       },
     },
     {
@@ -29,21 +40,19 @@ module.exports = {
         path: `${__dirname}/src/content`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/assets`,
-      },
-    },
-    `gatsby-remark-reading-time`,
+    `gatsby-plugin-netlify-cms-paths`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {},
+    },
+    `gatsby-remark-reading-time`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Gatsby-blog`,
-        short_name: `blog`,
+        short_name: `Blog`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -52,5 +61,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    'gatsby-plugin-netlify-cms',
   ],
 };

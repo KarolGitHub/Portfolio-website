@@ -3,9 +3,6 @@ import { Global, css } from '@emotion/core';
 import { rgba } from 'emotion-rgba';
 
 export const colors = {
-  primaryColor: '#464646',
-  overlayDark: rgba('#000000', 0.6),
-  overlayLight: rgba('#FFFFFF', 0.6),
   white: '#fff',
   light: '#f8f9fa',
   gray: '#343a40',
@@ -14,6 +11,8 @@ export const colors = {
   blueShade1: '#215973',
   blueShade2: '#6fadc6',
   blueShade3: '#d1e1e9',
+  overlayDark: rgba('#000000', 0.6),
+  overlayLight: rgba('#FFFFFF', 0.6),
   shadowDark: rgba('#96aab4', 0.5),
   shadowLight: rgba('#96aab4', 0.9),
 };
