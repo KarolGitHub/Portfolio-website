@@ -8,19 +8,19 @@ import RightIcon from '../../../assets/right.svg';
 import { Nav } from './Pagination.styles';
 
 type Props = {
-  postfix: string;
+  prefix: string;
   totalPages: number;
   currentPage: number;
 };
 
 const Pagination: FunctionComponent<Props> = ({
-  postfix,
+  prefix,
   totalPages,
   currentPage,
 }) => (
   <Nav>
     <div>
-      <Link to={`${postfix}/`}>
+      <Link to={`${prefix}/`}>
         <input
           type="image"
           alt="first"
@@ -28,7 +28,7 @@ const Pagination: FunctionComponent<Props> = ({
           disabled={currentPage < 2}
         />
       </Link>
-      <Link to={`${postfix}/${currentPage < 3 ? '' : currentPage - 1}`}>
+      <Link to={`${prefix}/${currentPage < 3 ? '' : currentPage - 1}`}>
         <input
           type="image"
           alt="left"
@@ -39,7 +39,10 @@ const Pagination: FunctionComponent<Props> = ({
     </div>
     {currentPage} / {totalPages}
     <div>
-      <Link to={`${postfix}/${currentPage + 1}`}>
+      <Link
+        to={`${prefix}/${
+          currentPage < totalPages ? currentPage + 1 : currentPage
+        }`}>
         <input
           type="image"
           alt="right"
@@ -47,7 +50,7 @@ const Pagination: FunctionComponent<Props> = ({
           disabled={currentPage === totalPages}
         />
       </Link>
-      <Link to={`${postfix}/${totalPages}`}>
+      <Link to={`${prefix}/${totalPages}`}>
         <input
           type="image"
           alt="last"

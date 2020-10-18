@@ -8,6 +8,7 @@ export const colors = {
   gray: '#343a40',
   darkGray: '#1a1c20',
   deepDarkGray: '#404040',
+  green: '#4caf50',
   blueShade1: '#215973',
   blueShade2: '#6fadc6',
   blueShade3: '#d1e1e9',
@@ -27,6 +28,7 @@ export const darkTheme = {
     textSecondary: colors.blueShade3,
     imageOverlay: colors.overlayDark,
     postShadow: colors.shadowDark,
+    green: colors.green,
   },
 };
 
@@ -40,6 +42,7 @@ export const lightTheme = {
     textSecondary: colors.deepDarkGray,
     imageOverlay: colors.overlayLight,
     postShadow: colors.shadowLight,
+    green: colors.green,
   },
 };
 
@@ -136,3 +139,31 @@ export const GlobalStyles = (props) => (
     `}
   />
 );
+
+export const cardStyles = (props) => css`
+  padding: 0;
+  width: 100%;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 7px 30px -10px ${props.theme.colors.postShadow};
+  -moz-box-shadow: 0 7px 30px -10px ${props.theme.colors.postShadow};
+  box-shadow: 0 7px 30px -10px ${props.theme.colors.postShadow};
+  a {
+    :hover {
+      opacity: 0.7;
+    }
+  }
+`;
+
+export const buttonStyles = () => css`
+  cursor: pointer;
+  transition: all 0.3s ease;
+  :disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+  :hover:not([disabled]) {
+    -moz-box-shadow: 0 0 10px #ccc;
+    -webkit-box-shadow: 0 0 10px #ccc;
+    box-shadow: 0 0 10px #ccc;
+  }
+`;

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { cardStyles } from '../../styles/GlobalStyles';
 
 export const Overlay = styled.div`
   position: absolute;
@@ -15,32 +16,22 @@ export const Overlay = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  position: relative;
   display: flex;
-  width: 100%;
+  ${cardStyles}
+  position: relative;
   min-height: 150px;
   margin-bottom: 40px;
-  -webkit-box-shadow: 0 7px 30px -10px ${(props) => props.theme.colors.postShadow};
-  -moz-box-shadow: 0 7px 30px -10px ${(props) => props.theme.colors.postShadow};
-  box-shadow: 0 7px 30px -10px ${(props) => props.theme.colors.postShadow};
-  padding: 0;
   list-style: none;
   z-index: 0;
   :hover ${Overlay} {
     width: 100%;
-  }
-  a {
-    :hover {
-      opacity: 0.7;
-    }
   }
 `;
 
 export const ImageWrapper = styled.div`
   position: relative;
   display: none;
-  min-width: 30%;
-  max-width: 50%;
+  width: 30%;
   margin: 0 20px 0 0;
   height: min-content;
   z-index: -1;

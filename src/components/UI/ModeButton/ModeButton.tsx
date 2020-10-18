@@ -5,10 +5,10 @@ import dark from '../../../assets/dark.svg';
 
 // Styles
 import { Button } from './ModeButton.styles';
-import { ModeContext } from '../../../context/ModeProvider';
+import { ThemeContext } from '../../../context/ThemeProvider';
 
 const ModeButton: FunctionComponent = () => {
-  const [colorMode, setColorMode] = useContext(ModeContext);
+  const [colorMode, setColorMode] = useContext(ThemeContext);
   return (
     <Button
       src={colorMode === 'dark' ? dark : light}

@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby';
 import SEO from '../SEO/SEO';
 import Pagination from '../UI/Pagination/Pagination';
 import BlogCard from '../BlogCard/BlogCard';
-import Layout from '../Hoc/Layout/Layout';
+import Layout from '../Hoc/Layout';
 
 const Tags = ({ data, pageContext: { totalPages, currentPage, tag } }) => {
   const { edges: posts, totalCount } = data.allMdx;
@@ -15,7 +15,7 @@ const Tags = ({ data, pageContext: { totalPages, currentPage, tag } }) => {
       <SEO title="Blog" />
       <main>
         <Pagination
-          postfix={`/blog/t/${tag}`}
+          prefix={`/blog/t/${tag}`}
           totalPages={totalPages}
           currentPage={currentPage}
         />
@@ -38,7 +38,7 @@ const Tags = ({ data, pageContext: { totalPages, currentPage, tag } }) => {
         })}
         {totalCount > 1 && (
           <Pagination
-            postfix={`/blog/t/${tag}`}
+            prefix={`/blog/t/${tag}`}
             totalPages={totalPages}
             currentPage={currentPage}
           />

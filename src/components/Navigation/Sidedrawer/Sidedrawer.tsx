@@ -1,35 +1,46 @@
-import React, { Fragment, FunctionComponent } from 'react';
+import React, { Fragment, FunctionComponent, useMemo } from 'react';
 import { Link } from 'gatsby';
 
 import NavigationItems from '../NavigationItems/NavigationItems';
 import Backdrop from '../../UI/Backdrop/Backdrop';
 import { Logo } from '../Toolbar/Toolbar.styles';
 import { Wrapper, Navigation } from './Sidedrawer.styles';
-import { useSiteConfigQuery } from '../../../hooks/useSiteConfigQuery';
+import withConfig from '../../Hoc/withConfig';
 
 type Props = {
   open: boolean;
   clicked: () => void;
   title: string;
+  logo: any;
+  menu: any;
 };
 
-const Sidedrawer: FunctionComponent<Props> = ({ open, clicked, title = ``}) => {
-  const siteConfig = useSiteConfigQuery();
+const Sidedrawer: FunctionComponent<Props> = ({
+  open,
+  clicked,
+  title = ``,
+  logo,
+  menu,
+}) => {
+  const backdrop = useMemo(
+    () => <Backdrop open={open} clicked={clicked} />,
+    []
+  );
   return (
     <Fragment>
-      <Backdrop open={open} clicked={clicked} />
+      {backdrop}
       <Wrapper {...{ open }} onClick={clicked}>
         <div>
           <Link to="/">
-            <Logo src={siteConfig.logo.publicURL} alt={title} />
+            <Logo src={logo} alt={title} />
           </Link>
         </div>
         <Navigation>
-          <NavigationItems items={siteConfig.menu} />
+          <NavigationItems items={menu} />
         </Navigation>
       </Wrapper>
     </Fragment>
   );
 };
 
-export default Sidedrawer;
+export default withConfig(Sidedrawer);

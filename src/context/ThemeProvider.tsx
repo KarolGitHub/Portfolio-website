@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useState } from 'react';
 
-export const ModeContext = React.createContext<any>([]);
+export const ThemeContext = React.createContext<any>([]);
 type Props = {
   children: any;
 };
-const ModeProvider: FunctionComponent<Props> = ({ children }) => {
+const ThemeProvider: FunctionComponent<Props> = ({ children }) => {
   const getInitialColorMode = () => {
     const storedMode = window.localStorage.getItem('colorMode');
     if (typeof storedMode === 'string') {
@@ -20,10 +20,10 @@ const ModeProvider: FunctionComponent<Props> = ({ children }) => {
   };
 
   return (
-    <ModeContext.Provider value={[colorMode, setColorMode]}>
+    <ThemeContext.Provider value={[colorMode, setColorMode]}>
       {children}
-    </ModeContext.Provider>
+    </ThemeContext.Provider>
   );
 };
 
-export default ModeProvider;
+export default ThemeProvider;

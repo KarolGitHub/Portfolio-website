@@ -6,11 +6,15 @@ module.exports = {
     author: 'Karol Gardyjas',
     social: [
       {
-        name: 'GitHub',
-        url: 'https://github.com/KarolGitHub/Gatsby-blog',
+        name: 'email',
+        url: 'karolgardyjas@gmail.com',
       },
       {
-        name: 'LinkedIn',
+        name: 'gitHub',
+        url: 'https://github.com/KarolGitHub',
+      },
+      {
+        name: 'linkedin',
         url: 'https://www.linkedin.com/in/karolgardyjas',
       },
     ],
@@ -57,7 +61,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/logo.png`,
+        icon: `src/assets/logo.svg`,
       },
     },
     'gatsby-plugin-offline',

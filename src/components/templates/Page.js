@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../Hoc/Layout/Layout';
+import Layout from '../Hoc/Layout';
 import SEO from '../SEO/SEO';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -29,6 +29,14 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date
+      }
+    }
+    site {
+      siteMetadata {
+        social {
+          url
+          name
+        }
       }
     }
   }

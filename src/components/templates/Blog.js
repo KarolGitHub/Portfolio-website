@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, Link } from 'gatsby';
-import Layout from '../Hoc/Layout/Layout';
+import Layout from '../Hoc/Layout';
 import SEO from '../SEO/SEO';
 import BlogCard from '../BlogCard/BlogCard';
 import Pagination from '../UI/Pagination/Pagination';
@@ -13,7 +13,7 @@ const Blog = ({ data, pageContext: { totalPages, currentPage } }) => {
       <SEO title="Blog" />
       <main>
         <Pagination
-          postfix="/blog"
+          prefix="/blog"
           totalPages={totalPages}
           currentPage={currentPage}
         />
@@ -34,7 +34,7 @@ const Blog = ({ data, pageContext: { totalPages, currentPage } }) => {
           );
         })}
         <Pagination
-          postfix="/blog"
+          prefix="/blog"
           totalPages={totalPages}
           currentPage={currentPage}
         />
