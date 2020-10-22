@@ -8,7 +8,7 @@ type Props = {
 
 const NavigationItem: FunctionComponent<Props> = ({ link, children }) => (
   <li>
-    <Link to={link} partiallyActive={true} activeClassName="active">
+    <Link to={link} partiallyActive={link !== '/'} activeClassName="active">
       {children}
     </Link>
   </li>

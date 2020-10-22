@@ -12,6 +12,13 @@ export const useMetaDataQuery = () => {
             name
             url
           }
+          projects {
+            name
+            code
+            demo
+            desc
+            image
+          }
         }
       }
     }

@@ -16,6 +16,7 @@ export const colors = {
   overlayLight: rgba('#FFFFFF', 0.6),
   shadowDark: rgba('#96aab4', 0.5),
   shadowLight: rgba('#96aab4', 0.9),
+  backdrop: rgba('#000000', 0.5),
 };
 
 export const darkTheme = {
@@ -29,6 +30,7 @@ export const darkTheme = {
     imageOverlay: colors.overlayDark,
     postShadow: colors.shadowDark,
     green: colors.green,
+    backdrop: colors.backdrop,
   },
 };
 
@@ -43,6 +45,7 @@ export const lightTheme = {
     imageOverlay: colors.overlayLight,
     postShadow: colors.shadowLight,
     green: colors.green,
+    backdrop: colors.backdrop,
   },
 };
 
@@ -52,6 +55,7 @@ export const GlobalStyles = (props) => (
     styles={css`
       * {
         box-sizing: border-box;
+        outline: none;
       }
       :root {
         --max-width: 1200px;
@@ -69,7 +73,7 @@ export const GlobalStyles = (props) => (
         color: ${props.theme.colors.textSecondary};
         font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
           'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-          'Helvetica Neue', sans-serif;
+          'Helvetica Neue', Catamaran, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         font-size: 1rem;
@@ -87,6 +91,7 @@ export const GlobalStyles = (props) => (
       }
 
       main {
+        display: block;
         margin: 40px auto;
         max-width: 960px;
       }
@@ -114,22 +119,20 @@ export const GlobalStyles = (props) => (
       }
 
       h2 {
-        font-size: 1rem;
-        letter-spacing: 1.8px;
-        text-transform: uppercase;
+        font-size: 1.5rem;
+        letter-spacing: 1.6px;
 
         @media (min-width: 600px) {
-          font-size: 1.5rem;
+          font-size: 2rem;
         }
       }
 
       h3 {
-        font-size: 0.8rem;
+        font-size: 1.3rem;
         letter-spacing: 1.5px;
-        margin: 30px 0 -15px 0;
 
         @media (min-width: 600px) {
-          font-size: 1.2rem;
+          font-size: 1.5rem;
         }
       }
 

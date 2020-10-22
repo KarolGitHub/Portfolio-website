@@ -7,7 +7,7 @@ type Props = {
   clicked: () => void;
 };
 const backdrop: FunctionComponent<Props> = ({ open, clicked }) => {
-  return open ? <Wrapper {...{ open }} onClick={clicked} /> : null;
+  return open ? <Wrapper onClick={clicked} /> : null;
 };
 
 export default backdrop;

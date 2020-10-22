@@ -18,6 +18,30 @@ module.exports = {
         url: 'https://www.linkedin.com/in/karolgardyjas',
       },
     ],
+    projects: [
+      {
+        name: 'Burger Builder',
+        demo: 'https://burger-builder-46554.web.app',
+        code: 'https://github.com/KarolGitHub/BurgerBuilder',
+        desc:
+          'Progressive web app made with React, Redux, Javascript, CSS Modules, Firebase.',
+        image: './src/assets/bb.png',
+      },
+      {
+        name: 'Spotify Playlist Maker',
+        demo: 'https://spotifyplaylistmaker-9f04b.web.app/',
+        code: 'https://github.com/KarolGitHub/SpotifyPlaylistMaker',
+        desc:
+          'Progressive web app made with React, Redux, Typescript, Sass, Firebase.',
+        image: './src/assets/spm.png',
+      },
+      {
+        name: 'Portfolio',
+        code: 'https://github.com/KarolGitHub/Portfolio-website',
+        desc:
+          'Summary of my work as Frontend developer, also a place where I publish my projects including personal blog. Made with GatsbyJS from scratch, new blog posts are done via Netlify CMS',
+      },
+    ],
   },
   plugins: [
     'gatsby-plugin-typescript',
@@ -51,6 +75,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {},
     },
+    `gatsby-plugin-smoothscroll`,
     `gatsby-remark-reading-time`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -61,7 +86,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/assets/logo.svg`,
+        icon: `src/assets/logo.png`,
       },
     },
     'gatsby-plugin-offline',

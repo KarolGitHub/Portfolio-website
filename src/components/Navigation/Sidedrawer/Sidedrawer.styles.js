@@ -11,12 +11,20 @@ export const Wrapper = styled.div`
   padding: 60px 16px;
   transition: transform 0.3s ease-out;
   transform: translate(${(props) => (props.open ? '0' : '-100%')});
-  .Logo {
-    height: 10%;
-    width: 10%;
-    margin-bottom: 32px;
+  img {
+    margin: 10px;
+  }
+  @media (min-width: 601px) {
+    display: none;
+    max-width: 70%;
+  }
+  @media (max-width: 600px) {
+    max-width: 70%;
   }
 `;
 export const Navigation = styled.nav`
   width: 30%;
+  li {
+    padding: 10px;
+  }
 `;

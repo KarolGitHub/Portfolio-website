@@ -22,13 +22,9 @@ const Sidedrawer: FunctionComponent<Props> = ({
   logo,
   menu,
 }) => {
-  const backdrop = useMemo(
-    () => <Backdrop open={open} clicked={clicked} />,
-    []
-  );
   return (
     <Fragment>
-      {backdrop}
+      <Backdrop open={open} clicked={clicked} />
       <Wrapper {...{ open }} onClick={clicked}>
         <div>
           <Link to="/">
