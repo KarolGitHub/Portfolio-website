@@ -25,7 +25,6 @@ module.exports = {
         code: 'https://github.com/KarolGitHub/BurgerBuilder',
         desc:
           'Progressive web app made with React, Redux, Javascript, CSS Modules, Firebase.',
-        image: './src/assets/bb.png',
       },
       {
         name: 'Spotify Playlist Maker',
@@ -33,7 +32,6 @@ module.exports = {
         code: 'https://github.com/KarolGitHub/SpotifyPlaylistMaker',
         desc:
           'Progressive web app made with React, Redux, Typescript, Sass, Firebase.',
-        image: './src/assets/spm.png',
       },
       {
         name: 'Portfolio',

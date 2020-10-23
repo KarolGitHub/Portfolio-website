@@ -9,9 +9,9 @@ type Props = {
 
 const NavigationItems: FunctionComponent<Props> = ({ items }) => (
   <Wrapper>
-    {items.map((item: any) => (
-      <NavigationItem key={item.id} link={item.link}>
-        {item.name}
+    {items.map(({id,name,link}) => (
+      <NavigationItem key={id} link={link}>
+        {name}
       </NavigationItem>
     ))}
   </Wrapper>

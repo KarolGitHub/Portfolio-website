@@ -6,8 +6,7 @@ export const Wrapper = styled.div`
   ${cardStyles}
   display: flex;
   margin: 40px 0;
-  justify-content: center;
-  align-items: center;
+  place-content: center;
   h3 {
     margin-bottom: 6px;
   }
@@ -22,10 +21,9 @@ export const Wrapper = styled.div`
     ul {
       list-style-type: none;
       display: grid;
-      padding: 0 40px;
-      margin: 0;
+      padding: 10px;
+      margin: 0 11vw;
       justify-items: center;
-      align-items: center;
       grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
       li {
         width: fit-content;

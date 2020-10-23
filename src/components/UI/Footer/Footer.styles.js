@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.footer`
-  position: absolute;
+  position: relative;
   left: 0;
+  bottom: 0;
   width: 100%;
   padding: 0.5rem;
-  background-color: ${(props) => props.theme.colors.footerBackground};
+  background-color: #343a40;
 `;

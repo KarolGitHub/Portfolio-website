@@ -57,15 +57,13 @@ export const GlobalStyles = (props) => (
         box-sizing: border-box;
         outline: none;
       }
-      :root {
-        --max-width: 1200px;
-      }
 
       html,
       body {
-        margin: 0 auto;
-        height: 100%;
-        max-width: var(--max-width);
+        margin: 0;
+        :root {
+          --max-width: 1500px;
+        }
       }
 
       body {
@@ -78,11 +76,7 @@ export const GlobalStyles = (props) => (
         -moz-osx-font-smoothing: grayscale;
         font-size: 1rem;
         font-style: normal;
-        margin: 0 auto;
         transition: all 0.5s ease;
-        @media (min-width: 600px) {
-          padding: 0 20px 80px 20px;
-        }
       }
 
       code {
@@ -93,7 +87,8 @@ export const GlobalStyles = (props) => (
       main {
         display: block;
         margin: 40px auto;
-        max-width: 960px;
+        max-width: calc(var(--max-width) - 300px);
+        min-height: 100vh;
       }
 
       h1,

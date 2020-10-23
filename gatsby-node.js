@@ -78,32 +78,48 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const allTags = result.data.tagsGroup.group;
 
   // Create posts
-  allPosts.forEach(({ node }) => {
-    if (node.frontmatter.published) {
-      createPage({
-        path: `${node.fields.slug}`,
-        component: path.resolve(`./src/components/templates/Post.js`),
-        // You can use the values in this context in
-        // our page layout component
-        context: { id: node.id },
-      });
+  allPosts.forEach(
+    ({
+      node: {
+        id,
+        fields: { slug },
+        frontmatter: { published },
+      },
+    }) => {
+      if (published) {
+        createPage({
+          path: `${slug}`,
+          component: path.resolve(`./src/components/templates/Post.js`),
+          // You can use the values in this context in
+          // our page layout component
+          context: { id: id },
+        });
+      }
     }
-  });
+  );
 
   // Create pages
-  allPages.forEach(({ node }) => {
-    let componentPath;
-    if (node.frontmatter.type === 'home') {
-      componentPath = `./src/components/templates/Home.js`;
-    } else {
-      componentPath = `./src/components/templates/Page.js`;
+  allPages.forEach(
+    ({
+      node: {
+        id,
+        frontmatter: { type },
+        fields: { slug },
+      },
+    }) => {
+      let componentPath;
+      if (type === 'home') {
+        componentPath = `./src/components/templates/Home.js`;
+      } else {
+        componentPath = `./src/components/templates/Page.js`;
+      }
+      createPage({
+        path: slug,
+        component: path.resolve(componentPath),
+        context: { id: id },
+      });
     }
-    createPage({
-      path: node.fields.slug,
-      component: path.resolve(componentPath),
-      context: { id: node.id },
-    });
-  });
+  );
 
   //Posts in Blog page
   const limit = 5;

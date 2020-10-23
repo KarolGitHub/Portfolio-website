@@ -17,7 +17,6 @@ export const useMetaDataQuery = () => {
             code
             demo
             desc
-            image
           }
         }
       }

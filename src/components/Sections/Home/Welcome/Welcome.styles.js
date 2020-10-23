@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { buttonStyles, cardStyles } from '../../../styles/GlobalStyles';
+import { buttonStyles, cardStyles } from '../../../../styles/GlobalStyles';
 
 export const Wrapper = styled.div`
   ${cardStyles}
@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
     }
   }
 `;
-export const WelcomeWrapper = styled.div`
+export const InfoWrapper = styled.div`
   width: 60%;
   display: flex;
   flex-direction: column;
