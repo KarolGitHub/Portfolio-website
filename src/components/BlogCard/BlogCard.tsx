@@ -15,29 +15,27 @@ import {
 } from './BlogCard.styles';
 
 type Props = {
-  slug: string;
-  title: string;
-  date: string;
-  tags: [string];
-  author: string;
-  readingTime: string;
-  excerpt: string;
-  image: any;
+  hit: BlogPost;
 };
 
 const BlogCard: FunctionComponent<Props> = ({
-  slug,
-  title,
-  date,
-  tags,
-  author,
-  readingTime,
-  excerpt,
-  image,
+  hit: {
+    objectID: id,
+    slug,
+    title,
+    date,
+    _tags: tags,
+    author,
+    readingTime: { text },
+    excerpt,
+    image: {
+      childImageSharp: { fluid },
+    },
+  },
 }) => (
-  <Wrapper>
+  <Wrapper key={id}>
     <ImageWrapper>
-      <Img fluid={image} alt="image" />
+      <Img fluid={fluid} alt="image" />
       <Overlay>
         <DetailsWrapper>
           <ul>
@@ -50,7 +48,7 @@ const BlogCard: FunctionComponent<Props> = ({
           </ul>
           <ul>
             <img src={TimeIcon} alt="time" />
-            <li>{readingTime}</li>
+            <li>{text}</li>
           </ul>
         </DetailsWrapper>
       </Overlay>

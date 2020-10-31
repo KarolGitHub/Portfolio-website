@@ -1,43 +1,51 @@
 import React, { FunctionComponent } from 'react';
 import { graphql, Link } from 'gatsby';
+import algoliasearch from 'algoliasearch/lite';
+import {
+  InstantSearch,
+  Hits,
+  connectStateResults,
+  ScrollTo,
+} from 'react-instantsearch-dom';
+
 import Layout from '../Hoc/Layout';
 import SEO from '../SEO/SEO';
-import BlogCard from '../BlogCard/BlogCard';
 import Pagination from '../UI/Pagination/Pagination';
+import SearchBox from '../UI/SearchBox/SearchBox';
+import BlogCard from '../BlogCard/BlogCard';
 
-const Blog = ({ data, pageContext: { totalPages, currentPage } }) => {
-  const { edges: posts } = data.allMdx;
-
+const LoadingIndicator = connectStateResults(
+  ({ isSearchStalled, searchResults, error }) => (
+    <h4>
+      {!error ? (
+        isSearchStalled ? (
+          'Loading...'
+        ) : searchResults?.nbHits ? null : (
+          'No results found.'
+        )
+      ) : (
+        <p style={{ color: 'red' }}>{error.message}</p>
+      )}
+    </h4>
+  )
+);
+const searchClient = algoliasearch(
+  process.env.GATSBY_ALGOLIA_APP_ID,
+  process.env.GATSBY_ALGOLIA_SEARCH_KEY
+);
+const Blog = () => {
   return (
-    <Layout>
+    <Layout id="Layout">
       <SEO title="Blog" />
       <main>
-        <Pagination
-          prefix="/blog"
-          totalPages={totalPages}
-          currentPage={currentPage}
-        />
-        {posts.map(({ node: post }) => {
-          const title = post.frontmatter.title || 'Untitled';
-          return (
-            <BlogCard
-              key={post.id}
-              slug={post.fields.slug}
-              title={title}
-              date={post.frontmatter.date}
-              tags={post.frontmatter.tags}
-              author={post.frontmatter.author}
-              readingTime={post.fields.readingTime.text}
-              excerpt={post.excerpt}
-              image={post.frontmatter.image.childImageSharp.fluid}
-            />
-          );
-        })}
-        <Pagination
-          prefix="/blog"
-          totalPages={totalPages}
-          currentPage={currentPage}
-        />
+        <InstantSearch searchClient={searchClient} indexName="blog">
+          <ScrollTo>
+            <SearchBox />
+          </ScrollTo>
+          <LoadingIndicator />
+          <Hits hitComponent={BlogCard} />
+          <Pagination />
+        </InstantSearch>
       </main>
     </Layout>
   );
@@ -46,39 +54,9 @@ const Blog = ({ data, pageContext: { totalPages, currentPage } }) => {
 export default Blog;
 
 export const blogQuery = graphql`
-  query blogListQuery($skip: Int, $limit: Int) {
-    allMdx(
-      limit: $limit
-      skip: $skip
-      filter: { frontmatter: { type: { eq: "post" }, published: { eq: true } } }
-      sort: { fields: frontmatter___date, order: DESC }
-    ) {
-      edges {
-        node {
-          id
-          excerpt
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            tags
-            author
-            published
-            image {
-              childImageSharp {
-                fluid(maxWidth: 200, maxHeight: 200) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          fields {
-            slug
-            readingTime {
-              text
-            }
-          }
-        }
-      }
+  query($id: String) {
+    site(id: { eq: $id }) {
+      id
     }
   }
 `;

@@ -44,7 +44,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
-
       tagsGroup: allMdx(limit: 2000) {
         group(field: frontmatter___tags) {
           fieldValue
@@ -53,7 +52,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
 
       pages: allMdx(
-        filter: { frontmatter: { type: { in: ["page", "home"] } } }
+        filter: { frontmatter: { type: { in: ["page", "home", "blog"] } } }
       ) {
         edges {
           node {
@@ -90,13 +89,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         createPage({
           path: `${slug}`,
           component: path.resolve(`./src/components/templates/Post.js`),
-          // You can use the values in this context in
-          // our page layout component
           context: { id: id },
         });
       }
     }
   );
+
+  const tags = allTags.map((tag) => tag.fieldValue);
 
   // Create pages
   allPages.forEach(
@@ -108,10 +107,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     }) => {
       let componentPath;
-      if (type === 'home') {
-        componentPath = `./src/components/templates/Home.js`;
-      } else {
-        componentPath = `./src/components/templates/Page.js`;
+      switch (type) {
+        case 'blog':
+          componentPath = `./src/components/templates/Blog.js`;
+          break;
+        case 'home':
+          componentPath = `./src/components/templates/Home.js`;
+          break;
+        default:
+          componentPath = `./src/components/templates/Page.js`;
       }
       createPage({
         path: slug,
@@ -121,63 +125,37 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   );
 
-  //Posts in Blog page
-  const limit = 5;
-  const totalPages = Math.ceil(allPosts.length / limit);
-  Array.from({ length: totalPages }).forEach((_, i) => {
+  // Create tag pages
+  allTags.forEach((tag) => {
+    const tagValue = tag.fieldValue;
+    const totalTagPages = allTags.length;
     createPage({
-      path: i === 0 ? `blog` : `blog/${i + 1}`,
-      component: path.resolve(`./src/components/templates/Blog.js`),
+      path: `blog/t/${_.kebabCase(tagValue)}/`,
+      component: path.resolve(`./src/components/templates/Tags.js`),
       context: {
-        limit: limit,
-        skip: i * limit,
-        totalPages,
-        currentPage: i + 1,
+        id: tagValue,
       },
     });
   });
 
-  // Create tag pages
-  const tagCount = {};
-  allPosts.forEach(
-    ({
-      node: {
-        frontmatter: { tags },
-      },
-    }) => {
-      tags.forEach((tag) => {
-        if (tagCount[tag]) {
-          tagCount[tag]++;
-        } else {
-          tagCount[tag] = 1;
-        }
-      });
-    }
-  );
+  createPage({
+    path: `blog/tags/`,
+    component: path.resolve(`./src/components/templates/Tags.js`),
+    context: {
+      id: 'tags',
+    },
+  });
 
-  const tagPages = {};
-  for (tag in tagCount) {
-    tagPages[tag] = Math.ceil(tagCount[tag] / limit);
-  }
   allTags.forEach((tag) => {
     const tagValue = tag.fieldValue;
-    const totalTagPages = tagPages[tagValue];
-    for (let j = 1; j <= totalTagPages; j++) {
-      createPage({
-        path:
-          j === 1
-            ? `blog/t/${_.kebabCase(tagValue)}/`
-            : `blog/t/${_.kebabCase(tagValue)}/${j}`,
-        component: path.resolve(`./src/components/templates/Tags.js`),
-        context: {
-          tag: tagValue,
-          limit: limit,
-          skip: (j - 1) * limit,
-          totalPages: totalTagPages,
-          currentPage: j,
-        },
-      });
-    }
+    const totalTagPages = allTags.length;
+    createPage({
+      path: `blog/t/${_.kebabCase(tagValue)}/`,
+      component: path.resolve(`./src/components/templates/Tags.js`),
+      context: {
+        id: tagValue,
+      },
+    });
   });
 };
 

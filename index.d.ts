@@ -21,5 +21,18 @@ declare type MetaData = {
   social: Social[];
   projects: Projects[];
 };
+declare type BlogPost = {
+  objectID: string;
+  excerpt: string;
+  title: string;
+  date: any;
+  _tags: string[];
+  author: string;
+  image: any;
+  slug: string;
+  readingTime: {
+    text: string;
+  };
+};
 
 declare module 'react-obfuscate';

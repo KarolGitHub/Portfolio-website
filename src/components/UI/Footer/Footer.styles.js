@@ -6,5 +6,5 @@ export const Wrapper = styled.footer`
   bottom: 0;
   width: 100%;
   padding: 0.5rem;
-  background-color: #343a40;
+  background-color: ${(props) => props.theme.colors.footerBackground};
 `;

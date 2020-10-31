@@ -21,7 +21,6 @@ export const Wrapper = styled.div`
   position: relative;
   min-height: 150px;
   margin-bottom: 40px;
-  list-style: none;
   z-index: 0;
   :hover ${Overlay} {
     width: 100%;
@@ -47,6 +46,7 @@ export const MetaData = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding-right: 20px;
   line-height: 1.2;
   z-index: 0;
   @media screen and (min-width: 600px) {
@@ -61,7 +61,6 @@ export const DetailsWrapper = styled.ul`
   left: 50%;
   margin: auto;
   padding: 0;
-  list-style: none;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -72,8 +71,6 @@ export const DetailsWrapper = styled.ul`
     display: flex;
     width: 100%;
     margin: auto;
-    padding: 0;
-    list-style: none;
     align-items: center;
     text-align: center;
     li {
@@ -89,8 +86,6 @@ export const InfoWrapper = styled.div`
   font-size: 1rem;
   z-index: 0;
   ul {
-    padding: 0;
-    list-style: none;
     display: flex;
     li {
       margin: 0px 0px 0px 10px;

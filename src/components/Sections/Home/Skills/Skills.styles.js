@@ -21,10 +21,8 @@ export const Wrapper = styled.div`
     ul {
       list-style-type: none;
       display: grid;
-      padding: 10px;
-      margin: 0 11vw;
       justify-items: center;
-      grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
       li {
         width: fit-content;
         img {

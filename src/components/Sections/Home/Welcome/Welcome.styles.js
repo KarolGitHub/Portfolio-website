@@ -40,7 +40,7 @@ export const ButtonFull = styled.a`
   color: ${(props) => props.theme.colors.textSecondary};
   text-align: center;
   font: inherit;
-  line-height: 55px;
+  line-height: 58px;
 `;
 export const ButtonOutline = styled.button`
   ${buttonStyles}

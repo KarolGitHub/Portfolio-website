@@ -21,7 +21,7 @@ const Toolbar: FunctionComponent<Props> = ({
   menu,
 }) => {
   return (
-    <Wrapper>
+    <Wrapper id='Toolbar'>
       <Menu clicked={openMenu} />
       <Navigation>
         <Link to="/">

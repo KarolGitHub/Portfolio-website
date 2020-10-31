@@ -24,9 +24,5 @@ export const Wrapper = styled.ul`
     :last-child {
       margin-right: 0;
     }
-
-    :hover {
-      opacity: 0.7;
-    }
   }
 `;

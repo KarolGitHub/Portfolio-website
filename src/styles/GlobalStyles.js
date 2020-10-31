@@ -12,6 +12,9 @@ export const colors = {
   blueShade1: '#215973',
   blueShade2: '#6fadc6',
   blueShade3: '#d1e1e9',
+  blue: '#0077B7',
+  lightBlue: '#eee',
+  darkBackground: '#3f324d',
   overlayDark: rgba('#000000', 0.6),
   overlayLight: rgba('#FFFFFF', 0.6),
   shadowDark: rgba('#96aab4', 0.5),
@@ -29,8 +32,10 @@ export const darkTheme = {
     textSecondary: colors.blueShade3,
     imageOverlay: colors.overlayDark,
     postShadow: colors.shadowDark,
+    searchBackground: colors.darkBackground,
     green: colors.green,
     backdrop: colors.backdrop,
+    blue: colors.blue,
   },
 };
 
@@ -44,8 +49,10 @@ export const lightTheme = {
     textSecondary: colors.deepDarkGray,
     imageOverlay: colors.overlayLight,
     postShadow: colors.shadowLight,
+    searchBackground: colors.lightBlue,
     green: colors.green,
     backdrop: colors.backdrop,
+    blue: colors.blue,
   },
 };
 
@@ -131,8 +138,16 @@ export const GlobalStyles = (props) => (
         }
       }
 
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
       a {
         text-decoration: none;
+        :hover {
+          opacity: 0.7;
+        }
       }
     `}
   />
@@ -145,11 +160,6 @@ export const cardStyles = (props) => css`
   -webkit-box-shadow: 0 7px 30px -10px ${props.theme.colors.postShadow};
   -moz-box-shadow: 0 7px 30px -10px ${props.theme.colors.postShadow};
   box-shadow: 0 7px 30px -10px ${props.theme.colors.postShadow};
-  a {
-    :hover {
-      opacity: 0.7;
-    }
-  }
 `;
 
 export const buttonStyles = () => css`
