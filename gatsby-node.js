@@ -88,14 +88,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       if (published) {
         createPage({
           path: `${slug}`,
-          component: path.resolve(`./src/components/templates/Post.js`),
+          component: path.resolve(`./src/components/templates/PostTemplate.js`),
           context: { id: id },
         });
       }
     }
   );
 
-  const tags = allTags.map((tag) => tag.fieldValue);
+  const tags = allTags
+    .map((tag) => ({
+      value: tag.fieldValue,
+      path: `/blog/t/${_.kebabCase(tag.fieldValue)}/`,
+      count: tag.totalCount,
+    }))
+    .sort((a, b) => b.count - a.count);
 
   // Create pages
   allPages.forEach(
@@ -106,56 +112,56 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         fields: { slug },
       },
     }) => {
-      let componentPath;
       switch (type) {
         case 'blog':
-          componentPath = `./src/components/templates/Blog.js`;
+          createPage({
+            path: slug,
+            component: path.resolve(
+              `./src/components/templates/BlogTemplate.js`
+            ),
+            context: { id: id, tags },
+          });
           break;
         case 'home':
-          componentPath = `./src/components/templates/Home.js`;
+          createPage({
+            path: slug,
+            component: path.resolve(
+              `./src/components/templates/HomeTemplate.js`
+            ),
+            context: { id: id },
+          });
           break;
         default:
-          componentPath = `./src/components/templates/Page.js`;
+          createPage({
+            path: slug,
+            component: path.resolve(
+              `./src/components/templates/PageTemplate.js`
+            ),
+            context: { id: id },
+          });
       }
-      createPage({
-        path: slug,
-        component: path.resolve(componentPath),
-        context: { id: id },
-      });
     }
   );
 
   // Create tag pages
-  allTags.forEach((tag) => {
-    const tagValue = tag.fieldValue;
-    const totalTagPages = allTags.length;
+  tags.forEach((tag) => {
     createPage({
-      path: `blog/t/${_.kebabCase(tagValue)}/`,
-      component: path.resolve(`./src/components/templates/Tags.js`),
+      path: tag.path,
+      component: path.resolve(`./src/components/templates/TagTemplate.js`),
       context: {
-        id: tagValue,
+        id: tag.value,
+        tags,
       },
     });
   });
 
   createPage({
-    path: `blog/tags/`,
-    component: path.resolve(`./src/components/templates/Tags.js`),
+    path: `/blog/tags/`,
+    component: path.resolve(`./src/components/templates/TagsTemplate.js`),
     context: {
       id: 'tags',
+      tags,
     },
-  });
-
-  allTags.forEach((tag) => {
-    const tagValue = tag.fieldValue;
-    const totalTagPages = allTags.length;
-    createPage({
-      path: `blog/t/${_.kebabCase(tagValue)}/`,
-      component: path.resolve(`./src/components/templates/Tags.js`),
-      context: {
-        id: tagValue,
-      },
-    });
   });
 };
 

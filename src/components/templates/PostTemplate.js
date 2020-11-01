@@ -6,7 +6,7 @@ import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Image from '../Image/Image';
 
-const Post = ({ data: { mdx } }) => {
+const PostTemplate = ({ data: { mdx } }) => {
   return (
     <Layout>
       <SEO title={mdx.frontmatter.title} />
@@ -21,7 +21,7 @@ const Post = ({ data: { mdx } }) => {
   );
 };
 
-export default Post;
+export default PostTemplate;
 
 export const query = graphql`
   query($id: String) {

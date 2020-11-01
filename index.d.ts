@@ -34,5 +34,10 @@ declare type BlogPost = {
     text: string;
   };
 };
+declare type Tag = {
+  value:string;
+  path:string;
+  count:number;
+}
 
 declare module 'react-obfuscate';

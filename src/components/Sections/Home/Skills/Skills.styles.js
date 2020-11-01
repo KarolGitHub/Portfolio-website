@@ -19,7 +19,6 @@ export const Wrapper = styled.div`
       margin: 0 0 10px 0;
     }
     ul {
-      list-style-type: none;
       display: grid;
       justify-items: center;
       grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));

@@ -4,9 +4,10 @@ import { cardStyles, buttonStyles } from '../../../styles/GlobalStyles';
 export const Wrapper = styled.div`
   height: 60px;
   align-items: center;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
   div {
-    width: 100%;
-    height: 100%;
     input {
       width: 20em;
       padding: 10px;
@@ -44,4 +45,21 @@ export const Wrapper = styled.div`
     }
   }
 `;
-export const Input = styled.input``;
+export const LinkWrapper = styled.div`
+  padding: 0px 10px;
+  a {
+    display: block;
+    font: inherit;
+    border-radius: 5px;
+    width: 54px;
+    height: 2.85em;
+    background-color: ${(props) => props.theme.colors.background};
+    border: 1px solid ${(props) => props.theme.colors.blue};
+    color: ${(props) => props.theme.colors.textMain};
+    text-align: center;
+    line-height: 35px;
+    @media (min-width: 600px) {
+      display: none;
+    }
+  }
+`;

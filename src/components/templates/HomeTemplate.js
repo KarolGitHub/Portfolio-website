@@ -5,7 +5,7 @@ import SEO from '../SEO/SEO';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-const Home = ({ data: { mdx } }) => {
+const HomeTemplate = ({ data: { mdx } }) => {
   return (
     <Layout>
       <SEO title={mdx.frontmatter.title} />
@@ -19,7 +19,7 @@ const Home = ({ data: { mdx } }) => {
   );
 };
 
-export default Home;
+export default HomeTemplate;
 
 export const homeQuery = graphql`
   query($id: String) {

@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 export const Wrapper = styled.ul`
   width: 100%;
   display: block;
-  list-style-type: none;
   padding: 0;
 
   a {

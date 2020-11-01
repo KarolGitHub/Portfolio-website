@@ -13,6 +13,7 @@ import SEO from '../SEO/SEO';
 import Pagination from '../UI/Pagination/Pagination';
 import SearchBox from '../UI/SearchBox/SearchBox';
 import BlogCard from '../BlogCard/BlogCard';
+import Blog from '../Sections/Blog/Blog';
 
 const LoadingIndicator = connectStateResults(
   ({ isSearchStalled, searchResults, error }) => (
@@ -33,25 +34,27 @@ const searchClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,
   process.env.GATSBY_ALGOLIA_SEARCH_KEY
 );
-const Blog = () => {
+const BlogTemplate = ({ pageContext: { tags } }) => {
   return (
     <Layout id="Layout">
       <SEO title="Blog" />
       <main>
-        <InstantSearch searchClient={searchClient} indexName="blog">
-          <ScrollTo>
-            <SearchBox />
-          </ScrollTo>
-          <LoadingIndicator />
-          <Hits hitComponent={BlogCard} />
-          <Pagination />
-        </InstantSearch>
+        <Blog taglist={tags}>
+          <InstantSearch searchClient={searchClient} indexName="blog">
+            <ScrollTo>
+              <SearchBox />
+            </ScrollTo>
+            <LoadingIndicator />
+            <Hits hitComponent={BlogCard} />
+            <Pagination />
+          </InstantSearch>
+        </Blog>
       </main>
     </Layout>
   );
 };
 
-export default Blog;
+export default BlogTemplate;
 
 export const blogQuery = graphql`
   query($id: String) {

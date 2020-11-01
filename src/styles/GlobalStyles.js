@@ -69,7 +69,7 @@ export const GlobalStyles = (props) => (
       body {
         margin: 0;
         :root {
-          --max-width: 1500px;
+          --max-width: 2300px;
         }
       }
 

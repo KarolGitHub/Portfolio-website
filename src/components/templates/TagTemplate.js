@@ -14,13 +14,14 @@ import Pagination from '../UI/Pagination/Pagination';
 import BlogCard from '../BlogCard/BlogCard';
 import SearchBox from '../UI/SearchBox/SearchBox';
 import Layout from '../Hoc/Layout';
+import Blog from '../Sections/Blog/Blog';
 
 const searchClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,
   process.env.GATSBY_ALGOLIA_SEARCH_KEY
 );
 
-const Tags = ({ pageContext: { id: tag } }) => {
+const TagTemplate = ({ pageContext: { id: tag, tags } }) => {
   const LoadingIndicator = connectStateResults(
     ({ isSearchStalled, searchResults, tag, error }) => (
       <h4>
@@ -46,21 +47,23 @@ const Tags = ({ pageContext: { id: tag } }) => {
     <Layout>
       <SEO title="Blog" />
       <main>
-        <InstantSearch searchClient={searchClient} indexName="blog">
-          <Configure facetFilters={[[`_tags:${tag}`]]} />
-          <ScrollTo>
-            <SearchBox />
-          </ScrollTo>
-          <LoadingIndicator tag={tag} />
-          <Hits hitComponent={BlogCard} />
-          <Pagination />
-        </InstantSearch>
+        <Blog taglist={tags}>
+          <InstantSearch searchClient={searchClient} indexName="blog">
+            <Configure facetFilters={[[`_tags:${tag}`]]} />
+            <ScrollTo>
+              <SearchBox />
+            </ScrollTo>
+            <LoadingIndicator tag={tag} />
+            <Hits hitComponent={BlogCard} />
+            <Pagination />
+          </InstantSearch>
+        </Blog>
       </main>
     </Layout>
   );
 };
-export default Tags;
-export const tagsQuery = graphql`
+export default TagTemplate;
+export const tagQuery = graphql`
   query($id: String) {
     site(id: { eq: $id }) {
       id

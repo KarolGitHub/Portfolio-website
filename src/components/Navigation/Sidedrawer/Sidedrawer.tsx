@@ -1,4 +1,4 @@
-import React, { Fragment, FunctionComponent, useMemo } from 'react';
+import React, { Fragment, FunctionComponent } from 'react';
 import { Link } from 'gatsby';
 
 import NavigationItems from '../NavigationItems/NavigationItems';
