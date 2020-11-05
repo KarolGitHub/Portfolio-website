@@ -46,7 +46,7 @@ const Pagination: FunctionComponent<Props> = ({
     const color = currentPage === page ? 'red' : 'inherit';
     return (
       <GatsbyLink
-        key={index}
+        key={'link' + index}
         to={URL}
         onClick={(event) => {
           event.preventDefault();

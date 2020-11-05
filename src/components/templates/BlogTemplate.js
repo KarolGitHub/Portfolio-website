@@ -14,13 +14,14 @@ import Pagination from '../UI/Pagination/Pagination';
 import SearchBox from '../UI/SearchBox/SearchBox';
 import BlogCard from '../BlogCard/BlogCard';
 import Blog from '../Sections/Blog/Blog';
+import LoadingIndicator from '../UI/LoadingIndicator/LoadingIndicator';
 
-const LoadingIndicator = connectStateResults(
+const LoadingWrapper = connectStateResults(
   ({ isSearchStalled, searchResults, error }) => (
     <h4>
       {!error ? (
         isSearchStalled ? (
-          'Loading...'
+          <LoadingIndicator />
         ) : searchResults?.nbHits ? null : (
           'No results found.'
         )
@@ -44,7 +45,7 @@ const BlogTemplate = ({ pageContext: { tags } }) => {
             <ScrollTo>
               <SearchBox />
             </ScrollTo>
-            <LoadingIndicator />
+            <LoadingWrapper />
             <Hits hitComponent={BlogCard} />
             <Pagination />
           </InstantSearch>

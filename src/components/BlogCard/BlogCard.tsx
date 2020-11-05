@@ -59,14 +59,16 @@ const BlogCard: FunctionComponent<Props> = ({
       </Link>
       <p>{excerpt}</p>
       <InfoWrapper>
-        <ul>
+        <div>
           <img src={TagsIcon} alt="time" />
-          {tags.map((tag, i) => (
-            <Link key={'tag' + i} to={`/blog/t/${tag}`}>
-              #{tag}
-            </Link>
-          ))}
-        </ul>
+          <ul>
+            {tags.map((tag, i) => (
+              <Link key={'tag' + i} to={`/blog/t/${tag}`}>
+                #{tag}
+              </Link>
+            ))}
+          </ul>
+        </div>
         <Link to={slug}>Read More</Link>
       </InfoWrapper>
     </MetaData>

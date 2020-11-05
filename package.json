@@ -50,6 +50,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-test-renderer": "^16.13.1",
+    "rxjs": "^6.6.3",
     "typography": "^0.16.19"
   },
   "devDependencies": {

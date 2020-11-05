@@ -12,7 +12,7 @@ const TagsTemplate = ({ pageContext: { tags } }) => {
       <SEO title="Blog" />
       <main>
         <Blog>
-          <TagCards tags={tags} />
+          <TagCards tagsInfo={tags} />
         </Blog>
       </main>
     </Layout>

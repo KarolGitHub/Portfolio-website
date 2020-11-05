@@ -31,7 +31,6 @@ export const ImageWrapper = styled.div`
   position: relative;
   display: none;
   width: 30%;
-  margin: 0 20px 0 0;
   height: min-content;
   z-index: -1;
   img {
@@ -46,7 +45,7 @@ export const MetaData = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding-right: 20px;
+  margin: 10px 20px;
   line-height: 1.2;
   z-index: 0;
   @media screen and (min-width: 600px) {
@@ -85,13 +84,24 @@ export const InfoWrapper = styled.div`
   align-items: center;
   font-size: 1rem;
   z-index: 0;
-  ul {
+  div {
     display: flex;
-    li {
-      margin: 0px 0px 0px 10px;
+    flex-direction: column;
+    img {
+      width: fit-content;
+    }
+    ul {
+      display: grid;
+      justify-items: left;
+      grid-template-columns: repeat(2, 1fr);
+      li {
+        width: fit-content;
+        margin: 0px 0px 0px 10px;
+      }
     }
   }
+
   a {
-    margin-right: 5px;
+    margin: 0px 5px 5px 0px;
   }
 `;

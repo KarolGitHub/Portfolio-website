@@ -4,7 +4,8 @@ import { cardStyles } from '../../../styles/GlobalStyles';
 
 export const Wrapper = styled.div`
   ${cardStyles}
-  display:grid;
+  min-width:fit-content;
+  display: grid;
   gap: 10px;
   padding: 10px;
   align-items: center;

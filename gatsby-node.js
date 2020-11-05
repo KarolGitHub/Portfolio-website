@@ -156,6 +156,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   });
 
   createPage({
+    path: `/blog/t/search/`,
+    component: path.resolve(`./src/components/templates/TagTemplate.js`),
+    context: {
+      id: 'search',
+      tags,
+    },
+  });
+
+  createPage({
     path: `/blog/tags/`,
     component: path.resolve(`./src/components/templates/TagsTemplate.js`),
     context: {
@@ -178,4 +187,9 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
       },
     });
   }
+  actions.setWebpackConfig({
+    node: {
+      fs: 'empty',
+    },
+  });
 };

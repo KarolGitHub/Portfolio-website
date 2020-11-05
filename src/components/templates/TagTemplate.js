@@ -15,6 +15,7 @@ import BlogCard from '../BlogCard/BlogCard';
 import SearchBox from '../UI/SearchBox/SearchBox';
 import Layout from '../Hoc/Layout';
 import Blog from '../Sections/Blog/Blog';
+import LoadingIndicator from '../UI/LoadingIndicator/LoadingIndicator';
 
 const searchClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,
@@ -22,12 +23,12 @@ const searchClient = algoliasearch(
 );
 
 const TagTemplate = ({ pageContext: { id: tag, tags } }) => {
-  const LoadingIndicator = connectStateResults(
+  const LoadingWrapper = connectStateResults(
     ({ isSearchStalled, searchResults, tag, error }) => (
       <h4>
         {!error ? (
           isSearchStalled ? (
-            'Loading...'
+            <LoadingIndicator />
           ) : searchResults?.nbHits ? (
             `${searchResults.nbHits} post${
               searchResults.nbHits === 1 ? '' : 's'
@@ -53,7 +54,7 @@ const TagTemplate = ({ pageContext: { id: tag, tags } }) => {
             <ScrollTo>
               <SearchBox />
             </ScrollTo>
-            <LoadingIndicator tag={tag} />
+            <LoadingWrapper tag={tag} />
             <Hits hitComponent={BlogCard} />
             <Pagination />
           </InstantSearch>

@@ -4,10 +4,14 @@ import { cardStyles } from '../../../styles/GlobalStyles';
 
 export const Wrapper = styled.div`
   ${cardStyles}
-  padding: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+  min-height: 150px;
   border-radius: 5px;
+  border-top: 1rem solid ${(props) => props.bgColor};
   div {
     a {
       h3 {
