@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   border-radius: 0 0 10px 10px;
   margin: 0 auto 40px auto;
   background-color: ${(props) => props.theme.colors.menuBackground};
-  max-width: 1500px;
+  max-width: calc(var(--max-width) - 1000px);
   height: 60px;
 `;
 export const Navigation = styled.div`

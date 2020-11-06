@@ -96,7 +96,7 @@ export const GlobalStyles = (props) => (
       main {
         display: block;
         margin: 40px auto;
-        max-width: calc(var(--max-width) - 300px);
+        max-width: calc(var(--max-width) - 1000px);
         min-height: 100vh;
       }
 

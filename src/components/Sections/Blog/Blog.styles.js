@@ -13,17 +13,21 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Tags = styled.nav`
+export const Tags = styled.div`
   display: none;
   text-align: center;
   margin: 0 auto;
   padding: 10px;
+  width: 20%;
+  h3 {
+    :hover {
+      opacity: 0.7;
+    }
+  }
   nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    h3 {
-    }
     a {
       margin: 10px;
       color: ${(props) => props.theme.colors.textDark};
@@ -33,23 +37,25 @@ export const Tags = styled.nav`
     display: block;
     margin: 0 auto;
   }
+  @media (min-width: 1000px) {
+    min-width: 200px;
+  }
 `;
 
 export const Content = styled.div`
-  width: 100%;
-  @media (min-width: 600px) {
-    width: 80%;
-  }
-  @media (min-width: 900px) {
-    width: ${(props) => props.width};
+  @media (min-width: 1300px) {
+    max-width: calc(var(--max-width) - 1000px);
   }
 `;
 
 export const Banner = styled.div`
   display: none;
-  @media (min-width: 900px) {
-    max-width: 300px;
+  @media (min-width: 1000px) {
+    padding: 10px;
+    text-align: center;
+    min-width: 200px;
     margin: 0 auto;
+    width: 20%;
     display: block;
   }
 `;

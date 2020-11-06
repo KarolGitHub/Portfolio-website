@@ -39,7 +39,7 @@ const BlogTemplate = ({ pageContext: { tags } }) => {
   return (
     <Layout id="Layout">
       <SEO title="Blog" />
-      <main>
+      <main style={{ maxWidth: 'calc(var(--max-width) - 300px)' }}>
         <Blog taglist={tags}>
           <InstantSearch searchClient={searchClient} indexName="blog">
             <ScrollTo>
