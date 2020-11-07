@@ -10,7 +10,7 @@ const Skills: FunctionComponent = () => {
     <Wrapper>
       <div>
         <h3>Skills</h3>
-        <p>Technology stack I'm familliar with</p>
+        <p>Technology stack I'm familiar with</p>
         <ul>
           {skillsIcons.map(({ name, path }, i) => (
             <li key={name + i}>

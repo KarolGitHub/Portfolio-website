@@ -25,7 +25,8 @@ const Blog: FunctionComponent<Props> = ({ taglist, children }) => {
           </nav>
         </Tags>
       )}
-      <Content {...(taglist ? { width: '60%' } : { width: '80%' })}>
+      <Content
+        {...(taglist ? { width: ['80%', '60%'] } : { width: ['100%', '80%'] })}>
         {children}
       </Content>
       <Banner>

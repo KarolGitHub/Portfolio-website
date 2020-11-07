@@ -43,8 +43,12 @@ export const Tags = styled.div`
 `;
 
 export const Content = styled.div`
-  @media (min-width: 1300px) {
-    max-width: calc(var(--max-width) - 1000px);
+  width: 100%;
+  @media (min-width: 600px) {
+    width: ${(props) => props.width[0]};
+  }
+  @media (min-width: 1000px) {
+    width: ${(props) => props.width[1]};
   }
 `;
 
