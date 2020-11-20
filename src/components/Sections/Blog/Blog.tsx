@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { Link } from 'gatsby';
-
+import BannerImg from '../../../assets/banner.png';
 import { Wrapper, Tags, Banner, Content } from './Blog.styles';
 
 type Props = {
@@ -30,7 +30,7 @@ const Blog: FunctionComponent<Props> = ({ taglist, children }) => {
         {children}
       </Content>
       <Banner>
-        <h3>Place Add Here</h3>
+        <img src={BannerImg} alt="place your ad here" />
       </Banner>
     </Wrapper>
   );

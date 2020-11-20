@@ -90,12 +90,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    {
-      resolve: `gatsby-plugin-google-adsense`,
-      options: {
-        publisherId: `ca-pub-5348690361317868`,
-      },
-    },
     'gatsby-plugin-netlify-cms',
     {
       resolve: `gatsby-plugin-algolia`,
