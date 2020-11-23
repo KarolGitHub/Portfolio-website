@@ -47,6 +47,7 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-netlify-cms',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -68,12 +69,17 @@ module.exports = {
         path: `${__dirname}/src/content`,
       },
     },
-    `gatsby-plugin-netlify-cms-paths`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {},
+    },
+    {
+      resolve: `gatsby-plugin-netlify-cms-paths`,
+      options: {
+        cmsConfig: `static/admin/config.yml`,
+      },
     },
     `gatsby-plugin-smoothscroll`,
     `gatsby-remark-reading-time`,
@@ -90,7 +96,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    'gatsby-plugin-netlify-cms',
     {
       resolve: `gatsby-plugin-algolia`,
       options: {

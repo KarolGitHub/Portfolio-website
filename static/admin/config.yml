@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  repo: KarolGitHub/Gatsby-blog
+  repo: KarolGitHub/Portfolio-website
 
 media_folder: static/images/uploads # Media files will be stored in the repo under images/uploads
 public_folder: static/images/uploads
@@ -19,7 +19,7 @@ collections: # A list of collections the CMS should be able to edit
     summary: '{{title}} - {{year}}/{{month}}/{{day}}'
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
-      - { label: 'Type', name: 'post', widget: 'hidden', default: 'post' }
+      - { label: 'Type', name: 'type', widget: 'hidden', default: 'type' }
       - { label: Author, name: author, widget: string }
       - { label: Title, name: title, widget: string, tagname: 'h1' }
       - { label: Published, name: published, widget: boolean }
