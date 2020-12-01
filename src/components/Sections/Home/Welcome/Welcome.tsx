@@ -2,7 +2,6 @@ import React, { FunctionComponent } from 'react';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
 import welcomeIcon from '../../../../assets/welcome.svg';
-import CV from '../../../../assets/CV_KG.pdf';
 import {
   Wrapper,
   InfoWrapper,
@@ -17,7 +16,10 @@ const Welcome: FunctionComponent = () => {
       <InfoWrapper>
         <h3>Frontend developer</h3>
         <ButtonWrapper>
-          <ButtonFull href={CV} download target="blank" title="CV DOWNLOAD">
+          <ButtonFull
+            href="https://drive.google.com/file/d/198LvS5ql791LBgkhNIWycXBuPDPhI4cn/view"
+            target="blank"
+            title="CV DOWNLOAD">
             CV DOWNLOAD
           </ButtonFull>
           <ButtonOutline title="PROJECTS" onClick={() => scrollTo('#Projects')}>
