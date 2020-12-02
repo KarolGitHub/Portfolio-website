@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { connectPagination } from 'react-instantsearch-dom';
 import { Link as GatsbyLink } from 'gatsby';
 
@@ -15,7 +15,7 @@ type Props = {
   createURL: (page: number) => string;
 };
 
-const Pagination: FunctionComponent<Props> = ({
+const Pagination: React.FC<Props> = ({
   refine,
   nbPages: totalPages,
   currentRefinement: currentPage,
@@ -24,7 +24,7 @@ const Pagination: FunctionComponent<Props> = ({
   const Link = (
     href: string,
     page: number,
-    icon: any,
+    icon: string,
     alt: string,
     disabled: boolean
   ) => (

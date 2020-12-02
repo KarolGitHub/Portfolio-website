@@ -1,9 +1,11 @@
 import React from 'react';
 import { useMetaDataQuery } from '../../hooks/useMetaDataQuery';
 
-const withProjects = (Component: any) => (props: any) => {
+const withProjects = <P extends object>(Component: React.ComponentType<P>) => (
+  props: any
+) => {
   const { projects }: MetaData = useMetaDataQuery();
-  return <Component {...props} projects={projects} />;
+  return <Component {...(props as P)} projects={projects} />;
 };
 
 export default withProjects;

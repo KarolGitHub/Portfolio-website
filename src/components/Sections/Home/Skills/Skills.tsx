@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { importAll } from '../../../../utils/utils';
-import { Wrapper} from './Skills.styles';
+import { Wrapper } from './Skills.styles';
 
-const Skills: FunctionComponent = () => {
+const Skills: React.FC<{}> = () => {
   const skillsIcons: [{ path: string; name: string }] = importAll(
     require.context('../../../../assets/skillsIcons/', false, /\.svg$/)
   );

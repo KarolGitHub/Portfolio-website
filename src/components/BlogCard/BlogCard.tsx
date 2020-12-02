@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 import AuthorIcon from '../../assets/author.svg';
@@ -18,7 +18,7 @@ type Props = {
   hit: BlogPost;
 };
 
-const BlogCard: FunctionComponent<Props> = ({
+const BlogCard: React.FC<Props> = ({
   hit: {
     objectID: id,
     slug,

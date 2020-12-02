@@ -1,14 +1,14 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 import BannerImg from '../../../assets/banner.png';
 import { Wrapper, Tags, Banner, Content } from './Blog.styles';
 
 type Props = {
   taglist?: Tag[];
-  children: any;
+  children: React.ReactNode;
 };
 
-const Blog: FunctionComponent<Props> = ({ taglist, children }) => {
+const Blog: React.FC<Props> = ({ taglist, children }) => {
   return (
     <Wrapper>
       {taglist && (

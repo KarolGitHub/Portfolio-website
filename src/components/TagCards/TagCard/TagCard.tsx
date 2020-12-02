@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React, { FunctionComponent, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { Wrapper } from './TagCard.styles';
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
   tagInfo: { path: string; count: number };
 };
 
-const TagCard: FunctionComponent<Props> = ({
+const TagCard: React.FC<Props> = ({
   tag: { name, bgColor },
   tagInfo: { path, count },
 }) => {
@@ -16,7 +16,7 @@ const TagCard: FunctionComponent<Props> = ({
       <Wrapper {...{ bgColor }}>
         <div>
           <Link to={path}>
-              <h3>{'#' + name}</h3>
+            <h3>{'#' + name}</h3>
           </Link>
         </div>
         {count > 0 && (

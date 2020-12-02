@@ -1,4 +1,4 @@
-import React, { Fragment, FunctionComponent } from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 
 import NavigationItems from '../NavigationItems/NavigationItems';
@@ -11,11 +11,11 @@ type Props = {
   open: boolean;
   clicked: () => void;
   title: string;
-  logo: any;
-  menu: any;
+  logo: string;
+  menu: [];
 };
 
-const Sidedrawer: FunctionComponent<Props> = ({
+const Sidedrawer: React.FC<Props> = ({
   open,
   clicked,
   title = ``,

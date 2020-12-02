@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
 import welcomeIcon from '../../../../assets/welcome.svg';
@@ -10,7 +10,7 @@ import {
   ButtonWrapper,
 } from './Welcome.styles';
 
-const Welcome: FunctionComponent = () => {
+const Welcome: React.FC<{}> = () => {
   return (
     <Wrapper>
       <InfoWrapper>

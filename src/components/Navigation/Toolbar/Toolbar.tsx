@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 
 import NavigationItems from '../NavigationItems/NavigationItems';
@@ -10,18 +10,13 @@ import withConfig from '../../Hoc/withConfig';
 type Props = {
   openMenu: () => void;
   title: string;
-  logo: any;
-  menu: any;
+  logo: string;
+  menu: [];
 };
 
-const Toolbar: FunctionComponent<Props> = ({
-  openMenu,
-  title = ``,
-  logo,
-  menu,
-}) => {
+const Toolbar: React.FC<Props> = ({ openMenu, title = ``, logo, menu }) => {
   return (
-    <Wrapper id='Toolbar'>
+    <Wrapper id="Toolbar">
       <Menu clicked={openMenu} />
       <Navigation>
         <Link to="/">

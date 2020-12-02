@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { graphql, Link } from 'gatsby';
 import algoliasearch from 'algoliasearch/lite';
 import {

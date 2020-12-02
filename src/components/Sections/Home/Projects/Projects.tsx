@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import {
   Wrapper,
   ProjectWrapper,
@@ -16,7 +16,7 @@ type Props = {
   projects: Projects[];
 };
 
-const Projects: FunctionComponent<Props> = ({ projects }) => {
+const Projects: React.FC<Props> = ({ projects }) => {
   const icons = [bbIcon, spmIcon, pIcon];
   return (
     <Wrapper id="Projects">

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { Global, css } from '@emotion/core';
 import { withTheme } from 'emotion-theming';
 
@@ -31,7 +31,7 @@ export const theme = {
   },
 };
 
-export const GlobalStyles: FunctionComponent<{}> = withTheme((props) => (
+export const GlobalStyles: React.FC<{}> = withTheme((props) => (
   <Global
     {...props}
     styles={css`

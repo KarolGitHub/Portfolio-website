@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import email from '../../../assets/email.svg';
 import github from '../../../assets/github.svg';
 import linkedin from '../../../assets/linkedin.svg';
@@ -10,7 +10,7 @@ type Props = {
   social: Social[];
 };
 
-const Contact: FunctionComponent<Props> = ({ social }) => {
+const Contact: React.FC<Props> = ({ social }) => {
   const imgList = [email, github, linkedin];
   return (
     <Wrapper>

@@ -1,4 +1,4 @@
-import React, { Fragment, FunctionComponent, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 
 import Toolbar from '../Navigation/Toolbar/Toolbar';
 import Footer from '../UI/Footer/Footer';
@@ -6,10 +6,10 @@ import { useMetaDataQuery } from '../../hooks/useMetaDataQuery';
 import Sidedrawer from '../Navigation/Sidedrawer/Sidedrawer';
 
 type Props = {
-  children: any;
+  children: React.ReactNode;
 };
 
-const Layout: FunctionComponent<Props> = ({ children }) => {
+const Layout: React.FC<Props> = ({ children }) => {
   const { title, author }: MetaData = useMetaDataQuery();
   const [showSideDrawer, setSideDrawer] = useState(false);
 

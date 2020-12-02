@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../Hoc/Layout';
 import SEO from '../SEO/SEO';

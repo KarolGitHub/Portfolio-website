@@ -1,11 +1,11 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 
 import light from '../../../assets/light.svg';
 import dark from '../../../assets/dark.svg';
 import { Button } from './ModeButton.styles';
 import { useTheme } from '../../../context/ThemeContext';
 
-const ModeButton: FunctionComponent = () => {
+const ModeButton: React.FC = () => {
   const theme = useTheme();
   return (
     <Button

@@ -1,4 +1,4 @@
-import React, { Dispatch, FunctionComponent, SetStateAction } from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
 import { theme as themeData } from '../styles/GlobalStyles';
 
@@ -48,9 +48,9 @@ const useDarkMode = (): [Theme, Dispatch<SetStateAction<Theme>>] => {
 };
 
 type Props = {
-  children: any;
+  children: React.ReactNode;
 };
-const ThemeProvider: FunctionComponent<Props> = ({ children }) => {
+const ThemeProvider: React.FC<Props> = ({ children }) => {
   const [theme, setTheme] = useDarkMode();
   const themeLoaded = theme === Theme.DARK ? themeData.dark : themeData.light;
   const toggleDark = () => {

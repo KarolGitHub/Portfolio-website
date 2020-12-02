@@ -25,10 +25,12 @@ declare type BlogPost = {
   objectID: string;
   excerpt: string;
   title: string;
-  date: any;
+  date: string;
   _tags: string[];
   author: string;
-  image: any;
+  image: {
+    childImageSharp: { fluid: any };
+  };
   slug: string;
   readingTime: {
     text: string;

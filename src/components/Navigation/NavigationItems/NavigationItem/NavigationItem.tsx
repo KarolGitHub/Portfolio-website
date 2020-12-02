@@ -1,12 +1,12 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 
 type Props = {
   link: string;
-  children: any;
+  children: React.ReactNode;
 };
 
-const NavigationItem: FunctionComponent<Props> = ({ link, children }) => (
+const NavigationItem: React.FC<Props> = ({ link, children }) => (
   <li>
     <Link to={link} partiallyActive={link !== '/'} activeClassName="active">
       {children}

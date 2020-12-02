@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TagCard from './TagCard/TagCard';
 import { Wrapper, TagCardsWrapper } from './TagCards.styles';
 import { defer } from 'rxjs';
@@ -13,7 +13,7 @@ type Props = {
   tagsInfo: Tag[];
 };
 
-const TagCards: FunctionComponent<Props> = ({ tagsInfo }) => {
+const TagCards: React.FC<Props> = ({ tagsInfo }) => {
   const [TagsData, setTagsData] = useState<BlogTag[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setLoading] = useState(false);
