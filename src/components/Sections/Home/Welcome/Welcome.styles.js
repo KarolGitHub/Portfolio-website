@@ -36,7 +36,7 @@ export const ButtonFull = styled.a`
   width: 150px;
   height: 60px;
   border-radius: 10px;
-  background-color: ${(props) => props.theme.colors.green};
+  background-color: var(--green);
   color: ${(props) => props.theme.colors.textSecondary};
   text-align: center;
   font: inherit;
@@ -48,7 +48,7 @@ export const ButtonOutline = styled.button`
   width: 150px;
   height: 60px;
   background-color: ${(props) => props.theme.colors.background};
-  border: 1px solid ${(props) => props.theme.colors.green};
+  border: 1px solid var(--green);
   color: ${(props) => props.theme.colors.textSecondary};
   border-radius: 10px;
 `;

@@ -1,64 +1,37 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { Global, css } from '@emotion/core';
-import { rgba } from 'emotion-rgba';
+import { withTheme } from 'emotion-theming';
 
-export const colors = {
-  white: '#fff',
-  light: '#f8f9fa',
-  gray: '#343a40',
-  darkGray: '#1a1c20',
-  deepDarkGray: '#404040',
-  green: '#4caf50',
-  blueShade1: '#215973',
-  blueShade2: '#6fadc6',
-  blueShade3: '#d1e1e9',
-  blue: '#0077B7',
-  lightBlue: '#eee',
-  darkBackground: '#3f324d',
-  overlayDark: rgba('#000000', 0.6),
-  overlayLight: rgba('#FFFFFF', 0.6),
-  shadowDark: rgba('#96aab4', 0.5),
-  shadowLight: rgba('#96aab4', 0.9),
-  backdrop: rgba('#000000', 0.5),
-};
-
-export const darkTheme = {
-  colors: {
-    background: colors.darkGray,
-    menuBackground: colors.blueShade1,
-    footerBackground: colors.gray,
-    textDark: colors.blueShade3,
-    textMain: colors.blueShade2,
-    textSecondary: colors.blueShade3,
-    imageOverlay: colors.overlayDark,
-    postShadow: colors.shadowDark,
-    searchBackground: colors.darkBackground,
-    loading: colors.light,
-    green: colors.green,
-    backdrop: colors.backdrop,
-    blue: colors.blue,
+export const theme = {
+  light: {
+    colors: {
+      background: `var(--background, #fff)`,
+      menuBackground: `var(--menu-background, #d1e1e9)`,
+      textDark: `var(--text-dark, #215973)`,
+      footerBackground: `var(--footer-background, #f8f9fa)`,
+      textSecondary: `var(--text-secondary, #404040)`,
+      imageOverlay: `var(--image-overlay, rgba(255, 255, 255, .6))`,
+      postShadow: `var(--post-shadow,  rgba(150, 170, 180, .9))`,
+      searchBackground: `var(--search-background, #eee)`,
+      loading: `var(--loading, #3f324d)`,
+    },
+  },
+  dark: {
+    colors: {
+      background: `var(--background, #1a1c20)`,
+      menuBackground: `var(--menu-background, #215973)`,
+      textDark: `var(--text-dark, #214080)`,
+      footerBackground: `var(--footer-background, #343a40)`,
+      textSecondary: `var(--text-secondary, #d1e1e9)`,
+      imageOverlay: `var(--image-overlay, rgba(0, 0, 0, .6))`,
+      postShadow: `var(--post-shadow, rgba(150, 170, 180, .5))`,
+      searchBackground: `var(--search-background, #050505)`,
+      loading: `var(--loading, #f8f9fa)`,
+    },
   },
 };
 
-export const lightTheme = {
-  colors: {
-    background: colors.white,
-    menuBackground: colors.blueShade3,
-    footerBackground: colors.light,
-    textDark: colors.blueShade1,
-    textMain: colors.blueShade2,
-    textSecondary: colors.deepDarkGray,
-    imageOverlay: colors.overlayLight,
-    postShadow: colors.shadowLight,
-    searchBackground: colors.lightBlue,
-    loading: colors.darkBackground,
-    green: colors.green,
-    backdrop: colors.backdrop,
-    blue: colors.blue,
-  },
-};
-
-export const GlobalStyles = (props) => (
+export const GlobalStyles: FunctionComponent<{}> = withTheme((props) => (
   <Global
     {...props}
     styles={css`
@@ -67,11 +40,38 @@ export const GlobalStyles = (props) => (
         outline: none;
       }
 
+      .theme-light {
+        --background: #fafafa;
+        --menu-background: #d1e1e9;
+        --text-dark: #215973;
+        --footer-background: #f8f9fa;
+        --text-secondary: #404040;
+        --image-overlay: rgba(255, 255, 255, 0.6);
+        --post-shadow: rgba(150, 170, 180, 0.9);
+        --search-background: #eee;
+        --loading: #214080;
+      }
+      .theme-dark {
+        --background: #1a1c20;
+        --menu-background: #215973;
+        --text-dark: #d1e1e9;
+        --footer-background: #343a40;
+        --text-secondary: #d1e1e9;
+        --image-overlay: rgba(0, 0, 0, 0.6);
+        --post-shadow: rgba(150, 170, 180, 0.5);
+        --search-background: #3f324d;
+        --loading: #f8f9fa;
+      }
+
       html,
       body {
         margin: 0;
         :root {
           --max-width: 2300px;
+          --light-blue: #6fadc6;
+          --blue: #0077b7;
+          --green: #4caf50;
+          --backdrop: rgba(0, 0, 0, 0.5);
         }
       }
 
@@ -106,7 +106,7 @@ export const GlobalStyles = (props) => (
       h4,
       h5,
       h6 {
-        color: ${props.theme.colors.textMain};
+        color: var(--light-blue);
         font-family: 'Muli Black', Arial, Helvetica, sans-serif;
         transition: all 0.5s ease;
         letter-spacing: 1px;
@@ -153,9 +153,9 @@ export const GlobalStyles = (props) => (
       }
     `}
   />
-);
+));
 
-export const cardStyles = (props) => css`
+export const cardStyles = (props: any) => css`
   padding: 0;
   width: 100%;
   border-radius: 10px;

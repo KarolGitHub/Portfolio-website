@@ -7,5 +7,5 @@ export const Wrapper = styled.div`
   z-index: 100;
   left: 0;
   right: 0;
-  background-color: ${(props) => props.theme.colors.backdrop};
+  background-color: var(--backdrop);
 `;

@@ -58,7 +58,7 @@ export const ButtonOutline = styled.a`
   height: 60px;
   border-radius: 10px;
   background-color: ${(props) => props.theme.colors.background};
-  border: 1px solid ${(props) => props.theme.colors.green};
+  border: 1px solid var(--green);
   color: ${(props) => props.theme.colors.textSecondary};
   text-align: center;
   font: inherit;

@@ -1,21 +1,20 @@
-import React, { FunctionComponent, useContext } from 'react';
-// Images
+import React, { FunctionComponent } from 'react';
+
 import light from '../../../assets/light.svg';
 import dark from '../../../assets/dark.svg';
-
-// Styles
 import { Button } from './ModeButton.styles';
-import { ThemeContext } from '../../../context/ThemeProvider';
+import { useTheme } from '../../../context/ThemeContext';
 
 const ModeButton: FunctionComponent = () => {
-  const [colorMode, setColorMode] = useContext(ThemeContext);
+  const theme = useTheme();
   return (
     <Button
-      src={colorMode === 'dark' ? dark : light}
-      alt="mode"
-      onClick={() =>
-        setColorMode(colorMode === 'dark' ? 'light' : 'dark')
-      }
+      src={theme.dark ? dark : light}
+      alt="theme switch"
+      onClick={(e) => {
+        theme.toggleDark();
+        e.stopPropagation;
+      }}
     />
   );
 };

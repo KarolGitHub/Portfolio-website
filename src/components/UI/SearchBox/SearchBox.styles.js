@@ -30,7 +30,7 @@ export const Wrapper = styled.div`
       border-radius: 5px;
       width: 50px;
       height: 3.25em;
-      background-color: ${(props) => props.theme.colors.blue};
+      background-color: var(--blue);
       border: 0;
       @media screen and (max-width: 600px) {
         :last-of-type {
@@ -54,8 +54,8 @@ export const LinkWrapper = styled.div`
     width: 54px;
     height: 2.85em;
     background-color: ${(props) => props.theme.colors.background};
-    border: 1px solid ${(props) => props.theme.colors.blue};
-    color: ${(props) => props.theme.colors.textMain};
+    border: 1px solid var(--blue);
+    color: var(--light-blue);
     text-align: center;
     line-height: 35px;
     @media (min-width: 600px) {
