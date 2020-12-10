@@ -8,7 +8,7 @@ export const theme = {
       background: `var(--background, #fff)`,
       menuBackground: `var(--menu-background, #d1e1e9)`,
       textDark: `var(--text-dark, #215973)`,
-      footerBackground: `var(--footer-background, #f8f9fa)`,
+      footerBackground: `var(--footer-background, #e7e7e7)`,
       textSecondary: `var(--text-secondary, #404040)`,
       imageOverlay: `var(--image-overlay, rgba(255, 255, 255, .6))`,
       postShadow: `var(--post-shadow,  rgba(150, 170, 180, .9))`,
@@ -20,7 +20,7 @@ export const theme = {
     colors: {
       background: `var(--background, #1a1c20)`,
       menuBackground: `var(--menu-background, #215973)`,
-      textDark: `var(--text-dark, #214080)`,
+      textDark: `var(--text-dark, #d1e1e9)`,
       footerBackground: `var(--footer-background, #343a40)`,
       textSecondary: `var(--text-secondary, #d1e1e9)`,
       imageOverlay: `var(--image-overlay, rgba(0, 0, 0, .6))`,
@@ -44,7 +44,7 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
         --background: #fafafa;
         --menu-background: #d1e1e9;
         --text-dark: #215973;
-        --footer-background: #f8f9fa;
+        --footer-background: #e7e7e7;
         --text-secondary: #404040;
         --image-overlay: rgba(255, 255, 255, 0.6);
         --post-shadow: rgba(150, 170, 180, 0.9);

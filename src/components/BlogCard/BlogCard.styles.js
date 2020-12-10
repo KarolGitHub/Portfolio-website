@@ -101,7 +101,9 @@ export const InfoWrapper = styled.div`
     }
   }
 
-  a {
+  a,
+  a:visited {
     margin: 0px 5px 5px 0px;
+    color: var(--blue);
   }
 `;

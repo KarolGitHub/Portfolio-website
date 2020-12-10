@@ -18,5 +18,9 @@ export const Wrapper = styled.div`
       height: 40px;
       margin-right: 10px;
     }
+    a,
+    a:visited {
+      color: var(--blue);
+    }
   }
 `;
