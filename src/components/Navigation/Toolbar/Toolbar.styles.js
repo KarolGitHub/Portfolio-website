@@ -5,11 +5,11 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 15px 15px;
   margin: 0 auto 40px auto;
   background-color: ${(props) => props.theme.colors.menuBackground};
   max-width: calc(var(--max-width) - 1000px);
-  height: 60px;
+  height: 70px;
 `;
 export const Navigation = styled.div`
   display: none;
@@ -21,4 +21,5 @@ export const Navigation = styled.div`
 
 export const Logo = styled.img`
   max-width: 60px;
+  margin: 5px 10px;
 `;

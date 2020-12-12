@@ -28,7 +28,7 @@ export const ImageWrapper = styled.div`
   place-content: center;
   img {
     min-width: 200px;
-    max-width: 500pxpx;
+    max-width: 500px;
     border-radius: 15px;
     width: 100%;
     height: 100%;
@@ -54,9 +54,9 @@ export const InfoWrapper = styled.div`
 export const ButtonOutline = styled.a`
   ${buttonStyles}
   font: inherit;
-  width: 150px;
+  width: 170px;
   height: 60px;
-  border-radius: 10px;
+  border-radius: 16px;
   background-color: ${(props) => props.theme.colors.background};
   border: 1px solid var(--green);
   color: ${(props) => props.theme.colors.textSecondary};

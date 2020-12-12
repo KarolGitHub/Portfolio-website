@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   padding: 10px;
   width: 100%;
   min-height: 150px;
-  border-radius: 5px;
+  border-radius: 10px;
   border-top: 1rem solid ${(props) => props.bgColor};
   div {
     a {

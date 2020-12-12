@@ -3,8 +3,7 @@ import { Link } from 'gatsby';
 
 import NavigationItems from '../NavigationItems/NavigationItems';
 import Backdrop from '../../UI/Backdrop/Backdrop';
-import { Logo } from '../Toolbar/Toolbar.styles';
-import { Wrapper, Navigation } from './Sidedrawer.styles';
+import { Wrapper, Navigation, Logo } from './Sidedrawer.styles';
 import withConfig from '../../Hoc/withConfig';
 
 type Props = {

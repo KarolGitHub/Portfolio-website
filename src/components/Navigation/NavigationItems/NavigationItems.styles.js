@@ -5,10 +5,6 @@ export const Wrapper = styled.ul`
   display: block;
   padding: 0;
 
-  a {
-    color: ${(props) => props.theme.colors.textDark};
-  }
-
   li {
     padding: 3px;
     display: inline-block;
@@ -22,6 +18,10 @@ export const Wrapper = styled.ul`
 
     :last-child {
       margin-right: 0;
+    }
+
+    a {
+      color: ${(props) => props.theme.colors.textDark};
     }
   }
 `;

@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { buttonStyles } from '../../../styles/GlobalStyles';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -17,7 +16,7 @@ export const Tags = styled.div`
   display: none;
   text-align: center;
   margin: 0 auto;
-  padding: 10px;
+  padding: 0px 10px;
   width: 20%;
   h3 {
     :hover {

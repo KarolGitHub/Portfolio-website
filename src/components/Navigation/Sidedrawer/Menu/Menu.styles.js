@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   padding: 10px 0;
+  margin-left: 10px;
   cursor: pointer;
   @media (min-width: 600px) {
     display: none;

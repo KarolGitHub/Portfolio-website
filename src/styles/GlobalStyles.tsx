@@ -83,7 +83,7 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
           'Helvetica Neue', Catamaran, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        font-size: 1rem;
+        font-size: 1.25rem;
         font-style: normal;
         transition: all 0.5s ease;
       }
@@ -108,17 +108,18 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
       h6 {
         color: var(--light-blue);
         font-family: 'Muli Black', Arial, Helvetica, sans-serif;
+
         transition: all 0.5s ease;
         letter-spacing: 1px;
       }
 
       p {
-        font-size: 0.9rem;
-        line-height: 1.2;
+        font-size: 1rem;
+        line-height: 1.5rem;
 
         @media (min-width: 600px) {
-          font-size: 1.1rem;
-          line-height: 1.5;
+          font-size: 1.125rem;
+          line-height: 1.75rem;
         }
       }
 

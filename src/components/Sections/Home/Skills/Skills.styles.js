@@ -29,7 +29,7 @@ export const Wrapper = styled.div`
           height: 50px;
         }
         p {
-          font-size: 12px;
+          font-size: 1rem;
           font-family: Catamaran, sans-serif;
           width: 100%;
           text-align: center;

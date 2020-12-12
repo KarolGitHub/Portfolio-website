@@ -11,9 +11,7 @@ export const Wrapper = styled.div`
   padding: 60px 16px;
   transition: transform 0.3s ease-out;
   transform: translate(${(props) => (props.open ? '0' : '-100%')});
-  img {
-    margin: 10px;
-  }
+
   @media (min-width: 601px) {
     display: none;
     max-width: 70%;
@@ -27,4 +25,8 @@ export const Navigation = styled.nav`
   li {
     padding: 10px;
   }
+`;
+
+export const Logo = styled.img`
+  max-width: 60px;
 `;

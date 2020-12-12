@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   img {
     min-width: 200px;
     width: 40%;
-    padding: 10px;
+    padding: 20px;
     @media (max-width: 599px) {
       display: none;
     }
@@ -33,9 +33,9 @@ export const ButtonWrapper = styled.div`
 `;
 export const ButtonFull = styled.a`
   ${buttonStyles}
-  width: 150px;
+  width: 170px;
   height: 60px;
-  border-radius: 10px;
+  border-radius: 16px;
   background-color: var(--green);
   color: ${(props) => props.theme.colors.textSecondary};
   text-align: center;
@@ -45,10 +45,10 @@ export const ButtonFull = styled.a`
 export const ButtonOutline = styled.button`
   ${buttonStyles}
   font: inherit;
-  width: 150px;
+  width: 170px;
   height: 60px;
   background-color: ${(props) => props.theme.colors.background};
   border: 1px solid var(--green);
   color: ${(props) => props.theme.colors.textSecondary};
-  border-radius: 10px;
+  border-radius: 16px;
 `;

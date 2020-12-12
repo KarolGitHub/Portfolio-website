@@ -66,6 +66,7 @@ export const DetailsWrapper = styled.ul`
   white-space: nowrap;
   z-index: 0;
   font-size: 1rem;
+  line-height: 1.5rem;
   ul {
     display: flex;
     width: 100%;
@@ -83,6 +84,7 @@ export const InfoWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   font-size: 1rem;
+  line-height: 1.5rem;
   z-index: 0;
   div {
     display: flex;
