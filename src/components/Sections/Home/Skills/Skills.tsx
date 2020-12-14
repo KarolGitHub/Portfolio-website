@@ -6,18 +6,39 @@ const Skills: React.FC<{}> = () => {
   const skillsIcons: [{ path: string; name: string }] = importAll(
     require.context('../../../../assets/skillsIcons/', false, /\.svg$/)
   );
+  const iconsOrder = [
+    'HTML 5',
+    'CSS',
+    'Javascript',
+    'Typescript',
+    'React.js',
+    'Redux',
+    'Gatsby',
+    'Node,js',
+    'GIT',
+    'Sass',
+    'Firebase',
+    'Netlify',
+  ];
+
+  const orderedSkillsIcons = iconsOrder.map((name) =>
+    skillsIcons.find((skillIcon) => name == skillIcon.name)
+  );
   return (
     <Wrapper>
       <div>
         <h3>Skills</h3>
         <p>Technology stack I'm familiar with</p>
         <ul>
-          {skillsIcons.map(({ name, path }, i) => (
-            <li key={name + i}>
-              <img src={path} alt={name} />
-              <p>{name}</p>
-            </li>
-          ))}
+          {orderedSkillsIcons.map(
+            (skillIcon, i) =>
+              skillIcon && (
+                <li key={`${skillIcon.name}${i}`}>
+                  <img src={skillIcon.path} alt={skillIcon.name} />
+                  <p>{skillIcon.name}</p>
+                </li>
+              )
+          )}
         </ul>
       </div>
     </Wrapper>
