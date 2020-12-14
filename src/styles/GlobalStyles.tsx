@@ -172,5 +172,6 @@ export const buttonStyles = () => css`
     -moz-box-shadow: 0 0 10px #ccc;
     -webkit-box-shadow: 0 0 10px #ccc;
     box-shadow: 0 0 10px #ccc;
+    transform: scale(1.1);
   }
 `;
