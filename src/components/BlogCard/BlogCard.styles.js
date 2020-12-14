@@ -88,24 +88,33 @@ export const InfoWrapper = styled.div`
   z-index: 0;
   div {
     display: flex;
-    flex-direction: column;
-    img {
-      width: fit-content;
-    }
+    flex-direction: row;
     ul {
       display: grid;
       justify-items: left;
+      max-width: min-content;
       grid-template-columns: repeat(2, 1fr);
       li {
-        width: fit-content;
-        margin: 0px 0px 0px 10px;
+        justify-self: start;
+        margin: 0px 5px 5px 0px;
       }
     }
+    a,
+    a:visited {
+      color: var(--blue);
+    }
+    > img {
+      width: min-content;
+      margin-right: 5px;
+    }
   }
+`;
 
-  a,
-  a:visited {
-    margin: 0px 5px 5px 0px;
-    color: var(--blue);
+export const PostLinkWrapper = styled.div`
+  margin-left: 5px;
+  flex-flow: wrap;
+  border-bottom: 1px solid var(--blue);
+  a {
+    display: flex;
   }
 `;

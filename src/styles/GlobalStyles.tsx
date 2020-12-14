@@ -71,6 +71,7 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
           --light-blue: #6fadc6;
           --blue: #0077b7;
           --green: #4caf50;
+          --red: #f93f3f;
           --backdrop: rgba(0, 0, 0, 0.5);
         }
       }

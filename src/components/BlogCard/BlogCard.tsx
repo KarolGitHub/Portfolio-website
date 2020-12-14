@@ -5,6 +5,7 @@ import AuthorIcon from '../../assets/author.svg';
 import DateIcon from '../../assets/date.svg';
 import TagsIcon from '../../assets/tags.svg';
 import TimeIcon from '../../assets/time.svg';
+import arrowRightIcon from '../../assets/arrow-right.svg';
 import {
   Wrapper,
   ImageWrapper,
@@ -12,6 +13,7 @@ import {
   MetaData,
   InfoWrapper,
   DetailsWrapper,
+  PostLinkWrapper,
 } from './BlogCard.styles';
 
 type Props = {
@@ -63,13 +65,18 @@ const BlogCard: React.FC<Props> = ({
           <img src={TagsIcon} alt="time" />
           <ul>
             {tags.map((tag, i) => (
-              <Link key={'tag' + i} to={`/blog/t/${tag}`}>
-                #{tag}
-              </Link>
+              <li key={'tag' + i}>
+                <Link to={`/blog/t/${tag}`}>#{tag}</Link>
+              </li>
             ))}
           </ul>
         </div>
-        <Link to={slug}>Read More</Link>
+        <PostLinkWrapper>
+          <Link to={slug}>
+            Read More
+            <img src={arrowRightIcon} alt="Read more" />
+          </Link>
+        </PostLinkWrapper>
       </InfoWrapper>
     </MetaData>
   </Wrapper>

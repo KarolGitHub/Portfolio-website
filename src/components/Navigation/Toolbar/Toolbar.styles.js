@@ -10,6 +10,9 @@ export const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.menuBackground};
   max-width: calc(var(--max-width) - 1000px);
   height: 70px;
+  a:hover {
+    opacity: 1;
+  }
 `;
 export const Navigation = styled.div`
   display: none;
