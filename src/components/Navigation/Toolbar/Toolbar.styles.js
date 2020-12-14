@@ -8,11 +8,9 @@ export const Wrapper = styled.div`
   border-radius: 0 0 15px 15px;
   margin: 0 auto 40px auto;
   background-color: ${(props) => props.theme.colors.menuBackground};
+  transition: all 0.5s ease;
   max-width: calc(var(--max-width) - 1000px);
   height: 70px;
-  a:hover {
-    opacity: 1;
-  }
 `;
 export const Navigation = styled.div`
   display: none;

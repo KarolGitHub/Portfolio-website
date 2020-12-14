@@ -10,6 +10,9 @@ export const Wrapper = styled.div`
   h6 {
     margin: 0;
   }
+  a:hover {
+    opacity: 0.7;
+  }
 `;
 
 export const Tags = styled.div`
@@ -18,10 +21,8 @@ export const Tags = styled.div`
   margin: 0 auto;
   padding: 0px 10px;
   width: 20%;
-  h3 {
-    :hover {
-      opacity: 0.7;
-    }
+  a > h3:hover {
+    opacity: 0.7;
   }
   nav {
     display: flex;

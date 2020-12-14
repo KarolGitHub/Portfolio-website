@@ -21,6 +21,9 @@ export const Wrapper = styled.div`
     a,
     a:visited {
       color: var(--blue);
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 `;

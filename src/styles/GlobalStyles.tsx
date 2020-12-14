@@ -109,8 +109,6 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
       h6 {
         color: var(--light-blue);
         font-family: 'Muli Black', Arial, Helvetica, sans-serif;
-
-        transition: all 0.5s ease;
         letter-spacing: 1px;
       }
 
@@ -149,9 +147,6 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
 
       a {
         text-decoration: none;
-        :hover {
-          opacity: 0.7;
-        }
       }
     `}
   />
