@@ -14,7 +14,10 @@ const Contact: React.FC<Props> = ({ social }) => {
   const imgList = [email, github, linkedin];
   return (
     <Wrapper>
-      Feel free to find me on media listed below:
+      <p>
+        If you have any job offers or simply want to talk, <br />
+        feel free to find me on media listed below:
+      </p>
       {social.map(({ name, url }, i) => (
         <div key={`${name}${i}`}>
           <img src={imgList[i]} alt={name} />

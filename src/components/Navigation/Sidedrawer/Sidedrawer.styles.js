@@ -23,7 +23,7 @@ export const Wrapper = styled.div`
 export const Navigation = styled.nav`
   width: 30%;
   li {
-    padding: 10px;
+    padding: 10px 0px;
   }
 `;
 

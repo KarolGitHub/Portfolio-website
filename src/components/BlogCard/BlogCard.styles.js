@@ -5,7 +5,6 @@ export const Overlay = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
   overflow: hidden;
   width: 0;
   height: 100%;
@@ -18,10 +17,7 @@ export const Overlay = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   ${cardStyles}
-  position: relative;
-  min-height: 150px;
   margin-bottom: 40px;
-  z-index: 0;
   :hover ${Overlay} {
     width: 100%;
   }
