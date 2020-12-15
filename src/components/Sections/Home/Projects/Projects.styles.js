@@ -57,7 +57,7 @@ export const ButtonOutline = styled.a`
   width: 170px;
   height: 60px;
   border-radius: 16px;
-  background-color: ${(props) => props.theme.colors.background};
+  background: ${(props) => props.theme.colors.linearBackground};
   border: 1px solid var(--green);
   color: ${(props) => props.theme.colors.textSecondary};
   text-align: center;

@@ -14,6 +14,8 @@ export const theme = {
       postShadow: `var(--post-shadow,  rgba(150, 170, 180, .9))`,
       searchBackground: `var(--search-background, #eee)`,
       loading: `var(--loading, #3f324d)`,
+      linearBackground: `var(--linear-background, linear-gradient(90deg, #fafafa 0%, #e7e7e7 100%))`,
+      radialBackground: `var(--radial-background, radial-gradient(circle,#4cff50 50%, #0fad4a 100%))`,
     },
   },
   dark: {
@@ -27,6 +29,8 @@ export const theme = {
       postShadow: `var(--post-shadow, rgba(150, 170, 180, .5))`,
       searchBackground: `var(--search-background, #050505)`,
       loading: `var(--loading, #f8f9fa)`,
+      linearBackground: `var(--linear-background, linear-gradient(90deg, #1a1c20 0%, #343a40 100%))`,
+      radialBackground: `var(--radial-background, radial-gradient(circle,#0fad4a 50%, #4cff50 100%))`,
     },
   },
 };
@@ -50,6 +54,8 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
         --post-shadow: rgba(150, 170, 180, 0.9);
         --search-background: #eee;
         --loading: #214080;
+        --linear-background: linear-gradient(90deg, #fafafa 0%, #e7e7e7 100%);
+        --radial-background: radial-gradient(circle, #4cff50 50%, #0fad4a 100%);
       }
       .theme-dark {
         --background: #1a1c20;
@@ -61,6 +67,8 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
         --post-shadow: rgba(150, 170, 180, 0.5);
         --search-background: #3f324d;
         --loading: #f8f9fa;
+        --linear-background: linear-gradient(90deg, #1a1c20 0%, #343a40 100%);
+        --radial-background: radial-gradient(circle, #0fad4a 50%, #4cff50 100%);
       }
 
       html,
@@ -70,7 +78,7 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
           --max-width: 2300px;
           --light-blue: #6fadc6;
           --blue: #0077b7;
-          --green: #4caf50;
+          --green: #4cff50;
           --red: #f93f3f;
           --backdrop: rgba(0, 0, 0, 0.5);
         }
@@ -163,7 +171,8 @@ export const cardStyles = (props: any) => css`
 
 export const buttonStyles = () => css`
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.3s ease,
+    transform 0.3s ease;
   :disabled {
     opacity: 0.3;
     cursor: not-allowed;

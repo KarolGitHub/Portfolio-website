@@ -19,11 +19,12 @@ export const Wrapper = styled.div`
         width: 400px;
         padding: 10px;
         border-radius: 20px;
+        color: ${(props) => props.theme.colors.textSecondary};
         background-color: ${(props) => props.theme.colors.searchBackground};
         border: 1px solid ${(props) => props.theme.colors.searchBackground};
+        transition: all 0.5s ease;
         font: inherit;
         font-weight: inherit;
-        color: ${(props) => props.theme.colors.textSecondary};
         :focus {
           border: 1px solid ${(props) => props.theme.colors.postShadow};
         }
