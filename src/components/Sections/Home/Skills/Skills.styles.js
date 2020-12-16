@@ -7,9 +7,6 @@ export const Wrapper = styled.div`
   display: flex;
   margin: 40px 0;
   place-content: center;
-  h3 {
-    margin-bottom: 6px;
-  }
   div {
     width: 100%;
     display: flex;

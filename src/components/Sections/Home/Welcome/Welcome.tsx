@@ -1,20 +1,24 @@
 import React from 'react';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 
-import welcomeIcon from '../../../../assets/welcome.svg';
 import {
   Wrapper,
   InfoWrapper,
+  ButtonWrapper,
   ButtonFull,
   ButtonOutline,
-  ButtonWrapper,
 } from './Welcome.styles';
 
 const Welcome: React.FC<{}> = () => {
   return (
     <Wrapper>
       <InfoWrapper>
-        <h3>Frontend developer</h3>
+        <h1>Hello I'm Karol</h1>
+        <p>
+          I’m a front-end developer mainly using technologies like
+          <br />
+          React, Gatsby.js and Next.js
+        </p>
         <ButtonWrapper>
           <ButtonFull
             href="https://drive.google.com/file/d/198LvS5ql791LBgkhNIWycXBuPDPhI4cn/view"
@@ -27,7 +31,6 @@ const Welcome: React.FC<{}> = () => {
           </ButtonOutline>
         </ButtonWrapper>
       </InfoWrapper>
-      <img src={welcomeIcon} alt="home" />
     </Wrapper>
   );
 };

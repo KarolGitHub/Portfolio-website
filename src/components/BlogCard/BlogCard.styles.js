@@ -41,7 +41,7 @@ export const MetaData = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 10px 20px;
+  margin: 0px 10px 10px;
   line-height: 1.2;
   z-index: 0;
   @media screen and (min-width: 600px) {

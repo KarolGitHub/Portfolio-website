@@ -1,6 +1,8 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
 import { withTheme } from 'emotion-theming';
+import welcomeDarkBg from '../assets/welcome-dark.png';
+import welcomeLightBg from '../assets/welcome-light.png';
 
 export const theme = {
   light: {
@@ -16,6 +18,11 @@ export const theme = {
       loading: `var(--loading, #3f324d)`,
       linearBackground: `var(--linear-background, linear-gradient(90deg, #fafafa 0%, #e7e7e7 100%))`,
       radialBackground: `var(--radial-background, radial-gradient(circle,#4cff50 50%, #0fad4a 100%))`,
+      heroBackground: `var(--hero-background, linear-gradient(
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0.4)
+      ),
+      url(${welcomeLightBg}))`,
     },
   },
   dark: {
@@ -31,6 +38,7 @@ export const theme = {
       loading: `var(--loading, #f8f9fa)`,
       linearBackground: `var(--linear-background, linear-gradient(90deg, #1a1c20 0%, #343a40 100%))`,
       radialBackground: `var(--radial-background, radial-gradient(circle,#0fad4a 50%, #4cff50 100%))`,
+      heroBackground: `var(--hero-background, url(${welcomeLightBg}))`,
     },
   },
 };
@@ -42,6 +50,8 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
       * {
         box-sizing: border-box;
         outline: none;
+        margin: 0;
+        padding: 0;
       }
 
       .theme-light {
@@ -56,6 +66,11 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
         --loading: #214080;
         --linear-background: linear-gradient(90deg, #fafafa 0%, #e7e7e7 100%);
         --radial-background: radial-gradient(circle, #4cff50 50%, #0fad4a 100%);
+        --hero-background: linear-gradient(
+            rgba(255, 255, 255, 0.4),
+            rgba(255, 255, 255, 0.4)
+          ),
+          url(${welcomeLightBg});
       }
       .theme-dark {
         --background: #1a1c20;
@@ -69,6 +84,7 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
         --loading: #f8f9fa;
         --linear-background: linear-gradient(90deg, #1a1c20 0%, #343a40 100%);
         --radial-background: radial-gradient(circle, #0fad4a 50%, #4cff50 100%);
+        --hero-background: url(${welcomeDarkBg});
       }
 
       html,
@@ -104,7 +120,7 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
 
       main {
         display: block;
-        margin: 40px auto;
+        margin: 0 auto;
         max-width: calc(var(--max-width) - 1000px);
         min-height: 100vh;
       }
@@ -118,11 +134,13 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
         color: var(--light-blue);
         font-family: 'Muli Black', Arial, Helvetica, sans-serif;
         letter-spacing: 1px;
+        margin: 10px 0px 16px;
       }
 
       p {
         font-size: 1rem;
         line-height: 1.5rem;
+        margin-bottom: 10px;
 
         @media (min-width: 600px) {
           font-size: 1.125rem;

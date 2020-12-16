@@ -2,14 +2,6 @@ import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   display: flex;
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0;
-  }
   a:hover {
     opacity: 0.7;
   }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import TagCard from './TagCard/TagCard';
 import { Wrapper, TagCardsWrapper } from './TagCards.styles';
 import { defer } from 'rxjs';
-import _ from 'lodash';
+import { debounce } from 'lodash';
 import LoadingIndicator from '../UI/LoadingIndicator/LoadingIndicator';
 
 const windowGlobal = typeof window !== 'undefined' && window;
@@ -67,7 +67,7 @@ const TagCards: React.FC<Props> = ({ tagsInfo }) => {
     });
   };
 
-  const debouncedScrollEvent = _.debounce(() => {
+  const debouncedScrollEvent = debounce(() => {
     if (error || isLoading || !currentPage) {
       return;
     }
