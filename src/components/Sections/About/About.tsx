@@ -1,18 +1,27 @@
 import React from 'react';
 import aboutIcon from '../../../assets/about.svg';
-import { Wrapper, InfoWrapper } from './About.styles';
+import arrowBorderIcon from '../../../assets/arrow-border.svg';
+
+import { Wrapper, InfoWrapper, ImgWrapper } from './About.styles';
 
 const About: React.FC<{}> = () => {
   return (
     <Wrapper>
       <InfoWrapper>
-        Hi I am Karol, currently graduate of Rzeszów University of Technology,
-        in the future frontend developer. For a few years I have been developing
-        myself towards chosen career path. Right now I am building my portfolio
-        through creating new projects as well as improving existing ones. Thank
-        you for visiting my portfolio page, I hope you will have fun.
+        <img src={arrowBorderIcon} alt="about" />
+        <p>
+          I'm a passionate front-end developer graduated in Rzeszów University
+          of Technology. For a few years I have been developing myself towards
+          chosen career path. Right now I am building my portfolio through
+          creating new projects as well as improving existing ones coding witch
+          technologies like <strong>React, Gatsby.js and Next.js</strong>. Thank
+          you for visiting my portfolio page, I hope you will have fun.
+        </p>
+        <img src={arrowBorderIcon} alt="about" />
       </InfoWrapper>
-      <img src={aboutIcon} alt="about" />
+      <ImgWrapper>
+        <img src={aboutIcon} alt="about" />
+      </ImgWrapper>
     </Wrapper>
   );
 };
