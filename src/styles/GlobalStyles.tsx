@@ -82,7 +82,7 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
         --post-shadow: rgba(150, 170, 180, 0.5);
         --search-background: #3f324d;
         --loading: #f8f9fa;
-        --linear-background: linear-gradient(90deg, #1a1c20 0%, #343a40 100%);
+        --linear-background: linear-gradient(270deg, #1a1c20 0%, #343a40 100%);
         --radial-background: radial-gradient(circle, #0fad4a 50%, #4cff50 100%);
         --hero-background: url(${welcomeDarkBg});
       }
@@ -97,6 +97,7 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
           --green: #4cff50;
           --red: #f93f3f;
           --backdrop: rgba(0, 0, 0, 0.5);
+          --yellow-gradient: linear-gradient(270deg, #ffd700 0%, #f5f94d 100%);
         }
       }
 

@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   padding: 20px;
   background-color: ${(props) => props.theme.colors.background};
 `;
-export const InfoWrapper = styled.div`
+export const AboutInfoWrapper = styled.div`
   display: flex;
   position: relative;
   max-width: 700px;

@@ -12,11 +12,11 @@ module.exports = {
         url: 'karolgardyjas@gmail.com',
       },
       {
-        name: 'gitHub',
+        name: '@KarolGitHub',
         url: 'https://github.com/KarolGitHub',
       },
       {
-        name: 'linkedin',
+        name: 'LinkedIn',
         url: 'https://www.linkedin.com/in/karolgardyjas',
       },
     ],
@@ -39,7 +39,7 @@ module.exports = {
         name: 'Portfolio',
         code: 'https://github.com/KarolGitHub/Portfolio-website',
         desc:
-          'Summary of my work as Frontend developer, also a place where I publish my projects including personal blog. Made with GatsbyJS from scratch, new blog posts are done via Netlify CMS',
+          'Summary of my work as front-end developer, also a place where I publish my projects including personal blog. Made with Gatsby.js from scratch, new blog posts are done via Netlify CMS',
       },
     ],
   },

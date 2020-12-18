@@ -1,9 +1,18 @@
 import React from 'react';
-import email from '../../../assets/email.svg';
-import github from '../../../assets/github.svg';
-import linkedin from '../../../assets/linkedin.svg';
 import Obfuscate from 'react-obfuscate';
-import { Wrapper } from './Contact.styles';
+
+import emailIcon from '../../../assets/email.svg';
+import githubIcon from '../../../assets/github.svg';
+import linkedinIcon from '../../../assets/linkedin.svg';
+import contactIcon from '../../../assets/contact.svg';
+import arrowBorderIcon from '../../../assets/arrow-border.svg';
+import { Wrapper } from '../About/About.styles';
+import {
+  ContactInfoWrapper,
+  ContactLinksWrapper,
+  ContactLink,
+  ImgWrapper,
+} from './Contact.styles';
 import withSocial from '../../Hoc/withSocial';
 
 type Props = {
@@ -11,23 +20,34 @@ type Props = {
 };
 
 const Contact: React.FC<Props> = ({ social }) => {
-  const imgList = [email, github, linkedin];
+  const iconList = [emailIcon, githubIcon, linkedinIcon];
   return (
     <Wrapper>
-      <p>
-        If you have any job offers or simply want to talk, <br />
-        feel free to find me on media listed below:
-      </p>
-      {social.map(({ name, url }, i) => (
-        <div key={`${name}${i}`}>
-          <img src={imgList[i]} alt={name} />
-          {name === 'email' ? (
-            <Obfuscate email={url} />
-          ) : (
-            <Obfuscate href={url} target="blank" />
-          )}
-        </div>
-      ))}
+      <ContactInfoWrapper>
+        <img src={arrowBorderIcon} alt="arrow" />
+        <p>
+          If you have any job offers or simply want to talk, <br />
+          feel free to find me on media listed below:
+        </p>
+        <ContactLinksWrapper>
+          {social.map(({ name, url }, i) => (
+            <ContactLink key={`${name}${i}`}>
+              <img src={iconList[i]} alt={name} />
+              {name === 'email' ? (
+                <Obfuscate email={url} />
+              ) : (
+                <a href={url} target="_blank">
+                  {name}
+                </a>
+              )}
+            </ContactLink>
+          ))}
+        </ContactLinksWrapper>
+        <img src={arrowBorderIcon} alt="arrow" />
+      </ContactInfoWrapper>
+      <ImgWrapper>
+        <img src={contactIcon} alt="contact" />
+      </ImgWrapper>
     </Wrapper>
   );
 };

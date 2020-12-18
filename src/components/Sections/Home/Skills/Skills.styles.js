@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
     ul {
       display: grid;
       justify-items: center;
-      grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
       li {
         width: fit-content;
         img {
