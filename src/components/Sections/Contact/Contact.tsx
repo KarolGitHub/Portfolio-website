@@ -10,7 +10,6 @@ import { Wrapper } from '../About/About.styles';
 import {
   ContactInfoWrapper,
   ContactLinksWrapper,
-  ContactLink,
   ImgWrapper,
 } from './Contact.styles';
 import withSocial from '../../Hoc/withSocial';
@@ -30,18 +29,23 @@ const Contact: React.FC<Props> = ({ social }) => {
           feel free to find me on media listed below:
         </p>
         <ContactLinksWrapper>
-          {social.map(({ name, url }, i) => (
-            <ContactLink key={`${name}${i}`}>
-              <img src={iconList[i]} alt={name} />
-              {name === 'email' ? (
-                <Obfuscate email={url} />
-              ) : (
-                <a href={url} target="_blank">
-                  {name}
-                </a>
-              )}
-            </ContactLink>
-          ))}
+          {social.map(({ name, url }, i) =>
+            name === 'email' ? (
+              <Obfuscate
+                key={`${name}${i}`}
+                email={url}
+                obfuscateChildren={false}
+                linkText="email">
+                <img src={iconList[i]} alt={name} />
+                {url}
+              </Obfuscate>
+            ) : (
+              <a key={`${name}${i}`} href={url} target="_blank">
+                <img src={iconList[i]} alt={name} />
+                {name}
+              </a>
+            )
+          )}
         </ContactLinksWrapper>
         <img src={arrowBorderIcon} alt="arrow" />
       </ContactInfoWrapper>

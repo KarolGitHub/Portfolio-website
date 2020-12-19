@@ -42,25 +42,24 @@ export const ContactLinksWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
   }
-`;
-
-export const ContactLink = styled.div`
-  ${buttonStyles}
-  display: flex;
-  border-radius: 10px;
-  padding: 5px;
-  margin: 5px 0px;
-  background: var(--yellow-gradient);
-  align-items: center;
-  text-align: center;
-  font: inherit;
-  a,
-  a:visited {
-    color: var(--blue);
+  a {
+    ${buttonStyles}
+    display: flex;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px 0px;
+    background: var(--yellow-gradient);
+    align-items: center;
+    text-align: center;
+    font: inherit;
+    &,
+    :visited {
+      color: var(--blue);
+    }
   }
 `;
 
