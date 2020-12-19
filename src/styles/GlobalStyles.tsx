@@ -196,10 +196,16 @@ export const buttonStyles = () => css`
     opacity: 0.3;
     cursor: not-allowed;
   }
-  :hover:not([disabled]) {
+  :hover:not([disabled]),
+  :active:not([disabled]) {
     -moz-box-shadow: 0 0 10px #ccc;
     -webkit-box-shadow: 0 0 10px #ccc;
     box-shadow: 0 0 10px #ccc;
+  }
+  :hover:not([disabled]) {
     transform: scale(1.1);
+  }
+  :active:not([disabled]) {
+    transform: scale(0.9);
   }
 `;
