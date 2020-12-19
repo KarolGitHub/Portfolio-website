@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-
+import welcomeBg from '../../../../assets/welcome-bg.png';
 import { buttonStyles, cardStyles } from '../../../../styles/GlobalStyles';
 
 export const Wrapper = styled.div`
@@ -10,11 +10,13 @@ export const Wrapper = styled.div`
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 16px;
   border-radius: 20px;
-  background-image: ${(props) => props.theme.colors.heroBackground};
+  background-image: url(${welcomeBg});
+  background-color: ${(props) => props.theme.colors.heroBackground};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  transition: background 0.5s ease;
+  transition: all 0.5s ease;
+  background-blend-mode: screen;
 `;
 
 export const InfoWrapper = styled.div`

@@ -1,8 +1,6 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
 import { withTheme } from 'emotion-theming';
-import welcomeDarkBg from '../assets/welcome-dark.png';
-import welcomeLightBg from '../assets/welcome-light.png';
 
 export const theme = {
   light: {
@@ -16,13 +14,9 @@ export const theme = {
       postShadow: `var(--post-shadow,  rgba(150, 170, 180, .9))`,
       searchBackground: `var(--search-background, #eee)`,
       loading: `var(--loading, #3f324d)`,
-      linearBackground: `var(--linear-background, linear-gradient(90deg, #fafafa 0%, #e7e7e7 100%))`,
+      linearBackground: `var(--linear-background, linear-gradient(270deg, #fafafa 0%, #e7e7e7 100%))`,
       radialBackground: `var(--radial-background, radial-gradient(circle,#4cff50 50%, #0fad4a 100%))`,
-      heroBackground: `var(--hero-background, linear-gradient(
-        rgba(255, 255, 255, 0.4),
-        rgba(255, 255, 255, 0.4)
-      ),
-      url(${welcomeLightBg}))`,
+      heroBackground: `var(--hero-background,rgba(240,248,255,0.8))`,
     },
   },
   dark: {
@@ -36,9 +30,9 @@ export const theme = {
       postShadow: `var(--post-shadow, rgba(150, 170, 180, .5))`,
       searchBackground: `var(--search-background, #050505)`,
       loading: `var(--loading, #f8f9fa)`,
-      linearBackground: `var(--linear-background, linear-gradient(90deg, #1a1c20 0%, #343a40 100%))`,
+      linearBackground: `var(--linear-background, linear-gradient(270deg, #1a1c20 0%, #343a40 100%))`,
       radialBackground: `var(--radial-background, radial-gradient(circle,#0fad4a 50%, #4cff50 100%))`,
-      heroBackground: `var(--hero-background, url(${welcomeLightBg}))`,
+      heroBackground: `var(--hero-background, rgba(0, 0, 0, 0.5))`,
     },
   },
 };
@@ -64,13 +58,9 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
         --post-shadow: rgba(150, 170, 180, 0.9);
         --search-background: #eee;
         --loading: #214080;
-        --linear-background: linear-gradient(90deg, #fafafa 0%, #e7e7e7 100%);
+        --linear-background: linear-gradient(270deg, #fafafa 0%, #e7e7e7 100%);
         --radial-background: radial-gradient(circle, #4cff50 50%, #0fad4a 100%);
-        --hero-background: linear-gradient(
-            rgba(255, 255, 255, 0.4),
-            rgba(255, 255, 255, 0.4)
-          ),
-          url(${welcomeLightBg});
+        --hero-background: rgba(240, 248, 255, 0.8);
       }
       .theme-dark {
         --background: #1a1c20;
@@ -84,7 +74,7 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
         --loading: #f8f9fa;
         --linear-background: linear-gradient(270deg, #1a1c20 0%, #343a40 100%);
         --radial-background: radial-gradient(circle, #0fad4a 50%, #4cff50 100%);
-        --hero-background: url(${welcomeDarkBg});
+        --hero-background: rgba(0, 0, 0, 0.5);
       }
 
       html,
