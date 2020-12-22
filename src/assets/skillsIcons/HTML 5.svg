@@ -1,25 +1,7 @@
-<?xml
-version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-  <polygon style="fill:#FF5722;" points="32,0 72.8,460.8 256,512 439.136,460.832 480,0 "/>
-  <polygon style="fill:#FAFAFA;" points="391.52,150.688 256,150.688 176.8,150.688 181.92,208.576 256,208.576 386.4,208.576
-    	371.008,382.144 256,414.24 255.904,414.272 140.96,382.144 132.928,291.36 189.248,291.36 193.44,338.464 255.936,355.456
-    	256,355.424 256,355.424 318.56,338.432 325.088,265.12 256,265.12 256,265.12 130.624,265.12 115.456,94.208 256,94.208
-    	396.512,94.208 "/>
-  <g></g>
-  <g></g>
-  <g></g>
-  <g></g>
-  <g></g>
-  <g></g>
-  <g></g>
-  <g></g>
-  <g></g>
-  <g></g>
-  <g></g>
-  <g></g>
-  <g></g>
-  <g></g>
-  <g></g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50pt" height="50pt" viewBox="0 0 50 50" version="1.1">
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,34.117647%,13.333333%);fill-opacity:1;" d="M 3.125 0 L 7.109375 45 L 25 50 L 42.882812 45.003906 L 46.875 0 Z M 3.125 0 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(98.039216%,98.039216%,98.039216%);fill-opacity:1;" d="M 38.234375 14.714844 L 17.265625 14.714844 L 17.765625 20.367188 L 37.734375 20.367188 L 36.230469 37.320312 L 25 40.453125 L 24.992188 40.457031 L 13.765625 37.320312 L 12.980469 28.453125 L 18.480469 28.453125 L 18.890625 33.054688 L 24.992188 34.710938 L 25 34.710938 L 31.109375 33.050781 L 31.746094 25.890625 L 12.757812 25.890625 L 11.273438 9.199219 L 38.722656 9.199219 Z M 38.234375 14.714844 "/>
+</g>
 </svg>
