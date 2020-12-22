@@ -32,10 +32,10 @@ export const Wrapper = styled.ul`
       border-radius: 5px;
       background: transparent;
       transition: background 0.3s ease;
-      color: ${(props) => props.theme.colors.textDark};
+      color: var(--text-dark);
 
       :hover {
-        background: ${(props) => props.theme.colors.postShadow};
+        background: var(--post-shadow);
       }
 
       @media (min-width: 600px) {

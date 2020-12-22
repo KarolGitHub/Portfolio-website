@@ -19,14 +19,14 @@ export const Wrapper = styled.div`
         width: 400px;
         padding: 10px;
         border-radius: 20px;
-        color: ${(props) => props.theme.colors.textSecondary};
-        background-color: ${(props) => props.theme.colors.searchBackground};
-        border: 1px solid ${(props) => props.theme.colors.searchBackground};
+        color: var(--text-secondary);
+        background-color: var(--search-background);
+        border: 1px solid var(--search-background);
         transition: all 0.5s ease;
         font: inherit;
         font-weight: inherit;
         :focus {
-          border: 1px solid ${(props) => props.theme.colors.postShadow};
+          border: 1px solid var(--post-shadow);
         }
         @media screen and (max-width: 599px) {
           width: 60%;
@@ -67,7 +67,7 @@ export const LinkWrapper = styled.div`
     width: 60px;
     height: 50px;
     margin-right: 10px;
-    background-color: ${(props) => props.theme.colors.background};
+    background-color: var(--background);
     border: 1px solid var(--blue);
     color: var(--light-blue);
     text-align: center;

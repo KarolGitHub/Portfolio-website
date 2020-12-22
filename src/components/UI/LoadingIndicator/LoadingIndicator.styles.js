@@ -26,7 +26,7 @@ export const Wrapper = styled.div`
   div {
     animation: ${animation} 1s infinite ease-in-out both;
     -webkit-animation: ${animation} 1s infinite ease-in-out both;
-    background-color: ${(props) => props.theme.colors.loading};
+    background-color: var(--loading);
     width: 18px;
     height: 18px;
     border-radius: 30%;

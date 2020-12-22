@@ -22,7 +22,7 @@ export const Tags = styled.div`
     align-items: center;
     a {
       margin: 10px;
-      color: ${(props) => props.theme.colors.textDark};
+      color: var(--text-dark);
     }
   }
   @media (min-width: 600px) {

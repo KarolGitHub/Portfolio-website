@@ -16,6 +16,6 @@ export const Wrapper = styled.div`
   div {
     width: 90%;
     height: 3px;
-    background-color: ${(props) => props.theme.colors.textDark};
+    background-color: var(--text-dark);
   }
 `;

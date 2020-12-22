@@ -14,7 +14,7 @@ export const ProjectWrapper = styled.div`
   display: flex;
   align-items: center;
   padding-bottom: 30px;
-  border-bottom: 2px solid ${(props) => props.theme.colors.postShadow};
+  border-bottom: 2px solid var(--post-shadow);
   @media (max-width: 730px) {
     flex-direction: column;
   }
@@ -57,9 +57,9 @@ export const ButtonOutline = styled.a`
   width: 170px;
   height: 60px;
   border-radius: 16px;
-  background: ${(props) => props.theme.colors.linearBackground};
+  background: var(--linear-background);
   border: 1px solid var(--green);
-  color: ${(props) => props.theme.colors.textSecondary};
+  color: var(--text-secondary);
   text-align: center;
   font: inherit;
   line-height: 55px;

@@ -1,45 +1,8 @@
 import React from 'react';
 import { Global, css } from '@emotion/core';
-import { withTheme } from 'emotion-theming';
 
-export const theme = {
-  light: {
-    colors: {
-      background: `var(--background, #fff)`,
-      menuBackground: `var(--menu-background, #d1e1e9)`,
-      textDark: `var(--text-dark, #215973)`,
-      footerBackground: `var(--footer-background, #e7e7e7)`,
-      textSecondary: `var(--text-secondary, #404040)`,
-      imageOverlay: `var(--image-overlay, rgba(255, 255, 255, .6))`,
-      postShadow: `var(--post-shadow,  rgba(150, 170, 180, .9))`,
-      searchBackground: `var(--search-background, #eee)`,
-      loading: `var(--loading, #3f324d)`,
-      linearBackground: `var(--linear-background, linear-gradient(270deg, #fafafa 0%, #e7e7e7 100%))`,
-      radialBackground: `var(--radial-background, radial-gradient(circle,#4cff50 50%, #0fad4a 100%))`,
-      heroBackground: `var(--hero-background,rgba(240,248,255,0.8))`,
-    },
-  },
-  dark: {
-    colors: {
-      background: `var(--background, #1a1c20)`,
-      menuBackground: `var(--menu-background, #215973)`,
-      textDark: `var(--text-dark, #d1e1e9)`,
-      footerBackground: `var(--footer-background, #343a40)`,
-      textSecondary: `var(--text-secondary, #d1e1e9)`,
-      imageOverlay: `var(--image-overlay, rgba(0, 0, 0, .6))`,
-      postShadow: `var(--post-shadow, rgba(150, 170, 180, .5))`,
-      searchBackground: `var(--search-background, #050505)`,
-      loading: `var(--loading, #f8f9fa)`,
-      linearBackground: `var(--linear-background, linear-gradient(270deg, #1a1c20 0%, #343a40 100%))`,
-      radialBackground: `var(--radial-background, radial-gradient(circle,#0fad4a 50%, #4cff50 100%))`,
-      heroBackground: `var(--hero-background, rgba(0, 0, 0, 0.5))`,
-    },
-  },
-};
-
-export const GlobalStyles: React.FC<{}> = withTheme((props) => (
+export const GlobalStyles = (
   <Global
-    {...props}
     styles={css`
       * {
         box-sizing: border-box;
@@ -79,7 +42,6 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
 
       html,
       body {
-        margin: 0;
         :root {
           --max-width: 2300px;
           --light-blue: #6fadc6;
@@ -92,8 +54,8 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
       }
 
       body {
-        background: ${props.theme.colors.background};
-        color: ${props.theme.colors.textSecondary};
+        background: var(--background);
+        color: var(--text-secondary);
         font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
           'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
           'Helvetica Neue', Catamaran, sans-serif;
@@ -101,7 +63,7 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
         -moz-osx-font-smoothing: grayscale;
         font-size: 1.25rem;
         font-style: normal;
-        transition: all 0.5s ease;
+        transition: var(--transition-theme);
       }
 
       code {
@@ -167,15 +129,15 @@ export const GlobalStyles: React.FC<{}> = withTheme((props) => (
       }
     `}
   />
-));
+);
 
-export const cardStyles = (props: any) => css`
+export const cardStyles = () => css`
   padding: 0;
   width: 100%;
   border-radius: 10px;
-  -webkit-box-shadow: 0 7px 30px -10px ${props.theme.colors.postShadow};
-  -moz-box-shadow: 0 7px 30px -10px ${props.theme.colors.postShadow};
-  box-shadow: 0 7px 30px -10px ${props.theme.colors.postShadow};
+  -webkit-box-shadow: 0 7px 30px -10px var(--post-shadow);
+  -moz-box-shadow: 0 7px 30px -10px var(--post-shadow);
+  box-shadow: 0 7px 30px -10px var(--post-shadow);
 `;
 
 export const buttonStyles = () => css`

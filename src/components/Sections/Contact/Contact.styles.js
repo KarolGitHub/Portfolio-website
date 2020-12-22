@@ -22,8 +22,8 @@ export const ContactInfoWrapper = styled.div`
     position: absolute;
     width: 60px;
     height: 60px;
-    filter: drop-shadow(0px 4px 4px ${(props) => props.theme.colors.postShadow})
-      drop-shadow(0px 4px 14px ${(props) => props.theme.colors.postShadow});
+    filter: drop-shadow(0px 4px 4px var(--post-shadow))
+      drop-shadow(0px 4px 14px var(--post-shadow));
     :first-of-type {
       transform: rotate(-45deg);
       top: 0;

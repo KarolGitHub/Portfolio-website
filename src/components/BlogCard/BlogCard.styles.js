@@ -11,7 +11,7 @@ export const Overlay = styled.div`
   transition: 0.5s ease;
   z-index: 0;
   border-radius: 10px;
-  background-color: ${(props) => props.theme.colors.imageOverlay};
+  background-color: var(--image-overlay);
 `;
 
 export const Wrapper = styled.div`

@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   grid-column-gap: 16px;
   border-radius: 20px;
   background-image: url(${welcomeBg});
-  background-color: ${(props) => props.theme.colors.heroBackground};
+  background-color: var(--hero-background);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -43,8 +43,8 @@ export const ButtonFull = styled.a`
   width: 170px;
   height: 60px;
   border-radius: 16px;
-  background: ${(props) => props.theme.colors.radialBackground};
-  color: ${(props) => props.theme.colors.textSecondary};
+  background: var(--radial-background);
+  color: var(--text-secondary);
   text-align: center;
   font: inherit;
   line-height: 58px;
@@ -55,7 +55,7 @@ export const ButtonOutline = styled.button`
   width: 170px;
   height: 60px;
   border-radius: 16px;
-  background: ${(props) => props.theme.colors.linearBackground};
+  background: var(--linear-background);
   border: 1px solid var(--green);
-  color: ${(props) => props.theme.colors.textSecondary};
+  color: var(--text-secondary);
 `;
