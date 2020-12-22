@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { GlobalStyles } from './styles/GlobalStyles';
 import { useTheme } from './hooks/useTheme';
 
 export default function HTML(props) {
@@ -18,7 +17,6 @@ export default function HTML(props) {
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes} className={`theme-${theme}`}>
-        {GlobalStyles}
         {props.preBodyComponents}
         <div
           key={`body`}

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { buttonStyles, cardStyles } from '../../../styles/GlobalStyles';
+import { buttonStyles, cardStyles } from '../../../styles/shared';
 import contactIcon from '../../../assets/contact.svg';
 
 export const ContactInfoWrapper = styled.div`

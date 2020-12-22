@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { cardStyles } from '../../../styles/GlobalStyles';
+import { cardStyles } from '../../../styles/shared';
 
 export const Wrapper = styled.div`
   ${cardStyles}
@@ -30,10 +30,8 @@ export const AboutInfoWrapper = styled.div`
     position: absolute;
     width: 60px;
     height: 60px;
-    filter: drop-shadow(
-      0px 4px 4px var(--post-shadow)
-        drop-shadow(0px 4px 14px var(--post-shadow))
-    );
+    filter: drop-shadow(0px 4px 4px var(--post-shadow))
+      drop-shadow(0px 4px 14px var(--post-shadow));
     :first-of-type {
       transform: rotate(-45deg);
       top: 0;

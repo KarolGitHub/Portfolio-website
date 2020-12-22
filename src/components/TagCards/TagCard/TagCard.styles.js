@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { cardStyles } from '../../../styles/GlobalStyles';
+import { cardStyles } from '../../../styles/shared';
 
 export const Wrapper = styled.div`
   ${cardStyles}

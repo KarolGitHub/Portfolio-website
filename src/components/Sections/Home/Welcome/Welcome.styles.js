@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import welcomeBg from '../../../../assets/welcome-bg.png';
-import { buttonStyles, cardStyles } from '../../../../styles/GlobalStyles';
+import { buttonStyles, cardStyles } from '../../../../styles/shared';
 
 export const Wrapper = styled.div`
   display: grid;

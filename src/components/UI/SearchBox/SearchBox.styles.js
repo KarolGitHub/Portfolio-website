@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { cardStyles, buttonStyles } from '../../../styles/GlobalStyles';
+import { cardStyles, buttonStyles } from '../../../styles/shared';
 
 export const Wrapper = styled.div`
   height: 60px;

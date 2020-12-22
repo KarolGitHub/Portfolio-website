@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { cardStyles } from '../../styles/GlobalStyles';
+import { cardStyles } from '../../styles/shared';
 
 export const Overlay = styled.div`
   position: absolute;
