@@ -5,7 +5,6 @@ import { cardStyles } from '../../../../styles/shared';
 export const Wrapper = styled.div`
   ${cardStyles}
   display: flex;
-  margin: 40px 0;
   place-content: center;
   div {
     width: 100%;

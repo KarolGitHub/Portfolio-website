@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 
-import Toolbar from '../Navigation/Toolbar/Toolbar';
+import Navbar from '../Navigation/Navbar/Navbar';
 import Footer from '../UI/Footer/Footer';
 import { useMetaDataQuery } from '../../hooks/useMetaDataQuery';
 import Sidedrawer from '../Navigation/Sidedrawer/Sidedrawer';
@@ -15,7 +15,7 @@ const Layout: React.FC<Props> = ({ children }) => {
 
   return (
     <Fragment>
-      <Toolbar openMenu={() => setSideDrawer(!showSideDrawer)} title={title} />
+      <Navbar openMenu={() => setSideDrawer(!showSideDrawer)} title={title} />
       <Sidedrawer
         open={showSideDrawer}
         clicked={() => setSideDrawer(false)}

@@ -7,7 +7,8 @@
 
 .theme-light {
   --background: #fafafa;
-  --menu-background: #d1e1e9;
+  --menu-background: rgba(209, 225, 233, 0.5);
+  --sidedrawer-background: rgba(209, 225, 233, 0.9);
   --text-dark: #215973;
   --footer-background: #e7e7e7;
   --text-secondary: #404040;
@@ -21,7 +22,8 @@
 }
 .theme-dark {
   --background: #1a1c20;
-  --menu-background: #215973;
+  --menu-background: rgba(33, 89, 115, 0.5);
+  --sidedrawer-background: rgba(33, 89, 115, 0.9);
   --text-dark: #d1e1e9;
   --footer-background: #343a40;
   --text-secondary: #d1e1e9;

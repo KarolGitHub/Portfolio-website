@@ -11,7 +11,9 @@ export const Wrapper = styled.div`
   margin-left: 10px;
   cursor: pointer;
   @media (min-width: 600px) {
-    display: none;
+    @media (min-height: 361px) {
+      display: none;
+    }
   }
   div {
     width: 90%;

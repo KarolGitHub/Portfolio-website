@@ -7,9 +7,10 @@ export const Wrapper = styled.div`
   min-height: 500px;
   width: 100%;
   position: relative;
+  top: -70px;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 16px;
-  border-radius: 20px;
+  border-radius: 0 0 20px 20px;
   background-image: url(${welcomeBg});
   background-color: var(--hero-background);
   background-position: center;

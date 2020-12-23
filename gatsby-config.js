@@ -90,7 +90,7 @@ module.exports = {
         name: `Gatsby-blog`,
         short_name: `Blog`,
         start_url: `/`,
-        background_color: `#663399`,
+        background_color: `#215973`,
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/assets/logo.png`,
