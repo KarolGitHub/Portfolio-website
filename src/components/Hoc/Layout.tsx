@@ -1,9 +1,9 @@
 import React, { Fragment, useState } from 'react';
 
-import Navbar from '../Navigation/Navbar/Navbar';
 import Footer from '../UI/Footer/Footer';
 import { useMetaDataQuery } from '../../hooks/useMetaDataQuery';
 import Sidedrawer from '../Navigation/Sidedrawer/Sidedrawer';
+import Navbar from '../Navigation/NavBar/Navbar';
 
 type Props = {
   children: React.ReactNode;

@@ -47,6 +47,15 @@ body {
   --yellow-gradient: linear-gradient(270deg, #ffd700 0%, #f5f94d 100%);
 }
 
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 7px;
+  box-shadow: inset 0 0 7px var(--post-shadow);
+}
+
 body {
   background: var(--background);
   color: var(--text-secondary);
