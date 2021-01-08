@@ -10,8 +10,8 @@ export const Wrapper = styled.div`
   padding: 10px 0;
   margin-left: 10px;
   cursor: pointer;
-  @media (min-width: 600px) {
-    @media (min-height: 361px) {
+  @media screen and (min-width: 600px) {
+    @media screen and (min-height: 361px) {
       display: none;
     }
   }

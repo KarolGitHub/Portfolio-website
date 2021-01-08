@@ -11,7 +11,7 @@ export const Wrapper = styled.ul`
     .active {
       font-weight: 800;
 
-      @media (min-width: 600px) {
+      @media screen and (min-width: 600px) {
         :after {
           display: block;
           content: '';
@@ -38,7 +38,7 @@ export const Wrapper = styled.ul`
         background: var(--post-shadow);
       }
 
-      @media (min-width: 600px) {
+      @media screen and (min-width: 600px) {
         padding: 5px 10px;
         margin: 0px 5px;
 

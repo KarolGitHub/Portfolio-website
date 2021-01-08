@@ -22,7 +22,7 @@ export const AboutInfoWrapper = styled.div`
   p {
     padding: 15px 20px;
     margin-bottom: 0;
-    @media (min-width: 600px) {
+    @media screen and (min-width: 600px) {
       line-height: 2;
     }
   }

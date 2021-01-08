@@ -72,7 +72,7 @@ export const LinkWrapper = styled.div`
     color: var(--light-blue);
     text-align: center;
     line-height: 50px;
-    @media (min-width: 600px) {
+    @media screen and (min-width: 600px) {
       display: none;
     }
   }

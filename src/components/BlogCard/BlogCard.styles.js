@@ -17,7 +17,7 @@ export const Overlay = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   ${cardStyles}
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   :hover ${Overlay} {
     width: 100%;
   }

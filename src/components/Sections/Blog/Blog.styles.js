@@ -25,28 +25,28 @@ export const Tags = styled.div`
       color: var(--text-dark);
     }
   }
-  @media (min-width: 600px) {
+  @media screen and (min-width: 600px) {
     display: block;
     margin: 0 auto;
   }
-  @media (min-width: 1000px) {
+  @media screen and (min-width: 1000px) {
     min-width: 200px;
   }
 `;
 
 export const Content = styled.div`
   width: 100%;
-  @media (min-width: 600px) {
+  @media screen and (min-width: 600px) {
     width: ${(props) => props.width[0]};
   }
-  @media (min-width: 1000px) {
+  @media screen and (min-width: 1000px) {
     width: ${(props) => props.width[1]};
   }
 `;
 
 export const Banner = styled.div`
   display: none;
-  @media (min-width: 1000px) {
+  @media screen and (min-width: 1000px) {
     padding: 10px;
     text-align: center;
     min-width: 200px;

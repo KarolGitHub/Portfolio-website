@@ -14,7 +14,7 @@ export const ContactInfoWrapper = styled.div`
   padding: 25px 30px;
   p {
     margin-bottom: 0;
-    @media (min-width: 600px) {
+    @media screen and (min-width: 600px) {
       line-height: 2;
     }
   }

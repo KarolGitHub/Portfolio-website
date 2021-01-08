@@ -12,13 +12,13 @@ export const Wrapper = styled.div`
   transition: transform 0.3s ease-out;
   transform: translate(${(props) => (props.open ? '0' : '-100%')});
 
-  @media (min-width: 601px) {
-    @media (min-height: 361px) {
+  @media screen and (min-width: 601px) {
+    @media screen and (min-height: 361px) {
       display: none;
       max-width: 70%;
     }
   }
-  @media (max-width: 600px) {
+  @media screen and (max-width: 600px) {
     max-width: 70%;
   }
 `;
@@ -31,7 +31,7 @@ export const Navigation = styled.nav`
 
 export const Logo = styled.img`
   max-width: 60px;
-  @media (max-height: 360px) {
+  @media screen and (max-height: 360px) {
     display: none;
   }
 `;
