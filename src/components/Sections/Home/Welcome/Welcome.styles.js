@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  transition: all 0.5s ease;
+  transition: background-color 0.5s ease;
   background-blend-mode: screen;
 `;
 

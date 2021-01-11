@@ -10,7 +10,7 @@ const ModeButton: React.FC = () => {
   return (
     <Button
       src={theme === Theme.DARK ? dark : light}
-      alt="theme switch"
+      alt="color theme switch"
       onClick={(e) => {
         setTheme(theme);
         e.stopPropagation();

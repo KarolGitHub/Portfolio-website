@@ -9,7 +9,7 @@ type Props = {
 const Footer: React.FC<Props> = ({ author }) => {
   return (
     <Wrapper>
-      Site developed by {author}&copy; {new Date().getFullYear().toString()}{' '}
+      Site developed by {author} &copy; {new Date().getFullYear().toString()}{' '}
     </Wrapper>
   );
 };

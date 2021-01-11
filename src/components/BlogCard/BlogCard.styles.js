@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { cardStyles } from '../../styles/shared';
+import { buttonStyles, cardStyles, tagStyles } from '../../styles/shared';
 
 export const Overlay = styled.div`
   position: absolute;
@@ -70,7 +70,14 @@ export const DetailsWrapper = styled.ul`
     align-items: center;
     text-align: center;
     li {
-      margin: 0px 0px 0px 10px;
+      font-size: 0.75rem;
+      margin-left: 5px;
+      @media screen and (min-width: 1000px) {
+        font-size: 0.875rem;
+      }
+    }
+    :first-of-type {
+      font-weight: 500;
     }
   }
 `;
@@ -78,7 +85,7 @@ export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   font-size: 1rem;
   line-height: 1.5rem;
   z-index: 0;
@@ -86,20 +93,22 @@ export const InfoWrapper = styled.div`
     display: flex;
     flex-direction: row;
     ul {
-      display: grid;
-      justify-items: left;
-      max-width: min-content;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      text-align: center;
       li {
-        justify-self: start;
-        margin: 0px 5px 5px 0px;
+        margin-bottom: 10px;
+        a {
+          ${tagStyles}
+        }
       }
     }
-    a,
     a:visited {
       color: var(--blue);
     }
     > img {
+      align-self: flex-start;
       width: min-content;
       margin-right: 5px;
     }
@@ -107,8 +116,9 @@ export const InfoWrapper = styled.div`
 `;
 
 export const PostLinkWrapper = styled.div`
-  margin-left: 5px;
+  display: flex;
   flex-flow: wrap;
+  margin-left: 5px;
   border-bottom: 1px solid var(--blue);
   a {
     display: flex;

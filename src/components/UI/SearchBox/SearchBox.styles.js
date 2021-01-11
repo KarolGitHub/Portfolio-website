@@ -3,7 +3,7 @@ import { cardStyles, buttonStyles } from '../../../styles/shared';
 
 export const Wrapper = styled.div`
   height: 60px;
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;

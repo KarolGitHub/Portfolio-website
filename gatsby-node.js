@@ -28,16 +28,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(`
     {
       posts: allMdx(
-        filter: { frontmatter: { type: { eq: "post" } } }
+        filter: {
+          frontmatter: { type: { eq: "post" }, published: { eq: true } }
+        }
         limit: 2000
       ) {
         edges {
           node {
             id
-            frontmatter {
-              published
-              tags
-            }
             fields {
               slug
             }
@@ -82,16 +80,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       node: {
         id,
         fields: { slug },
-        frontmatter: { published },
       },
     }) => {
-      if (published) {
-        createPage({
-          path: `${slug}`,
-          component: path.resolve(`./src/components/templates/PostTemplate.js`),
-          context: { id: id },
-        });
-      }
+      createPage({
+        path: `${slug}`,
+        component: path.resolve(`./src/components/templates/PostTemplate.js`),
+        context: { id: id },
+      });
     }
   );
 

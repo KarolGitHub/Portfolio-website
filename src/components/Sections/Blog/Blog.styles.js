@@ -13,9 +13,13 @@ export const Tags = styled.div`
   margin: 0 auto;
   padding: 0px 10px;
   width: 20%;
-  a > h3:hover {
-    opacity: 0.7;
+  a > h3 {
+    margin-top: 0;
+    :hover {
+      opacity: 0.7;
+    }
   }
+
   nav {
     display: flex;
     flex-direction: column;
@@ -47,7 +51,7 @@ export const Content = styled.div`
 export const Banner = styled.div`
   display: none;
   @media screen and (min-width: 1000px) {
-    padding: 10px;
+    padding: 0px 10px;
     text-align: center;
     min-width: 200px;
     margin: 0 auto;

@@ -28,7 +28,7 @@ const BlogCard: React.FC<Props> = ({
     date,
     _tags: tags,
     author,
-    readingTime: { text },
+    readingTime: { text: readingTime },
     excerpt,
     image: {
       childImageSharp: { fluid },
@@ -41,16 +41,16 @@ const BlogCard: React.FC<Props> = ({
       <Overlay>
         <DetailsWrapper>
           <ul>
-            <img src={AuthorIcon} alt="time" />
+            <img src={AuthorIcon} alt="author" />
             <li>{author}</li>
           </ul>
           <ul>
-            <img src={DateIcon} alt="time" />
+            <img src={DateIcon} alt="date" />
             <li>{date}</li>
           </ul>
           <ul>
             <img src={TimeIcon} alt="time" />
-            <li>{text}</li>
+            <li>{readingTime}</li>
           </ul>
         </DetailsWrapper>
       </Overlay>
@@ -62,7 +62,7 @@ const BlogCard: React.FC<Props> = ({
       <p>{excerpt}</p>
       <InfoWrapper>
         <div>
-          <img src={TagsIcon} alt="time" />
+          <img src={TagsIcon} alt="tags" />
           <ul>
             {tags.map((tag, i) => (
               <li key={'tag' + i}>

@@ -1,21 +1,35 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../Hoc/Layout';
-import SEO from '../SEO/SEO';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import Image from '../Image/Image';
 
-const PostTemplate = ({ data: { mdx } }) => {
+import Layout from '../Hoc/Layout';
+import SEO from '../SEO/SEO';
+import Blog from '../Sections/Blog/Blog';
+import PostCard from '../PostCard/PostCard';
+
+const PostTemplate = ({
+  data: {
+    mdx: {
+      frontmatter,
+      body,
+      fields: {
+        readingTime: { text },
+      },
+    },
+  },
+}) => {
   return (
     <Layout>
-      <SEO title={mdx.frontmatter.title} />
-      <Image fluid={mdx.frontmatter.image.childImageSharp.fluid} />
+      <SEO title={frontmatter.title} />
       <main>
-        <h2>{mdx.frontmatter.title}</h2>
-        <MDXProvider>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
-        </MDXProvider>
+        <Blog>
+          <PostCard postData={{ ...frontmatter, readingTime: text }}>
+            <MDXProvider>
+              <MDXRenderer>{body}</MDXRenderer>
+            </MDXProvider>
+          </PostCard>
+        </Blog>
       </main>
     </Layout>
   );
@@ -29,14 +43,22 @@ export const query = graphql`
       id
       body
       frontmatter {
+        tags
+        published
+        author
+        date(formatString: "DD MMMM, YYYY")
         title
-        date
         image {
           childImageSharp {
-            fluid(maxWidth: 2000) {
+            fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid_noBase64
             }
           }
+        }
+      }
+      fields {
+        readingTime {
+          text
         }
       }
     }

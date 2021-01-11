@@ -30,7 +30,7 @@ const Blog: React.FC<Props> = ({ taglist, children }) => {
         {children}
       </Content>
       <Banner>
-        <img src={BannerImg} alt="place your ad here" />
+        <img src={BannerImg} alt="banner" />
       </Banner>
     </Wrapper>
   );
