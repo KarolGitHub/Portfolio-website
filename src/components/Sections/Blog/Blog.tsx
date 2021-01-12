@@ -10,7 +10,10 @@ type Props = {
 
 const Blog: React.FC<Props> = ({ taglist, children }) => {
   return (
-    <Wrapper>
+    <Wrapper
+      {...(taglist
+        ? { columnsRatio: ['1fr 3fr', '1fr 3fr 1fr'] }
+        : { columnsRatio: ['auto', '2.5fr 1fr'] })}>
       {taglist && (
         <Tags>
           <Link to="/blog/tags" activeClassName="active">
@@ -25,10 +28,7 @@ const Blog: React.FC<Props> = ({ taglist, children }) => {
           </nav>
         </Tags>
       )}
-      <Content
-        {...(taglist ? { width: ['80%', '60%'] } : { width: ['100%', '80%'] })}>
-        {children}
-      </Content>
+      <Content>{children}</Content>
       <Banner>
         <img src={BannerImg} alt="banner" />
       </Banner>

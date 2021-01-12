@@ -1,7 +1,16 @@
 import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
-  display: flex;
+  display: grid;
+  grid-gap: 20px;
+  margin: 0 auto;
+  @media screen and (min-width: 768px) {
+    padding: 8px;
+    grid-template-columns: ${(props) => props.columnsRatio[0]};
+  }
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: ${(props) => props.columnsRatio[1]};
+  }
   a:hover {
     opacity: 0.7;
   }
@@ -10,9 +19,7 @@ export const Wrapper = styled.div`
 export const Tags = styled.div`
   display: none;
   text-align: center;
-  margin: 0 auto;
-  padding: 0px 10px;
-  width: 20%;
+
   a > h3 {
     margin-top: 0;
     :hover {
@@ -31,31 +38,15 @@ export const Tags = styled.div`
   }
   @media screen and (min-width: 768px) {
     display: block;
-    margin: 0 auto;
-  }
-  @media screen and (min-width: 1024px) {
-    min-width: 200px;
   }
 `;
 
-export const Content = styled.div`
-  width: 100%;
-  @media screen and (min-width: 768px) {
-    width: ${(props) => props.width[0]};
-  }
-  @media screen and (min-width: 1024px) {
-    width: ${(props) => props.width[1]};
-  }
-`;
+export const Content = styled.div``;
 
 export const Banner = styled.div`
   display: none;
   @media screen and (min-width: 1024px) {
-    padding: 0px 10px;
-    text-align: center;
-    min-width: 200px;
-    margin: 0 auto;
-    width: 20%;
     display: block;
+    text-align: center;
   }
 `;
