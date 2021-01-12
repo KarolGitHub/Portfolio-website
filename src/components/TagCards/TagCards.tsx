@@ -24,7 +24,7 @@ const TagCards: React.FC<Props> = ({ tagsInfo }) => {
     const width = window.innerWidth;
     const ratio = window.devicePixelRatio;
     resultsPerPage =
-      width * ratio < 1300 ? (width * ratio < 800 ? 10 : 20) : 30;
+      width * ratio < 1280 ? (width * ratio < 640 ? 10 : 20) : 30;
   } else {
     resultsPerPage = 10;
   }

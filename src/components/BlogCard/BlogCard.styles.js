@@ -32,7 +32,7 @@ export const ImageWrapper = styled.div`
   img {
     border-radius: 10px;
   }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     display: block;
   }
 `;
@@ -44,7 +44,7 @@ export const MetaData = styled.div`
   margin: 0px 10px 10px;
   line-height: 1.2;
   z-index: 0;
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     width: 70%;
   }
 `;
@@ -72,7 +72,7 @@ export const DetailsWrapper = styled.ul`
     li {
       font-size: 0.75rem;
       margin-left: 5px;
-      @media screen and (min-width: 1000px) {
+      @media screen and (min-width: 1024px) {
         font-size: 0.875rem;
       }
     }

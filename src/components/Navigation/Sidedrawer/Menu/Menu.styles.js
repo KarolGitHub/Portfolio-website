@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   padding: 10px 0;
   margin-left: 10px;
   cursor: pointer;
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     @media screen and (min-height: 361px) {
       display: none;
     }

@@ -29,28 +29,28 @@ export const Tags = styled.div`
       color: var(--text-dark);
     }
   }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     display: block;
     margin: 0 auto;
   }
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1024px) {
     min-width: 200px;
   }
 `;
 
 export const Content = styled.div`
   width: 100%;
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     width: ${(props) => props.width[0]};
   }
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1024px) {
     width: ${(props) => props.width[1]};
   }
 `;
 
 export const Banner = styled.div`
   display: none;
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1024px) {
     padding: 0px 10px;
     text-align: center;
     min-width: 200px;

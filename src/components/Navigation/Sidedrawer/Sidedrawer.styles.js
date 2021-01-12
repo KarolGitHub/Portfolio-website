@@ -12,13 +12,13 @@ export const Wrapper = styled.div`
   transition: transform 0.3s ease-out;
   transform: translate(${(props) => (props.open ? '0' : '-100%')});
 
-  @media screen and (min-width: 601px) {
+  @media screen and (min-width: 768px) {
     @media screen and (min-height: 361px) {
       display: none;
       max-width: 70%;
     }
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 767px) {
     max-width: 70%;
   }
 `;

@@ -15,7 +15,7 @@ export const ProjectWrapper = styled.div`
   align-items: center;
   padding-bottom: 30px;
   border-bottom: 2px solid var(--post-shadow);
-  @media screen and (max-width: 730px) {
+  @media screen and (max-width: 767px) {
     flex-direction: column;
   }
 `;
@@ -33,7 +33,7 @@ export const ImageWrapper = styled.div`
     width: 100%;
     height: 100%;
   }
-  @media screen and (max-width: 730px) {
+  @media screen and (max-width: 767px) {
     max-height: 200px;
   }
 `;
@@ -47,7 +47,7 @@ export const InfoWrapper = styled.div`
   p {
     text-align: justify;
   }
-  @media screen and (max-width: 730px) {
+  @media screen and (max-width: 767px) {
     width: 100%;
   }
 `;

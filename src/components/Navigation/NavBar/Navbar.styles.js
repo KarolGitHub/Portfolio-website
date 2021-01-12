@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
 export const Navigation = styled.div`
   display: none;
   width: 100%;
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     @media screen and (min-height: 361px) {
       display: flex;
     }

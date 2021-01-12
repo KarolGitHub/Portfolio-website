@@ -22,7 +22,7 @@ export const Wrapper = styled.div`
       border-radius: 30px;
     }
   }
-  @media screen and (min-width: 850px) {
+  @media screen and (min-width: 768px) {
     display: none;
   }
 `;
@@ -34,7 +34,7 @@ export const PagesWrapper = styled.div`
   a {
     padding: 10px;
   }
-  @media screen and (min-width: 850px) {
+  @media screen and (min-width: 768px) {
     display: flex;
   }
 `;

@@ -28,7 +28,7 @@ export const Wrapper = styled.div`
         :focus {
           border: 1px solid var(--post-shadow);
         }
-        @media screen and (max-width: 599px) {
+        @media screen and (max-width: 767px) {
           width: 60%;
         }
       }
@@ -40,7 +40,7 @@ export const Wrapper = styled.div`
         height: 50px;
         background-color: var(--blue);
         border: 0;
-        @media screen and (max-width: 599px) {
+        @media screen and (max-width: 767px) {
           :last-of-type {
             display: none;
           }
@@ -52,7 +52,7 @@ export const Wrapper = styled.div`
         }
       }
     }
-    @media screen and (max-width: 599px) {
+    @media screen and (max-width: 767px) {
       width: 60%;
     }
   }
@@ -72,7 +72,7 @@ export const LinkWrapper = styled.div`
     color: var(--light-blue);
     text-align: center;
     line-height: 50px;
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 768px) {
       display: none;
     }
   }

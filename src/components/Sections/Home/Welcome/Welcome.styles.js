@@ -35,7 +35,7 @@ export const ButtonWrapper = styled.div`
   gap: 10px;
   grid-auto-flow: column;
   margin-top: 10px;
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 767px) {
     grid-auto-flow: row;
   }
 `;
