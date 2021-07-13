@@ -27,12 +27,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
   const result = await graphql(`
     {
-      posts: allMdx(
-        filter: {
-          frontmatter: { type: { eq: "post" }, published: { eq: true } }
-        }
-        limit: 2000
-      ) {
+      posts: allMdx(filter: { frontmatter: { type: { eq: "post" }, published: { eq: true } } }, limit: 2000) {
         edges {
           node {
             id
@@ -49,9 +44,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
       }
 
-      pages: allMdx(
-        filter: { frontmatter: { type: { in: ["page", "home", "blog"] } } }
-      ) {
+      pages: allMdx(filter: { frontmatter: { type: { in: ["page", "home", "blog"] } } }) {
         edges {
           node {
             id
@@ -111,27 +104,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         case 'blog':
           createPage({
             path: slug,
-            component: path.resolve(
-              `./src/components/templates/BlogTemplate.js`
-            ),
+            component: path.resolve(`./src/components/templates/BlogTemplate.js`),
             context: { id: id, tags },
           });
           break;
         case 'home':
           createPage({
             path: slug,
-            component: path.resolve(
-              `./src/components/templates/HomeTemplate.js`
-            ),
+            component: path.resolve(`./src/components/templates/HomeTemplate.js`),
             context: { id: id },
           });
           break;
         default:
           createPage({
             path: slug,
-            component: path.resolve(
-              `./src/components/templates/PageTemplate.js`
-            ),
+            component: path.resolve(`./src/components/templates/PageTemplate.js`),
             context: { id: id },
           });
       }

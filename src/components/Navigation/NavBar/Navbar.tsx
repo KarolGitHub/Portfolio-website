@@ -17,14 +17,15 @@ type Props = {
 const Navbar: React.FC<Props> = ({ openMenu, title = ``, logo, menu }) => {
   const navbarRef = useRef<HTMLDivElement>();
 
+  let hideScroll = typeof window !== 'undefined' ? window.pageYOffset : 0;
+
   const scrollHandler = (entries: IntersectionObserverEntry[]) => {
-    if (navbarRef && !entries[0].isIntersecting) {
-      navbarRef.current?.style.setProperty(
-        'background-color',
-        'var(--menu-background)'
-      );
-    } else {
-      navbarRef.current?.style.setProperty('background-color', 'transparent');
+    if (navbarRef.current) {
+      if (entries[0].isIntersecting) {
+        navbarRef.current.style.setProperty('background-color', 'transparent');
+      } else {
+        navbarRef.current.style.setProperty('background-color', 'var(--menu-background)');
+      }
     }
   };
 
@@ -37,8 +38,22 @@ const Navbar: React.FC<Props> = ({ openMenu, title = ``, logo, menu }) => {
     if (navbarRef.current) {
       observer.observe(navbarRef.current);
     }
+
+    window.onscroll = () => {
+      const currentScrollPos = window.pageYOffset;
+
+      if (hideScroll > window.pageYOffset) {
+        navbarRef.current?.style.setProperty('top', '0');
+      } else {
+        navbarRef.current?.style.setProperty('top', '-70px');
+      }
+
+      hideScroll = currentScrollPos;
+    };
+
     return () => {
       observer.disconnect();
+      window.onscroll = null;
     };
   }, []);
 
