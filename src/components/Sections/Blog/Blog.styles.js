@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   display: grid;
   grid-gap: 20px;
   margin: 0 auto;
+  padding-top: 8px;
   @media screen and (min-width: 768px) {
     padding: 8px;
     grid-template-columns: ${(props) => props.columnsRatio[0]};

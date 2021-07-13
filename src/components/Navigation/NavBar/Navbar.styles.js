@@ -29,6 +29,6 @@ export const Navigation = styled.div`
 `;
 
 export const Logo = styled.img`
-  max-width: 60px;
+  width: 60px;
   margin: 5px 10px;
 `;

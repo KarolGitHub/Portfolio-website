@@ -59,7 +59,7 @@ export const Wrapper = styled.div`
 `;
 export const LinkWrapper = styled.div`
   width: 50px !important;
-  margin-right: 20px;
+  margin-right: 25px;
   a {
     display: block;
     font: inherit;
