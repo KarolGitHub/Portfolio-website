@@ -1,15 +1,10 @@
 import React from 'react';
-import {
-  Wrapper,
-  ProjectWrapper,
-  ButtonOutline,
-  InfoWrapper,
-  ImageWrapper,
-} from './Projects.styles';
+import { Wrapper, ProjectWrapper, ButtonOutline, InfoWrapper, ImageWrapper } from './Projects.styles';
 import { ButtonWrapper, ButtonFull } from '../Welcome/Welcome.styles';
 import withProjects from '../../../Hoc/withProjects';
 import bbIcon from '../../../../assets/bb.png';
 import spmIcon from '../../../../assets/spm.png';
+import ecIcon from '../../../../assets/ecommerce.png';
 import pIcon from '../../../../assets/portfolio.png';
 
 type Props = {
@@ -17,7 +12,7 @@ type Props = {
 };
 
 const Projects: React.FC<Props> = ({ projects }) => {
-  const icons = [bbIcon, spmIcon, pIcon];
+  const icons = [bbIcon, spmIcon, ecIcon, pIcon];
   return (
     <Wrapper id="Projects">
       <h3>Projects</h3>

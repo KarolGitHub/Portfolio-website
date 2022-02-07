@@ -3,8 +3,7 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: 'Gatsby-blog',
-    description:
-      'Blog made with Gatsby, Typescript, Javascript, React hooks, emotion, deployed using Netlify',
+    description: 'Blog made with Gatsby, Typescript, Javascript, React hooks, emotion, deployed using Netlify',
     author: 'Karol Gardyjas',
     social: [
       {
@@ -25,15 +24,19 @@ module.exports = {
         name: 'Burger Builder',
         demo: 'https://burger-builder-46554.web.app',
         code: 'https://github.com/KarolGitHub/BurgerBuilder',
-        desc:
-          'Progressive web app made with React, Redux, Javascript, CSS Modules, Firebase.',
+        desc: 'Progressive web app made with React, Redux, Javascript, CSS Modules, Firebase.',
       },
       {
         name: 'Spotify Playlist Maker',
         demo: 'https://spotifyplaylistmaker-9f04b.web.app/',
         code: 'https://github.com/KarolGitHub/SpotifyPlaylistMaker',
-        desc:
-          'Progressive web app made with React, Redux, Typescript, Sass, Firebase.',
+        desc: 'Progressive web app made with React, Redux, Typescript, Sass, Firebase.',
+      },
+      {
+        name: 'Next.js E-commerce',
+        demo: 'https://nextjs-ecommerce-psi-bice.vercel.app/',
+        code: 'https://github.com/KarolGitHub/nextjs-ecommerce',
+        desc: 'E-commerce store built with Next.js + MongoDB + PayPal API',
       },
       {
         name: 'Portfolio',
