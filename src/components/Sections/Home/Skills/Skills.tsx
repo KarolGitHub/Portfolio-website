@@ -7,23 +7,23 @@ const Skills: React.FC<{}> = () => {
     require.context('../../../../assets/skillsIcons/', false, /\.svg$/)
   );
   const iconsOrder = [
-    'HTML 5',
+    'HTML',
     'CSS',
     'Javascript',
     'Typescript',
     'React.js',
     'Redux',
     'Gatsby',
-    'Node,js',
+    'Next.js',
+    'Node.js',
     'GIT',
     'Sass',
+    'Bootstrap',
     'Firebase',
     'Netlify',
   ];
 
-  const orderedSkillsIcons = iconsOrder.map((name) =>
-    skillsIcons.find((skillIcon) => name == skillIcon.name)
-  );
+  const orderedSkillsIcons = iconsOrder.map((name) => skillsIcons.find((skillIcon) => name == skillIcon.name));
   return (
     <Wrapper>
       <div>
