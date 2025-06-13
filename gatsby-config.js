@@ -21,28 +21,40 @@ module.exports = {
     ],
     projects: [
       {
-        name: 'Burger Builder',
-        demo: 'https://burger-builder-46554.web.app',
-        code: 'https://github.com/KarolGitHub/BurgerBuilder',
-        desc: 'Progressive web app made with React, Redux, Javascript, CSS Modules, Firebase.',
+        name: 'Portfolio',
+        code: 'https://github.com/KarolGitHub/Portfolio-website',
+        desc:
+          'Summary of my work as front-end developer, also a place where I publish my projects including personal blog. Made with Gatsby.js from scratch, new blog posts are done via Netlify CMS.',
+        icon: 'portfolio.png',
+      },
+      {
+        name: 'Lucidify',
+        demo: 'https://lucidify.netlify.app/',
+        code: 'https://github.com/KarolGitHub/lucidify',
+        desc:
+          'Progressive web app for dream journaling built with Vue 3, TypeScript, Tailwind CSS, Node.js, MongoDB, and Firebase Authentication.',
+        icon: '',
+      },
+      {
+        name: 'Next.js E-commerce',
+        demo: 'https://nextjs-ecommerce-psi-bice.vercel.app/',
+        code: 'https://github.com/KarolGitHub/nextjs-ecommerce',
+        desc: 'E-commerce store built with Next.js + MongoDB + PayPal API.',
+        icon: 'ecommerce.png',
       },
       {
         name: 'Spotify Playlist Maker',
         demo: 'https://spotifyplaylistmaker-9f04b.web.app/',
         code: 'https://github.com/KarolGitHub/SpotifyPlaylistMaker',
         desc: 'Progressive web app made with React, Redux, Typescript, Sass, Firebase.',
+        icon: 'spm.png',
       },
       {
-        name: 'Next.js E-commerce',
-        demo: 'https://nextjs-ecommerce-psi-bice.vercel.app/',
-        code: 'https://github.com/KarolGitHub/nextjs-ecommerce',
-        desc: 'E-commerce store built with Next.js + MongoDB + PayPal API',
-      },
-      {
-        name: 'Portfolio',
-        code: 'https://github.com/KarolGitHub/Portfolio-website',
-        desc:
-          'Summary of my work as front-end developer, also a place where I publish my projects including personal blog. Made with Gatsby.js from scratch, new blog posts are done via Netlify CMS',
+        name: 'Burger Builder',
+        demo: 'https://burger-builder-46554.web.app',
+        code: 'https://github.com/KarolGitHub/BurgerBuilder',
+        desc: 'Progressive web app made with React, Redux, Javascript, CSS Modules, Firebase.',
+        icon: 'bb.png',
       },
     ],
   },

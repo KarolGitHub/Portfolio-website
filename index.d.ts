@@ -13,6 +13,7 @@ declare type Projects = {
   demo?: string;
   code: string;
   desc: string;
+  icon?: string;
 };
 declare type MetaData = {
   author: string;

@@ -12,15 +12,22 @@ const Skills: React.FC<{}> = () => {
     'Javascript',
     'Typescript',
     'React.js',
+    'Vue.js',
+    'Vuex',
+    'Pinia',
+    'Nuxt.js',
     'Redux',
-    'Gatsby',
+    'GraphQL',
     'Next.js',
     'Node.js',
+    'MongoDB',
     'GIT',
     'Sass',
+    'TailwindCSS',
     'Bootstrap',
     'Firebase',
     'Netlify',
+    'Elasticsearch',
   ];
 
   const orderedSkillsIcons = iconsOrder.map((name) => skillsIcons.find((skillIcon) => name == skillIcon.name));
