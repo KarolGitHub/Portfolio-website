@@ -40,151 +40,57 @@ tags:
 
 <h2>Building an Accessible Product Card Component</h2>
 
-<p>Let's start with a fundamental e-commerce component—the product card. Here's how to implement it with accessibility in mind:</p>
+<p>Let's start with a fundamental e-commerce component—the product card. When implementing accessible product cards, focus on these key principles:</p>
 
-<pre><code class="language-vue">&lt;template&gt;
-  &lt;article 
-    class="product-card" 
-    :aria-labelledby="`product-title-${product.id}`"
-    role="article"
-  &gt;
-    &lt;!-- Product Image with Proper Alt Text --&gt;
-    &lt;div class="product-image-container"&gt;
-      &lt;img 
-        :src="product.image" 
-        :alt="product.imageAlt || `${product.name} - ${product.category}`"
-        class="product-image"
-        loading="lazy"
-      /&gt;
-      &lt;button 
-        v-if="product.hasQuickView"
-        @click="openQuickView"
-        class="quick-view-btn"
-        :aria-label="`Quick view ${product.name}`"
-      &gt;
-        &lt;EyeIcon aria-hidden="true" /&gt;
-      &lt;/button&gt;
-    &lt;/div&gt;
+<p><strong>Semantic HTML Structure:</strong> Use proper HTML elements like article tags for product card containers, maintain proper heading hierarchy with h3 elements for product titles, and ensure meaningful link text and button labels throughout the component.</p>
 
-    &lt;!-- Product Information --&gt;
-    &lt;div class="product-info"&gt;
-      &lt;h3 
-        :id="`product-title-${product.id}`"
-        class="product-title"
-      &gt;
-        &lt;router-link 
-          :to="`/products/${product.slug}`"
-          :aria-describedby="`product-price-${product.id}`"
-        &gt;
-          {{ product.name }}
-        &lt;/router-link&gt;
-      &lt;/h3&gt;
+<p><strong>ARIA Labels and Descriptions:</strong> Implement aria-labelledby to connect product cards to their titles, use aria-describedby to provide additional context for prices and stock status, and add aria-label attributes to offer descriptive text for interactive elements.</p>
 
-      &lt;div 
-        :id="`product-price-${product.id}`"
-        class="product-price"
-        :aria-label="`Price: ${formatPrice(product.price)}`"
-      &gt;
-        &lt;span class="sr-only"&gt;Price:&lt;/span&gt;
-        &lt;span class="current-price"&gt;{{ formatPrice(product.price) }}&lt;/span&gt;
-        &lt;span 
-          v-if="product.originalPrice" 
-          class="original-price"
-          :aria-label="`Original price: ${formatPrice(product.originalPrice)}`"
-        &gt;
-          {{ formatPrice(product.originalPrice) }}
-        &lt;/span&gt;
-      &lt;/div&gt;
+<p><strong>Image Accessibility:</strong> Every product image should include descriptive alternative text that conveys the product name and category. For decorative icons, use aria-hidden attributes to prevent screen readers from announcing them unnecessarily.</p>
 
-      &lt;!-- Add to Cart Button --&gt;
-      &lt;button 
-        @click="addToCart"
-        class="add-to-cart-btn"
-        :disabled="!product.inStock"
-        :aria-label="`Add ${product.name} to cart`"
-        :aria-describedby="!product.inStock ? `out-of-stock-${product.id}` : null"
-      &gt;
-        {{ product.inStock ? 'Add to Cart' : 'Out of Stock' }}
-      &lt;/button&gt;
+<p><strong>Interactive Elements:</strong> Ensure all buttons and links have clear, descriptive labels. For example, instead of just "Add to Cart," use "Add \[Product Name] to cart" to provide context when navigating with assistive technologies.</p>
 
-      &lt;div 
-        v-if="!product.inStock"
-        :id="`out-of-stock-${product.id}`"
-        class="sr-only"
-      &gt;
-        This item is currently out of stock
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/article&gt;
-&lt;/template&gt;</code></pre>
-
-<h2>Key Accessibility Features Implemented</h2>
+<h2>Key Accessibility Features to Implement</h2>
 
 <h3>1. Semantic HTML Structure</h3>
 <ul>
-<li>Used <code>&lt;article&gt;</code> for the product card container</li>
-<li>Proper heading hierarchy with <code>&lt;h3&gt;</code> for product titles</li>
-<li>Meaningful link text and button labels</li>
+<li>Use article elements for product card containers</li>
+<li>Maintain proper heading hierarchy with h3 elements for product titles</li>
+<li>Implement meaningful link text and button labels</li>
 </ul>
 
 <h3>2. ARIA Labels and Descriptions</h3>
 <ul>
-<li><code>aria-labelledby</code> connects the product card to its title</li>
-<li><code>aria-describedby</code> provides additional context for prices and stock status</li>
-<li><code>aria-label</code> offers descriptive text for interactive elements</li>
+<li>Connect product cards to their titles using aria-labelledby</li>
+<li>Provide additional context for prices and stock status with aria-describedby</li>
+<li>Add descriptive text for interactive elements using aria-label</li>
 </ul>
 
 <h3>3. Keyboard Navigation Support</h3>
 <ul>
-<li>All interactive elements are focusable</li>
-<li>Clear focus indicators with outline styles</li>
-<li>Logical tab order throughout the component</li>
+<li>Ensure all interactive elements are focusable</li>
+<li>Implement clear focus indicators with outline styles</li>
+<li>Maintain logical tab order throughout components</li>
 </ul>
 
 <h3>4. Screen Reader Considerations</h3>
 <ul>
-<li>Hidden descriptive text using <code>.sr-only</code> class</li>
-<li><code>aria-hidden="true"</code> for decorative icons</li>
-<li>Proper price formatting with currency information</li>
+<li>Include hidden descriptive text using screen reader only CSS classes</li>
+<li>Use aria-hidden attributes for decorative icons</li>
+<li>Format prices properly with currency information</li>
 </ul>
 
 <h2>Testing Your Accessible Components</h2>
 
-<p>Accessibility testing should be part of your development workflow:</p>
+<p>Accessibility testing should be part of your development workflow. Implement both automated and manual testing approaches:</p>
 
 <h3>Automated Testing</h3>
-<pre><code class="language-javascript">// Example using @vue/test-utils and jest-axe
-import { mount } from '@vue/test-utils'
-import { axe, toHaveNoViolations } from 'jest-axe'
-import ProductCard from '@/components/ProductCard.vue'
-
-expect.extend(toHaveNoViolations)
-
-describe('ProductCard Accessibility', () => {
-  test('should not have accessibility violations', async () => {
-    const wrapper = mount(ProductCard, {
-      props: {
-        product: {
-          id: 1,
-          name: 'Test Product',
-          price: 29.99,
-          image: '/test-image.jpg',
-          inStock: true
-        }
-      }
-    })
-
-```
-
-```
-
-  })
-})</code></pre>
+<p>Use tools like jest-axe with your Vue test utils to automatically detect accessibility violations. Set up tests that mount your components and run axe checks to ensure no WCAG violations exist in your markup.</p>
 
 <h3>Manual Testing Checklist</h3>
 <ul>
 <li>Navigate using only keyboard (Tab, Enter, Space, Arrow keys)</li>
-<li>Test with screen reader (NVDA, JAWS, or VoiceOver)</li>
+<li>Test with screen reader software (NVDA, JAWS, or VoiceOver)</li>
 <li>Verify color contrast ratios meet WCAG standards</li>
 <li>Check that all interactive elements have focus indicators</li>
 <li>Ensure form labels are properly associated</li>
@@ -192,33 +98,9 @@ describe('ProductCard Accessibility', () => {
 
 <h2>Performance Considerations</h2>
 
-<p>Accessibility and performance go hand in hand:</p>
+<p>Accessibility and performance go hand in hand. Implement lazy loading for images while maintaining proper alternative text. Use intersection observers to load images only when they enter the viewport, ensuring that accessibility attributes are properly set when images load.</p>
 
-<pre><code class="language-javascript">// Lazy load images with proper alt text
-const useImageLazyLoading = () => {
-  const imageRef = ref(null)
-  
-  onMounted(() => {
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target
-            img.src = img.dataset.src
-            img.alt = img.dataset.alt
-            observer.unobserve(img)
-          }
-        })
-      })
-      
-      if (imageRef.value) {
-        observer.observe(imageRef.value)
-      }
-    }
-  })
-  
-  return { imageRef }
-}</code></pre>
+<p>Consider implementing progressive enhancement where basic functionality works without JavaScript, then enhance the experience with interactive features. This approach benefits both performance and accessibility.</p>
 
 <h2>Real-World Impact</h2>
 
@@ -230,6 +112,16 @@ const useImageLazyLoading = () => {
 <li><strong>Reduced support tickets</strong> related to usability issues</li>
 <li><strong>Enhanced overall user experience</strong> for all customers</li>
 </ul>
+
+<h2>Best Practices for Implementation</h2>
+
+<p><strong>Start with Semantic HTML:</strong> Before adding any ARIA attributes, ensure your HTML structure is semantic and meaningful. Proper HTML elements often provide built-in accessibility features.</p>
+
+<p><strong>Test Early and Often:</strong> Don't wait until the end of development to test accessibility. Integrate accessibility testing into your development workflow from the beginning.</p>
+
+<p><strong>Consider Context:</strong> Think about how users with different abilities will interact with your components. What information do they need? How will they navigate through your interface?</p>
+
+<p><strong>Document Accessibility Features:</strong> Create documentation that explains the accessibility features of your components, making it easier for other developers to maintain and extend them properly.</p>
 
 <h2>Conclusion</h2>
 
