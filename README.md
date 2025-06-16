@@ -1,75 +1,119 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-Gatsby website in TypeScript with a homepage, blog, about and contact page
-</h1>
+# Gatsby Blog
 
-## Goals for this project
+This is a Gatsby.js blog project, designed for fast and modern web development.
 
-- TypeScript for type safety, IDE comfort and error checking during development and build time.
-- Generates TypeScript types for Gatsby GraphQL queries. (Execute `yarn develop` to generate types.)
-- ESLint and Prettier for safety and consistent code style.
-- Current state of the art by using React functional components with React Hooks.
-- Minimal bundle size - therefore it does not include an UI Framework and instead uses Formite and Reakit with Emotion.
+## Table of Contents
 
-## 🚀 Quick start
+- [Features](#features)
+- [Installation](#installation)
+- [Scripts](#scripts)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
 
-    Use the Gatsby CLI to start the site:
-    gatsby develop
-    Your site is now running at `http://localhost:8000`!
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+## Features
 
-## 🧐 What's inside?
+This project leverages the following key technologies and features:
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+- **Gatsby.js**: A powerful static site generator for React.
+- **MDX**: Write JSX in your Markdown documents.
+- **Emotion**: A CSS-in-JS library for styling.
+- **Algolia**: For fast and relevant search capabilities.
+- **Netlify CMS**: A Git-based CMS for content management.
+- **Responsive Design**: Adapts to various screen sizes.
+- **Image Optimization**: Using `gatsby-image` and `gatsby-plugin-sharp` for optimized image delivery.
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+## Installation
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+To get this project up and running on your local machine, follow these steps:
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+1.  **Clone the repository**:
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+    ```bash
+    git clone https://github.com/your-username/gatsby-blog.git
+    cd gatsby-blog
+    ```
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+2.  **Install dependencies**:
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+## Scripts
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+Here are the available scripts for developing and building your Gatsby blog:
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+- **`npm run develop`** (or `npm start`):
+  Starts the development server. You can view your site at `http://localhost:8000`.
+  The GraphiQL IDE is also available at `http://localhost:8000/___graphql`.
 
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+  ```bash
+  npm run develop
+  ```
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+- **`npm run build`**:
+  Compiles your Gatsby site for production. The static files will be generated in the `public` directory.
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+  ```bash
+  npm run build
+  ```
 
-12. **`README.md`**: A text file containing useful reference information about your project.
+- **`npm run serve`**:
+  Serves the production build locally. This is useful for testing your built site before deployment.
 
-## 🎓 Learning Gatsby
+  ```bash
+  npm run serve
+  ```
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
+- **`npm run clean`**:
+  Clears the Gatsby cache and public directory. This can be helpful when you encounter build issues or want a fresh start.
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+  ```bash
+  npm run clean
+  ```
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-<!-- AUTO-GENERATED-CONTENT:END -->
+- **`npm run format`**:
+  Formats your code using Prettier.
+
+  ```bash
+  npm run format
+  ```
+
+- **`npm test`**:
+  Currently a placeholder. You should add your unit tests here.
+
+  ```bash
+  npm test
+  ```
+
+## Deployment
+
+This project is configured for deployment on Netlify. The `npm run build` command generates the necessary static files, which Netlify then serves.
+
+**Netlify Configuration**:
+
+- **Build command**: `npm run build`
+- **Publish directory**: `public/`
+
+Make sure to configure your Algolia environment variables in Netlify for search functionality:
+
+- `ALGOLIA_ADMIN_KEY`
+- `GATSBY_ALGOLIA_APP_ID`
+- `GATSBY_ALGOLIA_SEARCH_KEY`
+
+## Contributing
+
+Contributions are welcome! Please follow these steps to contribute:
+
+1.  Fork the repository.
+2.  Create a new branch for your feature or bug fix.
+3.  Make your changes and ensure they adhere to the project's coding style.
+4.  Write or update tests as necessary.
+5.  Submit a pull request.
+
+## License
+
+This project is open source and available under the MIT License.
