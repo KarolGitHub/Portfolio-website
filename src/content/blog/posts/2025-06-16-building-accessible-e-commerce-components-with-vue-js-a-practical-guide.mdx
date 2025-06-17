@@ -1,7 +1,7 @@
 ---
-type: type
+type: 'post'
 author: Karol Gardyjas
-title: "Building Accessible E-commerce Components with Vue.js: A Practical Guide"
+title: 'Building Accessible E-commerce Components with Vue.js: A Practical Guide'
 published: true
 date: 2025-06-16
 image: static/images/uploads/cms.png
@@ -13,122 +13,210 @@ tags:
   - Frontend Development
   - Web Development
 ---
-<p>As frontend developers, we often focus on making our e-commerce applications visually appealing and functionally robust. However, accessibility is equally crucial—not just for compliance, but for creating inclusive experiences that serve all users. In this post, I'll share practical strategies for building accessible e-commerce components using Vue.js, drawing from real-world implementation experience.</p>
+
+<p>
+  As frontend developers, we often focus on making our e-commerce applications visually appealing and functionally
+  robust. However, accessibility is equally crucial—not just for compliance, but for creating inclusive experiences that
+  serve all users. In this post, I'll share practical strategies for building accessible e-commerce components using
+  Vue.js, drawing from real-world implementation experience.
+</p>
 
 <h2>Why Accessibility Matters in E-commerce</h2>
 
-<p>E-commerce accessibility isn't just about doing the right thing (though it absolutely is). It's also about business impact:</p>
+<p>
+  E-commerce accessibility isn't just about doing the right thing (though it absolutely is). It's also about business
+  impact:
+</p>
 
 <ul>
-<li><strong>Market Reach</strong>: Over 1 billion people worldwide have disabilities</li>
-<li><strong>SEO Benefits</strong>: Many accessibility practices improve search engine rankings</li>
-<li><strong>Legal Compliance</strong>: Accessibility standards are increasingly required by law</li>
-<li><strong>Better UX for Everyone</strong>: Accessible design often improves usability for all users</li>
+  <li>
+    <strong>Market Reach</strong>: Over 1 billion people worldwide have disabilities
+  </li>
+  <li>
+    <strong>SEO Benefits</strong>: Many accessibility practices improve search engine rankings
+  </li>
+  <li>
+    <strong>Legal Compliance</strong>: Accessibility standards are increasingly required by law
+  </li>
+  <li>
+    <strong>Better UX for Everyone</strong>: Accessible design often improves usability for all users
+  </li>
 </ul>
 
 <h2>Common Accessibility Pitfalls in E-commerce</h2>
 
-<p>Before diving into solutions, let's identify the most frequent accessibility issues I've encountered in e-commerce applications:</p>
+<p>
+  Before diving into solutions, let's identify the most frequent accessibility issues I've encountered in e-commerce
+  applications:
+</p>
 
 <ol>
-<li>Missing or inadequate form labels</li>
-<li>Poor keyboard navigation support</li>
-<li>Insufficient color contrast</li>
-<li>Missing alternative text for product images</li>
-<li>Inaccessible modal dialogs and dropdowns</li>
+  <li>Missing or inadequate form labels</li>
+  <li>Poor keyboard navigation support</li>
+  <li>Insufficient color contrast</li>
+  <li>Missing alternative text for product images</li>
+  <li>Inaccessible modal dialogs and dropdowns</li>
 </ol>
 
 <h2>Building an Accessible Product Card Component</h2>
 
-<p>Let's start with a fundamental e-commerce component—the product card. When implementing accessible product cards, focus on these key principles:</p>
+<p>
+  Let's start with a fundamental e-commerce component—the product card. When implementing accessible product cards,
+  focus on these key principles:
+</p>
 
-<p><strong>Semantic HTML Structure:</strong> Use proper HTML elements like article tags for product card containers, maintain proper heading hierarchy with h3 elements for product titles, and ensure meaningful link text and button labels throughout the component.</p>
+<p>
+  <strong>Semantic HTML Structure:</strong> Use proper HTML elements like article tags for product card containers,
+  maintain proper heading hierarchy with h3 elements for product titles, and ensure meaningful link text and button
+  labels throughout the component.
+</p>
 
-<p><strong>ARIA Labels and Descriptions:</strong> Implement aria-labelledby to connect product cards to their titles, use aria-describedby to provide additional context for prices and stock status, and add aria-label attributes to offer descriptive text for interactive elements.</p>
+<p>
+  <strong>ARIA Labels and Descriptions:</strong> Implement aria-labelledby to connect product cards to their titles, use
+  aria-describedby to provide additional context for prices and stock status, and add aria-label attributes to offer
+  descriptive text for interactive elements.
+</p>
 
-<p><strong>Image Accessibility:</strong> Every product image should include descriptive alternative text that conveys the product name and category. For decorative icons, use aria-hidden attributes to prevent screen readers from announcing them unnecessarily.</p>
+<p>
+  <strong>Image Accessibility:</strong> Every product image should include descriptive alternative text that conveys the
+  product name and category. For decorative icons, use aria-hidden attributes to prevent screen readers from announcing
+  them unnecessarily.
+</p>
 
-<p><strong>Interactive Elements:</strong> Ensure all buttons and links have clear, descriptive labels. For example, instead of just "Add to Cart," use "Add \[Product Name] to cart" to provide context when navigating with assistive technologies.</p>
+<p>
+  <strong>Interactive Elements:</strong> Ensure all buttons and links have clear, descriptive labels. For example,
+  instead of just "Add to Cart," use "Add \[Product Name] to cart" to provide context when navigating with assistive
+  technologies.
+</p>
 
 <h2>Key Accessibility Features to Implement</h2>
 
 <h3>1. Semantic HTML Structure</h3>
 <ul>
-<li>Use article elements for product card containers</li>
-<li>Maintain proper heading hierarchy with h3 elements for product titles</li>
-<li>Implement meaningful link text and button labels</li>
+  <li>Use article elements for product card containers</li>
+  <li>Maintain proper heading hierarchy with h3 elements for product titles</li>
+  <li>Implement meaningful link text and button labels</li>
 </ul>
 
 <h3>2. ARIA Labels and Descriptions</h3>
 <ul>
-<li>Connect product cards to their titles using aria-labelledby</li>
-<li>Provide additional context for prices and stock status with aria-describedby</li>
-<li>Add descriptive text for interactive elements using aria-label</li>
+  <li>Connect product cards to their titles using aria-labelledby</li>
+  <li>Provide additional context for prices and stock status with aria-describedby</li>
+  <li>Add descriptive text for interactive elements using aria-label</li>
 </ul>
 
 <h3>3. Keyboard Navigation Support</h3>
 <ul>
-<li>Ensure all interactive elements are focusable</li>
-<li>Implement clear focus indicators with outline styles</li>
-<li>Maintain logical tab order throughout components</li>
+  <li>Ensure all interactive elements are focusable</li>
+  <li>Implement clear focus indicators with outline styles</li>
+  <li>Maintain logical tab order throughout components</li>
 </ul>
 
 <h3>4. Screen Reader Considerations</h3>
 <ul>
-<li>Include hidden descriptive text using screen reader only CSS classes</li>
-<li>Use aria-hidden attributes for decorative icons</li>
-<li>Format prices properly with currency information</li>
+  <li>Include hidden descriptive text using screen reader only CSS classes</li>
+  <li>Use aria-hidden attributes for decorative icons</li>
+  <li>Format prices properly with currency information</li>
 </ul>
 
 <h2>Testing Your Accessible Components</h2>
 
-<p>Accessibility testing should be part of your development workflow. Implement both automated and manual testing approaches:</p>
+<p>
+  Accessibility testing should be part of your development workflow. Implement both automated and manual testing
+  approaches:
+</p>
 
 <h3>Automated Testing</h3>
-<p>Use tools like jest-axe with your Vue test utils to automatically detect accessibility violations. Set up tests that mount your components and run axe checks to ensure no WCAG violations exist in your markup.</p>
+<p>
+  Use tools like jest-axe with your Vue test utils to automatically detect accessibility violations. Set up tests that
+  mount your components and run axe checks to ensure no WCAG violations exist in your markup.
+</p>
 
 <h3>Manual Testing Checklist</h3>
 <ul>
-<li>Navigate using only keyboard (Tab, Enter, Space, Arrow keys)</li>
-<li>Test with screen reader software (NVDA, JAWS, or VoiceOver)</li>
-<li>Verify color contrast ratios meet WCAG standards</li>
-<li>Check that all interactive elements have focus indicators</li>
-<li>Ensure form labels are properly associated</li>
+  <li>Navigate using only keyboard (Tab, Enter, Space, Arrow keys)</li>
+  <li>Test with screen reader software (NVDA, JAWS, or VoiceOver)</li>
+  <li>Verify color contrast ratios meet WCAG standards</li>
+  <li>Check that all interactive elements have focus indicators</li>
+  <li>Ensure form labels are properly associated</li>
 </ul>
 
 <h2>Performance Considerations</h2>
 
-<p>Accessibility and performance go hand in hand. Implement lazy loading for images while maintaining proper alternative text. Use intersection observers to load images only when they enter the viewport, ensuring that accessibility attributes are properly set when images load.</p>
+<p>
+  Accessibility and performance go hand in hand. Implement lazy loading for images while maintaining proper alternative
+  text. Use intersection observers to load images only when they enter the viewport, ensuring that accessibility
+  attributes are properly set when images load.
+</p>
 
-<p>Consider implementing progressive enhancement where basic functionality works without JavaScript, then enhance the experience with interactive features. This approach benefits both performance and accessibility.</p>
+<p>
+  Consider implementing progressive enhancement where basic functionality works without JavaScript, then enhance the
+  experience with interactive features. This approach benefits both performance and accessibility.
+</p>
 
 <h2>Real-World Impact</h2>
 
 <p>In a recent e-commerce project, implementing these accessibility practices resulted in:</p>
 
 <ul>
-<li><strong>15% increase in conversion rates</strong> among users with disabilities</li>
-<li><strong>Improved SEO rankings</strong> due to better semantic structure</li>
-<li><strong>Reduced support tickets</strong> related to usability issues</li>
-<li><strong>Enhanced overall user experience</strong> for all customers</li>
+  <li>
+    <strong>15% increase in conversion rates</strong> among users with disabilities
+  </li>
+  <li>
+    <strong>Improved SEO rankings</strong> due to better semantic structure
+  </li>
+  <li>
+    <strong>Reduced support tickets</strong> related to usability issues
+  </li>
+  <li>
+    <strong>Enhanced overall user experience</strong> for all customers
+  </li>
 </ul>
 
 <h2>Best Practices for Implementation</h2>
 
-<p><strong>Start with Semantic HTML:</strong> Before adding any ARIA attributes, ensure your HTML structure is semantic and meaningful. Proper HTML elements often provide built-in accessibility features.</p>
+<p>
+  <strong>Start with Semantic HTML:</strong> Before adding any ARIA attributes, ensure your HTML structure is semantic
+  and meaningful. Proper HTML elements often provide built-in accessibility features.
+</p>
 
-<p><strong>Test Early and Often:</strong> Don't wait until the end of development to test accessibility. Integrate accessibility testing into your development workflow from the beginning.</p>
+<p>
+  <strong>Test Early and Often:</strong> Don't wait until the end of development to test accessibility. Integrate
+  accessibility testing into your development workflow from the beginning.
+</p>
 
-<p><strong>Consider Context:</strong> Think about how users with different abilities will interact with your components. What information do they need? How will they navigate through your interface?</p>
+<p>
+  <strong>Consider Context:</strong> Think about how users with different abilities will interact with your components.
+  What information do they need? How will they navigate through your interface?
+</p>
 
-<p><strong>Document Accessibility Features:</strong> Create documentation that explains the accessibility features of your components, making it easier for other developers to maintain and extend them properly.</p>
+<p>
+  <strong>Document Accessibility Features:</strong> Create documentation that explains the accessibility features of
+  your components, making it easier for other developers to maintain and extend them properly.
+</p>
 
 <h2>Conclusion</h2>
 
-<p>Building accessible e-commerce components isn't just about compliance—it's about creating better experiences for everyone. By incorporating these practices into your Vue.js development workflow, you're not only expanding your market reach but also building more robust, maintainable applications.</p>
+<p>
+  Building accessible e-commerce components isn't just about compliance—it's about creating better experiences for
+  everyone. By incorporating these practices into your Vue.js development workflow, you're not only expanding your
+  market reach but also building more robust, maintainable applications.
+</p>
 
-<p>The key is to think about accessibility from the beginning of your design process, not as an afterthought. Start with semantic HTML, add ARIA attributes where needed, ensure keyboard navigation works smoothly, and always test with real users and assistive technologies.</p>
+<p>
+  The key is to think about accessibility from the beginning of your design process, not as an afterthought. Start with
+  semantic HTML, add ARIA attributes where needed, ensure keyboard navigation works smoothly, and always test with real
+  users and assistive technologies.
+</p>
 
-<p>Remember: accessibility is not a destination, but a journey of continuous improvement. Every small step toward more inclusive design makes a meaningful difference in someone's online shopping experience.</p>
+<p>
+  Remember: accessibility is not a destination, but a journey of continuous improvement. Every small step toward more
+  inclusive design makes a meaningful difference in someone's online shopping experience.
+</p>
 
-<p><em>What accessibility challenges have you encountered in your e-commerce projects? Share your experiences and solutions in the comments below.</em></p>
+<p>
+  <em>
+    What accessibility challenges have you encountered in your e-commerce projects? Share your experiences and solutions
+    in the comments below.
+  </em>
+</p>
